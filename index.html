@@ -137,23 +137,28 @@
       box-shadow: 0 0 0 1px rgba(255, 255, 255, .16);
       background: #0c1116;
     }
+    .flag-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 15px;
+      flex: none;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 3px;
+      background: #0e1820;
+      color: #dce7ec;
+      font-size: 8px;
+      font-weight: 900;
+      line-height: 1;
+    }
     .team-label {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    tr.qual td:first-child::before,
-    tr.third td:first-child::before {
-      content: "";
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      margin-right: 6px;
-      border-radius: 50%;
-      vertical-align: middle;
-    }
-    tr.qual td:first-child::before { background: var(--good); }
-    tr.third td:first-child::before { background: var(--warn); }
+    tr.qual .team-label { color: #76e5bc; }
+    tr.third .team-label { color: #ffb08e; }
     td.pts { color: var(--accent); font-weight: 900; }
 
     .matches {
@@ -462,6 +467,57 @@
       "파나마": "https://flagcdn.com/w80/pa.png"
     };
 
+    const STATIC_CODES = {
+      "멕시코": "MEX",
+      "남아프리카공화국": "RSA",
+      "대한민국": "KOR",
+      "체코": "CZE",
+      "캐나다": "CAN",
+      "보스니아 헤르체고비나": "BIH",
+      "카타르": "QAT",
+      "스위스": "SUI",
+      "브라질": "BRA",
+      "모로코": "MAR",
+      "아이티": "HAI",
+      "스코틀랜드": "SCO",
+      "미국": "USA",
+      "파라과이": "PAR",
+      "호주": "AUS",
+      "튀르키예": "TUR",
+      "독일": "GER",
+      "퀴라소": "CUW",
+      "코트디부아르": "CIV",
+      "에콰도르": "ECU",
+      "네덜란드": "NED",
+      "일본": "JPN",
+      "튀니지": "TUN",
+      "스웨덴": "SWE",
+      "벨기에": "BEL",
+      "이집트": "EGY",
+      "이란": "IRN",
+      "뉴질랜드": "NZL",
+      "스페인": "ESP",
+      "카보베르데": "CPV",
+      "사우디아라비아": "KSA",
+      "우루과이": "URU",
+      "프랑스": "FRA",
+      "세네갈": "SEN",
+      "이라크": "IRQ",
+      "노르웨이": "NOR",
+      "아르헨티나": "ARG",
+      "알제리": "ALG",
+      "오스트리아": "AUT",
+      "요르단": "JOR",
+      "포르투갈": "POR",
+      "콩고민주공화국": "COD",
+      "우즈베키스탄": "UZB",
+      "콜롬비아": "COL",
+      "잉글랜드": "ENG",
+      "크로아티아": "CRO",
+      "가나": "GHA",
+      "파나마": "PAN"
+    };
+
     const FIXTURES = [
       ["A", "06/12 04:00", "멕시코 대 남아프리카공화국"],
       ["A", "06/12 11:00", "대한민국 대 체코"],
@@ -540,10 +596,23 @@
       return STATIC_FLAGS[team] || "";
     }
 
+    function codeFor(team) {
+      if (!team) return "";
+      if (typeof team === "object") return team.code || STATIC_CODES[team.name] || "";
+      return STATIC_CODES[team] || "";
+    }
+
     function teamCell(row) {
       const name = typeof row === "object" ? row.team : row;
       const flag = flagFor(row);
-      const image = flag ? `<img class="flag" src="${esc(flag)}" alt="" loading="lazy">` : "";
+      const code = codeFor(row);
+      const fallback = code ? `<span class="flag-code">${esc(code)}</span>` : "";
+      const onFlagError = code
+        ? `this.replaceWith(Object.assign(document.createElement('span'),{className:'flag-code',textContent:'${esc(code)}'}))`
+        : "this.remove()";
+      const image = flag
+        ? `<img class="flag" src="${esc(flag)}" alt="" loading="lazy" onerror="${onFlagError}">`
+        : fallback;
       return `<span class="team-wrap">${image}<span class="team-label">${esc(name)}</span></span>`;
     }
 
@@ -556,7 +625,8 @@
         const name = teamName(t.name_en);
         teams[String(t.id)] = {
           name,
-          flag: t.flag || STATIC_FLAGS[name] || ""
+          flag: t.flag || STATIC_FLAGS[name] || "",
+          code: t.fifa_code || STATIC_CODES[name] || ""
         };
       }
 
@@ -564,17 +634,23 @@
       for (const group of data.groups.groups || []) {
         const letter = String(group.name || "").toUpperCase();
         if (!GROUPS[letter]) continue;
-        standings[letter] = (group.teams || []).map((row) => ({
-          team: (teams[String(row.team_id)] || {}).name || String(row.team_id),
-          flag: (teams[String(row.team_id)] || {}).flag || "",
-          p: num(row.mp),
-          w: num(row.w),
-          d: num(row.d),
-          l: num(row.l),
-          gd: num(row.gd),
-          pts: num(row.pts),
-          gf: num(row.gf)
-        })).sort((a, b) =>
+        standings[letter] = (group.teams || []).map((row, index) => {
+          const team = teams[String(row.team_id)] || {};
+          const fallbackName = GROUPS[letter][index] || String(row.team_id || "");
+          const name = team.name || fallbackName;
+          return {
+            team: name,
+            flag: team.flag || STATIC_FLAGS[name] || "",
+            code: team.code || STATIC_CODES[name] || "",
+            p: num(row.mp),
+            w: num(row.w),
+            d: num(row.d),
+            l: num(row.l),
+            gd: num(row.gd),
+            pts: num(row.pts),
+            gf: num(row.gf)
+          };
+        }).sort((a, b) =>
           b.pts - a.pts ||
           b.gd - a.gd ||
           b.gf - a.gf ||
@@ -589,7 +665,17 @@
       if (live && live.standings[letter] && live.standings[letter].length) {
         return live.standings[letter];
       }
-      return GROUPS[letter].map((team) => ({ team, flag: STATIC_FLAGS[team] || "", p: 0, w: 0, d: 0, l: 0, gd: 0, pts: 0 }));
+      return GROUPS[letter].map((team) => ({
+        team,
+        flag: STATIC_FLAGS[team] || "",
+        code: STATIC_CODES[team] || "",
+        p: 0,
+        w: 0,
+        d: 0,
+        l: 0,
+        gd: 0,
+        pts: 0
+      }));
     }
 
     function renderGroups(live) {
