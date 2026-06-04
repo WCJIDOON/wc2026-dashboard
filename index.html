@@ -216,9 +216,6 @@
   </main>
 
   <script>
-    document.write('<script src="wc2026_live_data.js?v=' + Date.now() + '"><\\/script>');
-  </script>
-  <script>
     const GROUPS = {
       A: ["멕시코", "남아프리카공화국", "대한민국", "체코"],
       B: ["캐나다", "보스니아 헤르체고비나", "카타르", "스위스"],
@@ -469,18 +466,34 @@
       el.textContent = `온라인 갱신: ${label}`;
     }
 
-    document.getElementById("today").textContent = new Intl.DateTimeFormat("ko-KR", {
-      year: "numeric", month: "long", day: "numeric", weekday: "short"
-    }).format(new Date());
+    function startDashboard() {
+      document.getElementById("today").textContent = new Intl.DateTimeFormat("ko-KR", {
+        year: "numeric", month: "long", day: "numeric", weekday: "short"
+      }).format(new Date());
 
-    const live = liveStandings();
-    renderGroups(live);
-    renderKorea();
-    renderStatus(live);
+      const live = liveStandings();
+      renderGroups(live);
+      renderKorea();
+      renderStatus(live);
 
-    setTimeout(() => {
-      window.location.reload();
-    }, 5 * 60 * 1000);
+      setTimeout(() => {
+        window.location.reload();
+      }, 5 * 60 * 1000);
+    }
+
+    function loadLiveData() {
+      const script = document.createElement("script");
+      script.src = `wc2026_live_data.js?v=${Date.now()}`;
+      script.onload = startDashboard;
+      script.onerror = startDashboard;
+      document.head.appendChild(script);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", loadLiveData);
+    } else {
+      loadLiveData();
+    }
   </script>
 </body>
 </html>
