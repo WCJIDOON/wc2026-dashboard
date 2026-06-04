@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026 월드컵 조별리그 현황</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #10151b;
+      --panel: #182129;
+      --panel-2: #202b35;
+      --line: #344453;
+      --text: #eef4f7;
+      --muted: #9fb0ba;
+      --accent: #e0b649;
+      --good: #55c79b;
+      --warn: #e17f63;
+      --blue: #70a6d8;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+    }
+    body { padding: 18px; overflow-x: hidden; }
+    .shell { max-width: 1320px; margin: 0 auto; }
+
+    .top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+    h1 { margin: 0; font-size: 27px; line-height: 1.1; letter-spacing: 0; }
+    .sub { margin-top: 6px; color: var(--muted); font-size: 13px; }
+    .stamp {
+      text-align: right;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      background: #15202a;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 4px 9px;
+    }
+    .chip.good { color: #c9f4e5; border-color: rgba(85, 199, 155, .55); }
+    .chip.warn { color: #ffd7ca; border-color: rgba(225, 127, 99, .55); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .group {
+      min-width: 0;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+    }
+    .group-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(90deg, #243342, #1a2730);
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .group-name { font-weight: 800; color: var(--accent); font-size: 15px; }
+    .group-status { color: var(--muted); font-size: 11px; }
+
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 12px; }
+    th {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 10px;
+      padding: 6px 4px;
+      border-bottom: 1px solid #263542;
+      text-align: center;
+    }
+    th.team, td.team { text-align: left; width: auto; padding-left: 10px; }
+    th.num, td.num { width: 31px; }
+    th.pts, td.pts { width: 36px; }
+    td {
+      padding: 7px 4px;
+      border-bottom: 1px solid #24323e;
+      color: #dce7ec;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    tr:last-child td { border-bottom: none; }
+    td.team {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text);
+      font-weight: 700;
+    }
+    tr.qual td:first-child::before,
+    tr.third td:first-child::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 6px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+    tr.qual td:first-child::before { background: var(--good); }
+    tr.third td:first-child::before { background: var(--warn); }
+    td.pts { color: var(--accent); font-weight: 900; }
+
+    .matches {
+      background: #131b22;
+      border-top: 1px solid var(--line);
+      padding: 8px 10px 10px;
+    }
+    .matches-title {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+    .match {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+      padding: 2px 0;
+    }
+    .time { color: #dbe8ef; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .teams {
+      color: #cbd8de;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .korea {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .k-card {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .k-date { color: var(--accent); font-size: 12px; font-weight: 900; margin-bottom: 5px; }
+    .k-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+    .k-meta { color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 1180px) { .grid { grid-template-columns: repeat(3, minmax(240px, 1fr)); } }
+    @media (max-width: 880px) {
+      body { padding: 12px; }
+      .top { align-items: start; flex-direction: column; gap: 8px; }
+      .stamp { text-align: left; }
+      .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+      .korea { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="top">
+      <div>
+        <h1>2026 FIFA 월드컵 조별리그 현황</h1>
+        <div class="sub">한국시간 기준 · 각 조 1, 2위 진출 · 3위 중 상위 8팀 추가 진출</div>
+      </div>
+      <div class="stamp">
+        <div id="today"></div>
+        <div id="dataStatus">정적 데이터 표시 중</div>
+        <div id="refreshStatus">5분마다 자동 새로고침</div>
+      </div>
+    </section>
+
+    <section class="legend">
+      <span class="chip good">1-2위</span>
+      <span class="chip warn">3위 후보</span>
+      <span class="chip">P 경기</span>
+      <span class="chip">GD 득실</span>
+      <span class="chip">Pts 승점</span>
+    </section>
+
+    <section class="grid" id="groups"></section>
+    <section class="korea" id="korea"></section>
+  </main>
+
+  <script>
+    document.write('<script src="wc2026_live_data.js?v=' + Date.now() + '"><\\/script>');
+  </script>
+  <script>
+    const GROUPS = {
+      A: ["멕시코", "남아프리카공화국", "대한민국", "체코"],
+      B: ["캐나다", "보스니아 헤르체고비나", "카타르", "스위스"],
+      C: ["브라질", "모로코", "아이티", "스코틀랜드"],
+      D: ["미국", "파라과이", "호주", "튀르키예"],
+      E: ["독일", "퀴라소", "코트디부아르", "에콰도르"],
+      F: ["네덜란드", "일본", "튀니지", "스웨덴"],
+      G: ["벨기에", "이집트", "이란", "뉴질랜드"],
+      H: ["스페인", "카보베르데", "사우디아라비아", "우루과이"],
+      I: ["프랑스", "세네갈", "노르웨이", "이라크"],
+      J: ["아르헨티나", "알제리", "오스트리아", "요르단"],
+      K: ["포르투갈", "콩고민주공화국", "우즈베키스탄", "콜롬비아"],
+      L: ["잉글랜드", "크로아티아", "가나", "파나마"]
+    };
+
+    const KO_NAME = {
+      "Mexico": "멕시코",
+      "South Africa": "남아프리카공화국",
+      "South Korea": "대한민국",
+      "Czechia": "체코",
+      "Czech Republic": "체코",
+      "Canada": "캐나다",
+      "Bosnia & Herzegovina": "보스니아 헤르체고비나",
+      "Bosnia and Herzegovina": "보스니아 헤르체고비나",
+      "Qatar": "카타르",
+      "Switzerland": "스위스",
+      "Brazil": "브라질",
+      "Morocco": "모로코",
+      "Haiti": "아이티",
+      "Scotland": "스코틀랜드",
+      "United States": "미국",
+      "USA": "미국",
+      "Paraguay": "파라과이",
+      "Australia": "호주",
+      "Turkey": "튀르키예",
+      "Türkiye": "튀르키예",
+      "Germany": "독일",
+      "Curaçao": "퀴라소",
+      "Ivory Coast": "코트디부아르",
+      "Ecuador": "에콰도르",
+      "Netherlands": "네덜란드",
+      "Japan": "일본",
+      "Tunisia": "튀니지",
+      "Sweden": "스웨덴",
+      "Belgium": "벨기에",
+      "Egypt": "이집트",
+      "Iran": "이란",
+      "New Zealand": "뉴질랜드",
+      "Spain": "스페인",
+      "Cape Verde": "카보베르데",
+      "Saudi Arabia": "사우디아라비아",
+      "Uruguay": "우루과이",
+      "France": "프랑스",
+      "Senegal": "세네갈",
+      "Iraq": "이라크",
+      "Norway": "노르웨이",
+      "Argentina": "아르헨티나",
+      "Algeria": "알제리",
+      "Austria": "오스트리아",
+      "Jordan": "요르단",
+      "Portugal": "포르투갈",
+      "Democratic Republic of the Congo": "콩고민주공화국",
+      "DR Congo": "콩고민주공화국",
+      "Uzbekistan": "우즈베키스탄",
+      "Colombia": "콜롬비아",
+      "England": "잉글랜드",
+      "Croatia": "크로아티아",
+      "Ghana": "가나",
+      "Panama": "파나마"
+    };
+
+    const FIXTURES = [
+      ["A", "06/12 04:00", "멕시코 대 남아프리카공화국"],
+      ["A", "06/12 11:00", "대한민국 대 체코"],
+      ["A", "06/19 10:00", "멕시코 대 대한민국"],
+      ["A", "06/25 10:00", "대한민국 대 남아프리카공화국"],
+      ["B", "06/13 04:00", "캐나다 대 보스니아 헤르체고비나"],
+      ["B", "06/14 04:00", "카타르 대 스위스"],
+      ["B", "06/19 07:00", "캐나다 대 카타르"],
+      ["B", "06/25 04:00", "캐나다 대 스위스"],
+      ["C", "06/14 07:00", "브라질 대 모로코"],
+      ["C", "06/14 10:00", "아이티 대 스코틀랜드"],
+      ["C", "06/20 07:00", "스코틀랜드 대 모로코"],
+      ["C", "06/25 07:00", "스코틀랜드 대 브라질"],
+      ["D", "06/13 10:00", "미국 대 파라과이"],
+      ["D", "06/14 13:00", "호주 대 튀르키예"],
+      ["D", "06/20 04:00", "미국 대 호주"],
+      ["D", "06/26 10:00", "미국 대 튀르키예"],
+      ["E", "06/15 02:00", "독일 대 퀴라소"],
+      ["E", "06/15 08:00", "코트디부아르 대 에콰도르"],
+      ["E", "06/21 05:00", "독일 대 코트디부아르"],
+      ["E", "06/26 05:00", "에콰도르 대 독일"],
+      ["F", "06/15 05:00", "네덜란드 대 일본"],
+      ["F", "06/15 11:00", "튀니지 대 스웨덴"],
+      ["F", "06/21 02:00", "네덜란드 대 스웨덴"],
+      ["F", "06/26 08:00", "일본 대 스웨덴"],
+      ["G", "06/16 04:00", "벨기에 대 이집트"],
+      ["G", "06/16 10:00", "이란 대 뉴질랜드"],
+      ["G", "06/22 04:00", "벨기에 대 이란"],
+      ["G", "06/27 08:00", "이집트 대 이란"],
+      ["H", "06/16 01:00", "스페인 대 카보베르데"],
+      ["H", "06/16 07:00", "사우디아라비아 대 우루과이"],
+      ["H", "06/22 01:00", "스페인 대 사우디아라비아"],
+      ["H", "06/27 05:00", "우루과이 대 스페인"],
+      ["I", "06/17 04:00", "프랑스 대 세네갈"],
+      ["I", "06/17 07:00", "노르웨이 대 이라크"],
+      ["I", "06/23 02:00", "프랑스 대 이라크"],
+      ["I", "06/27 04:00", "노르웨이 대 프랑스"],
+      ["J", "06/17 10:00", "아르헨티나 대 알제리"],
+      ["J", "06/17 13:00", "오스트리아 대 요르단"],
+      ["J", "06/23 02:00", "아르헨티나 대 오스트리아"],
+      ["J", "06/28 11:00", "요르단 대 아르헨티나"],
+      ["K", "06/18 02:00", "포르투갈 대 콩고민주공화국"],
+      ["K", "06/18 11:00", "우즈베키스탄 대 콜롬비아"],
+      ["K", "06/24 02:00", "포르투갈 대 우즈베키스탄"],
+      ["K", "06/28 08:30", "콜롬비아 대 포르투갈"],
+      ["L", "06/18 05:00", "잉글랜드 대 크로아티아"],
+      ["L", "06/18 08:00", "가나 대 파나마"],
+      ["L", "06/24 05:00", "잉글랜드 대 가나"],
+      ["L", "06/28 06:00", "파나마 대 잉글랜드"]
+    ];
+
+    const KOREA = [
+      ["2026년 6월 12일 11:00", "대한민국 대 체코", "과달라하라"],
+      ["2026년 6월 19일 10:00", "멕시코 대 대한민국", "과달라하라"],
+      ["2026년 6월 25일 10:00", "대한민국 대 남아프리카공화국", "몬테레이"]
+    ];
+
+    function esc(text) {
+      return String(text).replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[ch]);
+    }
+
+    function num(value) {
+      const n = Number(value);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function teamName(name) {
+      return KO_NAME[name] || name;
+    }
+
+    function liveStandings() {
+      const data = window.WC2026_LIVE_DATA;
+      if (!data || !data.groups || !data.teams) return null;
+
+      const teams = {};
+      for (const t of data.teams.teams || []) {
+        teams[String(t.id)] = teamName(t.name_en);
+      }
+
+      const standings = {};
+      for (const group of data.groups.groups || []) {
+        const letter = String(group.name || "").toUpperCase();
+        if (!GROUPS[letter]) continue;
+        standings[letter] = (group.teams || []).map((row) => ({
+          team: teams[String(row.team_id)] || String(row.team_id),
+          p: num(row.mp),
+          w: num(row.w),
+          d: num(row.d),
+          l: num(row.l),
+          gd: num(row.gd),
+          pts: num(row.pts),
+          gf: num(row.gf)
+        })).sort((a, b) =>
+          b.pts - a.pts ||
+          b.gd - a.gd ||
+          b.gf - a.gf ||
+          a.team.localeCompare(b.team, "ko")
+        );
+      }
+
+      return { standings, fetchedAt: data.fetchedAt || "" };
+    }
+
+    function rowsForGroup(letter, live) {
+      if (live && live.standings[letter] && live.standings[letter].length) {
+        return live.standings[letter];
+      }
+      return GROUPS[letter].map((team) => ({ team, p: 0, w: 0, d: 0, l: 0, gd: 0, pts: 0 }));
+    }
+
+    function renderGroups(live) {
+      const root = document.getElementById("groups");
+      root.innerHTML = Object.keys(GROUPS).map((letter) => {
+        const groupRows = rowsForGroup(letter, live);
+        const played = Math.round(groupRows.reduce((sum, row) => sum + num(row.p), 0) / 2);
+        const rows = groupRows.map((row, index) => {
+          const cls = index < 2 ? "qual" : index === 2 ? "third" : "";
+          const gd = num(row.gd) > 0 ? `+${num(row.gd)}` : String(num(row.gd));
+          return `<tr class="${cls}">
+            <td class="team">${esc(row.team)}</td>
+            <td class="num">${num(row.p)}</td>
+            <td class="num">${num(row.w)}</td>
+            <td class="num">${num(row.d)}</td>
+            <td class="num">${num(row.l)}</td>
+            <td class="num">${esc(gd)}</td>
+            <td class="pts">${num(row.pts)}</td>
+          </tr>`;
+        }).join("");
+
+        const matches = FIXTURES.filter((m) => m[0] === letter).slice(0, 4).map((m) => `
+          <div class="match"><span class="time">${esc(m[1])}</span><span class="teams">${esc(m[2])}</span></div>
+        `).join("");
+
+        return `<article class="group">
+          <div class="group-head">
+            <div class="group-name">${letter}조</div>
+            <div class="group-status">${played}/6 경기</div>
+          </div>
+          <table>
+            <thead>
+              <tr><th class="team">대표팀</th><th class="num">P</th><th class="num">W</th><th class="num">D</th><th class="num">L</th><th class="num">GD</th><th class="pts">Pts</th></tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+          <div class="matches">
+            <div class="matches-title">주요 일정</div>
+            ${matches}
+          </div>
+        </article>`;
+      }).join("");
+    }
+
+    function renderKorea() {
+      document.getElementById("korea").innerHTML = KOREA.map((m) => `
+        <article class="k-card">
+          <div class="k-date">${esc(m[0])}</div>
+          <div class="k-title">${esc(m[1])}</div>
+          <div class="k-meta">${esc(m[2])}</div>
+        </article>
+      `).join("");
+    }
+
+    function renderStatus(live) {
+      const el = document.getElementById("dataStatus");
+      if (!live || !live.fetchedAt) {
+        el.textContent = "오프라인 정적 데이터";
+        return;
+      }
+      const date = new Date(live.fetchedAt);
+      const label = Number.isFinite(date.getTime())
+        ? new Intl.DateTimeFormat("ko-KR", {
+            month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit"
+          }).format(date)
+        : live.fetchedAt;
+      el.textContent = `온라인 갱신: ${label}`;
+    }
+
+    document.getElementById("today").textContent = new Intl.DateTimeFormat("ko-KR", {
+      year: "numeric", month: "long", day: "numeric", weekday: "short"
+    }).format(new Date());
+
+    const live = liveStandings();
+    renderGroups(live);
+    renderKorea();
+    renderStatus(live);
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 5 * 60 * 1000);
+  </script>
+</body>
+</html>
