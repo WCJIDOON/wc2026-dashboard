@@ -8,6 +8,7 @@ const outputPath = join(__dirname, "..", "wc2026_live_data.js");
 const endpoints = {
   groups: "https://worldcup26.ir/get/groups",
   teams: "https://worldcup26.ir/get/teams",
+  games: "https://worldcup26.ir/get/games",
 };
 
 async function fetchJson(url) {
@@ -40,12 +41,16 @@ function assertShape(data) {
   if (!data.teams || !Array.isArray(data.teams.teams)) {
     throw new Error("teams response shape changed");
   }
+  if (!data.games || !Array.isArray(data.games.games)) {
+    throw new Error("games response shape changed");
+  }
 }
 
 const data = {
   fetchedAt: new Date().toISOString(),
   groups: await fetchJson(endpoints.groups),
   teams: await fetchJson(endpoints.teams),
+  games: await fetchJson(endpoints.games),
 };
 
 assertShape(data);

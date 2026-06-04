@@ -120,6 +120,28 @@
       color: var(--text);
       font-weight: 700;
     }
+    .team-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      max-width: 100%;
+      min-width: 0;
+      vertical-align: middle;
+    }
+    .flag {
+      width: 19px;
+      height: 13px;
+      flex: none;
+      border-radius: 2px;
+      object-fit: cover;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, .16);
+      background: #0c1116;
+    }
+    .team-label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
     tr.qual td:first-child::before,
     tr.third td:first-child::before {
       content: "";
@@ -178,12 +200,97 @@
     .k-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
     .k-meta { color: var(--muted); font-size: 12px; }
 
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 0 0 14px;
+    }
+    .stat-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .stat-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 10px;
+      background: #17232c;
+      border-bottom: 1px solid var(--line);
+    }
+    .stat-title {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .stat-note {
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .rank-list {
+      display: grid;
+      gap: 0;
+    }
+    .rank-row {
+      display: grid;
+      grid-template-columns: 30px 1fr 42px;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 6px 10px;
+      border-bottom: 1px solid #24323e;
+      font-size: 12px;
+    }
+    .rank-row:last-child { border-bottom: none; }
+    .rank-num {
+      color: var(--muted);
+      font-weight: 900;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .player {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .player-name {
+      color: var(--text);
+      font-weight: 800;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .player-team {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .rank-score {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 900;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .empty-stat {
+      color: var(--muted);
+      padding: 18px 12px;
+      font-size: 12px;
+      text-align: center;
+    }
+
     @media (max-width: 1180px) { .grid { grid-template-columns: repeat(3, minmax(240px, 1fr)); } }
     @media (max-width: 880px) {
       body { padding: 12px; }
       .top { align-items: start; flex-direction: column; gap: 8px; }
       .stamp { text-align: left; }
       .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+      .stats-grid { grid-template-columns: 1fr; }
       .korea { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
@@ -209,6 +316,23 @@
       <span class="chip">P 경기</span>
       <span class="chip">GD 득실</span>
       <span class="chip">Pts 승점</span>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-panel">
+        <div class="stat-head">
+          <div class="stat-title">개인 득점 순위</div>
+          <div class="stat-note" id="scorerNote">대회 시작 전</div>
+        </div>
+        <div class="rank-list" id="scorers"></div>
+      </article>
+      <article class="stat-panel">
+        <div class="stat-head">
+          <div class="stat-title">개인 도움 순위</div>
+          <div class="stat-note" id="assistNote">데이터 대기 중</div>
+        </div>
+        <div class="rank-list" id="assists"></div>
+      </article>
     </section>
 
     <section class="grid" id="groups"></section>
@@ -287,6 +411,57 @@
       "Panama": "파나마"
     };
 
+    const STATIC_FLAGS = {
+      "멕시코": "https://flagcdn.com/w80/mx.png",
+      "남아프리카공화국": "https://flagcdn.com/w80/za.png",
+      "대한민국": "https://flagcdn.com/w80/kr.png",
+      "체코": "https://flagcdn.com/w80/cz.png",
+      "캐나다": "https://flagcdn.com/w80/ca.png",
+      "보스니아 헤르체고비나": "https://flagcdn.com/w80/ba.png",
+      "카타르": "https://flagcdn.com/w80/qa.png",
+      "스위스": "https://flagcdn.com/w80/ch.png",
+      "브라질": "https://flagcdn.com/w80/br.png",
+      "모로코": "https://flagcdn.com/w80/ma.png",
+      "아이티": "https://flagcdn.com/w80/ht.png",
+      "스코틀랜드": "https://flagcdn.com/w80/gb-sct.png",
+      "미국": "https://flagcdn.com/w80/us.png",
+      "파라과이": "https://flagcdn.com/w80/py.png",
+      "호주": "https://flagcdn.com/w80/au.png",
+      "튀르키예": "https://flagcdn.com/w80/tr.png",
+      "독일": "https://flagcdn.com/w80/de.png",
+      "퀴라소": "https://flagcdn.com/w80/cw.png",
+      "코트디부아르": "https://flagcdn.com/w80/ci.png",
+      "에콰도르": "https://flagcdn.com/w80/ec.png",
+      "네덜란드": "https://flagcdn.com/w80/nl.png",
+      "일본": "https://flagcdn.com/w80/jp.png",
+      "튀니지": "https://flagcdn.com/w80/tn.png",
+      "스웨덴": "https://flagcdn.com/w80/se.png",
+      "벨기에": "https://flagcdn.com/w80/be.png",
+      "이집트": "https://flagcdn.com/w80/eg.png",
+      "이란": "https://flagcdn.com/w80/ir.png",
+      "뉴질랜드": "https://flagcdn.com/w80/nz.png",
+      "스페인": "https://flagcdn.com/w80/es.png",
+      "카보베르데": "https://flagcdn.com/w80/cv.png",
+      "사우디아라비아": "https://flagcdn.com/w80/sa.png",
+      "우루과이": "https://flagcdn.com/w80/uy.png",
+      "프랑스": "https://flagcdn.com/w80/fr.png",
+      "세네갈": "https://flagcdn.com/w80/sn.png",
+      "이라크": "https://flagcdn.com/w80/iq.png",
+      "노르웨이": "https://flagcdn.com/w80/no.png",
+      "아르헨티나": "https://flagcdn.com/w80/ar.png",
+      "알제리": "https://flagcdn.com/w80/dz.png",
+      "오스트리아": "https://flagcdn.com/w80/at.png",
+      "요르단": "https://flagcdn.com/w80/jo.png",
+      "포르투갈": "https://flagcdn.com/w80/pt.png",
+      "콩고민주공화국": "https://flagcdn.com/w80/cd.png",
+      "우즈베키스탄": "https://flagcdn.com/w80/uz.png",
+      "콜롬비아": "https://flagcdn.com/w80/co.png",
+      "잉글랜드": "https://flagcdn.com/w80/gb-eng.png",
+      "크로아티아": "https://flagcdn.com/w80/hr.png",
+      "가나": "https://flagcdn.com/w80/gh.png",
+      "파나마": "https://flagcdn.com/w80/pa.png"
+    };
+
     const FIXTURES = [
       ["A", "06/12 04:00", "멕시코 대 남아프리카공화국"],
       ["A", "06/12 11:00", "대한민국 대 체코"],
@@ -359,13 +534,30 @@
       return KO_NAME[name] || name;
     }
 
+    function flagFor(team) {
+      if (!team) return "";
+      if (typeof team === "object") return team.flag || STATIC_FLAGS[team.name] || "";
+      return STATIC_FLAGS[team] || "";
+    }
+
+    function teamCell(row) {
+      const name = typeof row === "object" ? row.team : row;
+      const flag = flagFor(row);
+      const image = flag ? `<img class="flag" src="${esc(flag)}" alt="" loading="lazy">` : "";
+      return `<span class="team-wrap">${image}<span class="team-label">${esc(name)}</span></span>`;
+    }
+
     function liveStandings() {
       const data = window.WC2026_LIVE_DATA;
       if (!data || !data.groups || !data.teams) return null;
 
       const teams = {};
       for (const t of data.teams.teams || []) {
-        teams[String(t.id)] = teamName(t.name_en);
+        const name = teamName(t.name_en);
+        teams[String(t.id)] = {
+          name,
+          flag: t.flag || STATIC_FLAGS[name] || ""
+        };
       }
 
       const standings = {};
@@ -373,7 +565,8 @@
         const letter = String(group.name || "").toUpperCase();
         if (!GROUPS[letter]) continue;
         standings[letter] = (group.teams || []).map((row) => ({
-          team: teams[String(row.team_id)] || String(row.team_id),
+          team: (teams[String(row.team_id)] || {}).name || String(row.team_id),
+          flag: (teams[String(row.team_id)] || {}).flag || "",
           p: num(row.mp),
           w: num(row.w),
           d: num(row.d),
@@ -396,7 +589,7 @@
       if (live && live.standings[letter] && live.standings[letter].length) {
         return live.standings[letter];
       }
-      return GROUPS[letter].map((team) => ({ team, p: 0, w: 0, d: 0, l: 0, gd: 0, pts: 0 }));
+      return GROUPS[letter].map((team) => ({ team, flag: STATIC_FLAGS[team] || "", p: 0, w: 0, d: 0, l: 0, gd: 0, pts: 0 }));
     }
 
     function renderGroups(live) {
@@ -408,7 +601,7 @@
           const cls = index < 2 ? "qual" : index === 2 ? "third" : "";
           const gd = num(row.gd) > 0 ? `+${num(row.gd)}` : String(num(row.gd));
           return `<tr class="${cls}">
-            <td class="team">${esc(row.team)}</td>
+            <td class="team">${teamCell(row)}</td>
             <td class="num">${num(row.p)}</td>
             <td class="num">${num(row.w)}</td>
             <td class="num">${num(row.d)}</td>
@@ -439,6 +632,105 @@
           </div>
         </article>`;
       }).join("");
+    }
+
+    function cleanPlayerName(value) {
+      return String(value || "")
+        .replace(/\([^)]*\d+[^)]*\)/g, "")
+        .replace(/\b\d+\+?\d*'?/g, "")
+        .replace(/\b(PEN|Penalty|penalty|OG|Own Goal|own goal)\b/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function parsePeople(raw) {
+      if (raw == null) return [];
+      if (Array.isArray(raw)) return raw.map(cleanPlayerName).filter(Boolean);
+
+      const text = String(raw).trim();
+      if (!text || text === "null" || text === "[]" || text === "-") return [];
+
+      try {
+        const parsed = JSON.parse(text);
+        if (Array.isArray(parsed)) return parsed.map(cleanPlayerName).filter(Boolean);
+      } catch (_) {
+        // Plain scorer strings are expected from the free API.
+      }
+
+      return text
+        .split(/[,;|،]+/)
+        .map(cleanPlayerName)
+        .filter(Boolean);
+    }
+
+    function addPlayerCount(map, player, team, flag) {
+      const name = cleanPlayerName(player);
+      if (!name) return;
+      const key = `${name}__${team}`;
+      const current = map.get(key) || { name, team, flag, count: 0 };
+      current.count += 1;
+      map.set(key, current);
+    }
+
+    function collectRankings(live, type) {
+      const data = window.WC2026_LIVE_DATA;
+      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
+      const rankings = new Map();
+
+      for (const game of games) {
+        const homeTeam = teamName(game.home_team_name_en || "");
+        const awayTeam = teamName(game.away_team_name_en || "");
+        const homeFlag = STATIC_FLAGS[homeTeam] || "";
+        const awayFlag = STATIC_FLAGS[awayTeam] || "";
+
+        if (type === "goals") {
+          for (const player of parsePeople(game.home_scorers)) addPlayerCount(rankings, player, homeTeam, homeFlag);
+          for (const player of parsePeople(game.away_scorers)) addPlayerCount(rankings, player, awayTeam, awayFlag);
+          continue;
+        }
+
+        const homeAssistKeys = Object.keys(game).filter((key) => /^home_.*assist/i.test(key));
+        const awayAssistKeys = Object.keys(game).filter((key) => /^away_.*assist/i.test(key));
+        for (const key of homeAssistKeys) {
+          for (const player of parsePeople(game[key])) addPlayerCount(rankings, player, homeTeam, homeFlag);
+        }
+        for (const key of awayAssistKeys) {
+          for (const player of parsePeople(game[key])) addPlayerCount(rankings, player, awayTeam, awayFlag);
+        }
+      }
+
+      return Array.from(rankings.values())
+        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, "ko"))
+        .slice(0, 8);
+    }
+
+    function renderRanking(targetId, noteId, rows, unit, emptyText) {
+      const target = document.getElementById(targetId);
+      const note = document.getElementById(noteId);
+      note.textContent = rows.length ? `상위 ${rows.length}명` : "데이터 대기 중";
+
+      if (!rows.length) {
+        target.innerHTML = `<div class="empty-stat">${esc(emptyText)}</div>`;
+        return;
+      }
+
+      target.innerHTML = rows.map((row, index) => `
+        <div class="rank-row">
+          <div class="rank-num">${index + 1}</div>
+          <div class="player">
+            <div class="player-name">${esc(row.name)}</div>
+            <div class="player-team">${teamCell({ team: row.team, flag: row.flag })}</div>
+          </div>
+          <div class="rank-score">${row.count}${esc(unit)}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderStats(live) {
+      const scorers = collectRankings(live, "goals");
+      const assists = collectRankings(live, "assists");
+      renderRanking("scorers", "scorerNote", scorers, "골", "대회 시작 후 득점자가 집계됩니다.");
+      renderRanking("assists", "assistNote", assists, "도움", "공개 API에 도움 데이터가 제공되면 자동 표시됩니다.");
     }
 
     function renderKorea() {
@@ -472,6 +764,7 @@
       }).format(new Date());
 
       const live = liveStandings();
+      renderStats(live);
       renderGroups(live);
       renderKorea();
       renderStatus(live);
