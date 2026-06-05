@@ -1,5 +1,5 @@
 window.WC2026_LIVE_DATA = {
-  "fetchedAt": "2026-06-05T18:26:53.539Z",
+  "fetchedAt": "2026-06-05T22:45:42.891Z",
   "groups": {
     "groups": [
       {
