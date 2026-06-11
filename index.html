@@ -57,6 +57,74 @@
     #dataStatus.status-stale { color: #ffd7ca; }
     #dataStatus.status-static { color: var(--muted); }
 
+    .countdown-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 14px;
+      padding: 14px 16px;
+      background: #131b22;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
+    }
+    .countdown-card.is-live {
+      border-left-color: var(--good);
+    }
+    .countdown-kicker {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .countdown-card.is-live .countdown-kicker {
+      color: #c9f4e5;
+    }
+    .countdown-title {
+      margin-top: 3px;
+      color: var(--text);
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .countdown-meta {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .countdown-unit {
+      min-width: 0;
+      background: #0f161d;
+      border: 1px solid #293845;
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .countdown-value {
+      display: block;
+      color: var(--text);
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-label {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
     .legend {
       display: flex;
       align-items: center;
@@ -524,6 +592,9 @@
       body { padding: 12px; }
       .top { align-items: start; flex-direction: column; gap: 8px; }
       .stamp { text-align: left; }
+      .countdown-card { grid-template-columns: 1fr; padding: 12px; }
+      .countdown-title { font-size: 19px; }
+      .countdown-value { font-size: 23px; }
       .today-top { align-items: start; flex-direction: column; gap: 4px; }
       .today-count { text-align: left; white-space: normal; }
       .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
@@ -544,6 +615,32 @@
         <div id="today"></div>
         <div id="dataStatus">정적 데이터 표시 중</div>
         <div id="refreshStatus">5분마다 자동 새로고침</div>
+      </div>
+    </section>
+
+    <section class="countdown-card" id="openingCountdown" aria-live="polite">
+      <div>
+        <div class="countdown-kicker" id="countdownKicker">Opening Match Countdown</div>
+        <div class="countdown-title" id="countdownTitle">개막전까지</div>
+        <div class="countdown-meta" id="countdownMeta">2026.06.12 04:00 KST · Mexico vs South Africa</div>
+      </div>
+      <div class="countdown-grid" aria-label="개막까지 남은 시간">
+        <div class="countdown-unit">
+          <span class="countdown-value" id="countdownDays">--</span>
+          <span class="countdown-label">일</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="countdownHours">--</span>
+          <span class="countdown-label">시간</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="countdownMinutes">--</span>
+          <span class="countdown-label">분</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="countdownSeconds">--</span>
+          <span class="countdown-label">초</span>
+        </div>
       </div>
     </section>
 
@@ -604,6 +701,14 @@
   </main>
 
   <script>
+    const OPENING_MATCH = {
+      kickoffUtc: "2026-06-11T19:00:00Z",
+      title: "Mexico vs South Africa",
+      venue: "Mexico City Stadium",
+      kstLabel: "2026.06.12 04:00 KST"
+    };
+    let OPENING_COUNTDOWN_TIMER = null;
+
     const GROUPS = {
       A: ["멕시코", "남아프리카공화국", "대한민국", "체코"],
       B: ["캐나다", "보스니아 헤르체고비나", "카타르", "스위스"],
@@ -927,6 +1032,48 @@
       return `${pad2(date.getUTCMonth() + 1)}/${pad2(date.getUTCDate())} ${pad2(date.getUTCHours())}:${pad2(date.getUTCMinutes())}`;
     }
 
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function countdownParts(ms) {
+      const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return { days, hours, minutes, seconds };
+    }
+
+    function renderOpeningCountdown(now = new Date()) {
+      const card = document.getElementById("openingCountdown");
+      if (!card) return;
+
+      const kickoff = new Date(OPENING_MATCH.kickoffUtc);
+      const diff = kickoff.getTime() - now.getTime();
+      const isLive = diff <= 0;
+      const parts = countdownParts(isLive ? -diff : diff);
+
+      card.classList.toggle("is-live", isLive);
+      setText("countdownKicker", isLive ? "Tournament Live" : "Opening Match Countdown");
+      setText("countdownTitle", isLive ? "월드컵 진행 중" : "개막전까지");
+      setText(
+        "countdownMeta",
+        `${OPENING_MATCH.kstLabel} · ${OPENING_MATCH.title} · ${OPENING_MATCH.venue}`
+      );
+      setText("countdownDays", pad2(parts.days));
+      setText("countdownHours", pad2(parts.hours));
+      setText("countdownMinutes", pad2(parts.minutes));
+      setText("countdownSeconds", pad2(parts.seconds));
+    }
+
+    function startOpeningCountdown() {
+      renderOpeningCountdown();
+      if (OPENING_COUNTDOWN_TIMER) clearInterval(OPENING_COUNTDOWN_TIMER);
+      OPENING_COUNTDOWN_TIMER = setInterval(renderOpeningCountdown, 1000);
+    }
+
     function gameKstDate(game) {
       const match = String(game.local_date || "").match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{1,2}):(\d{2})$/);
       if (!match) return null;
@@ -1115,7 +1262,8 @@
 
       const number = value.number || value.no || value.shirt || value.shirt_number || value.jersey || value.jersey_number;
       const position = value.position || value.pos || value.role;
-      const meta = [number ? `#${number}` : "", position || ""].filter(Boolean).join(" · ");
+      const captain = value.captain ? "C" : "";
+      const meta = [number ? `#${number}` : "", position || "", captain].filter(Boolean).join(" · ");
       return { name, meta };
     }
 
@@ -1163,6 +1311,7 @@
 
       const prefix = side === "home" ? "home" : "away";
       const candidates = [
+        game.official_lineups && game.official_lineups[prefix],
         game[`${prefix}_lineup`],
         game[`${prefix}_lineups`],
         game[`${prefix}_starting_lineup`],
@@ -1568,6 +1717,8 @@
     }
 
     function startDashboard() {
+      startOpeningCountdown();
+
       document.getElementById("today").textContent = new Intl.DateTimeFormat("ko-KR", {
         year: "numeric", month: "long", day: "numeric", weekday: "short"
       }).format(new Date());

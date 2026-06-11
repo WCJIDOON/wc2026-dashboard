@@ -11,6 +11,14 @@ const endpoints = {
   games: "https://worldcup26.ir/get/games",
 };
 
+const fifa = {
+  apiBase: "https://api.fifa.com/api/v3",
+  webBase: "https://www.fifa.com/en/match-centre/match",
+  competitionId: "17",
+  seasonId: "285023",
+  language: "en",
+};
+
 async function fetchJson(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 20_000);
@@ -46,6 +54,208 @@ function assertShape(data) {
   }
 }
 
+function fifaText(value) {
+  if (!Array.isArray(value)) return "";
+  return (
+    value.find((item) => String(item.Locale || "").toLowerCase().startsWith("en")) ||
+    value[0] ||
+    {}
+  ).Description || "";
+}
+
+function stripMarks(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+function normalizeTeamName(value) {
+  let name = stripMarks(value)
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+
+  const aliases = {
+    "bosnia herzegovina": "bosnia and herzegovina",
+    "bosnia and herzegovina": "bosnia and herzegovina",
+    "cabo verde": "cape verde",
+    "cape verde": "cape verde",
+    "cote d ivoire": "ivory coast",
+    "cote divoire": "ivory coast",
+    "czech republic": "czechia",
+    "czechia": "czechia",
+    "curacao": "curacao",
+    "congo dr": "congo dr",
+    "democratic republic of the congo": "congo dr",
+    "dr congo": "congo dr",
+    "ivory coast": "ivory coast",
+    "ir iran": "iran",
+    "iran": "iran",
+    "korea republic": "south korea",
+    "south korea": "south korea",
+    "turkey": "turkiye",
+    "turkiye": "turkiye",
+    "usa": "usa",
+    "united states": "usa",
+    "united states of america": "usa",
+  };
+
+  return aliases[name] || name;
+}
+
+function fifaMatchUrl(match) {
+  return [
+    fifa.webBase,
+    match.IdCompetition,
+    match.IdSeason,
+    match.IdStage,
+    match.IdMatch,
+  ].join("/");
+}
+
+function positionLabel(position) {
+  return {
+    0: "GK",
+    1: "DF",
+    2: "MF",
+    3: "FW",
+  }[position] || "";
+}
+
+function fifaPlayer(player) {
+  return {
+    name: fifaText(player.PlayerName) || fifaText(player.ShortName) || String(player.IdPlayer || ""),
+    shortName: fifaText(player.ShortName),
+    number: player.ShirtNumber ?? "",
+    position: positionLabel(player.Position),
+    captain: Boolean(player.Captain),
+    fifaId: player.IdPlayer || "",
+    lineupX: player.LineupX ?? null,
+    lineupY: player.LineupY ?? null,
+  };
+}
+
+function fifaTeamLineup(team) {
+  const players = Array.isArray(team?.Players) ? team.Players : [];
+  const starters = players.filter((player) => player.Status === 1).map(fifaPlayer);
+  const substitutes = players.filter((player) => player.Status === 2).map(fifaPlayer);
+  const coaches = Array.isArray(team?.Coaches) ? team.Coaches : [];
+
+  return {
+    team: fifaText(team?.TeamName),
+    code: team?.Abbreviation || "",
+    formation: team?.Tactics || "",
+    coach: fifaText(coaches[0]?.Name) || fifaText(coaches[0]?.Alias),
+    starters,
+    substitutes,
+  };
+}
+
+function indexFifaMatches(matches) {
+  const byTeams = new Map();
+
+  for (const match of matches) {
+    const home = normalizeTeamName(fifaText(match.Home?.TeamName));
+    const away = normalizeTeamName(fifaText(match.Away?.TeamName));
+    if (!home || !away) continue;
+
+    byTeams.set(`${home}::${away}`, match);
+    byTeams.set(`${away}::${home}`, match);
+  }
+
+  return byTeams;
+}
+
+function matchNeedsLiveFetch(match, now = new Date()) {
+  const kickoff = new Date(match.Date);
+  if (Number.isNaN(kickoff.getTime())) return false;
+
+  const matchStatus = Number(match.MatchStatus);
+  const isLineupOrLive = [3, 11, 12].includes(matchStatus);
+  const hoursFromKickoff = (kickoff.getTime() - now.getTime()) / 36e5;
+
+  return isLineupOrLive || (hoursFromKickoff >= -30 && hoursFromKickoff <= 48);
+}
+
+async function fetchFifaMatches() {
+  const params = new URLSearchParams({
+    idCompetition: fifa.competitionId,
+    idSeason: fifa.seasonId,
+    language: fifa.language,
+    count: "200",
+  });
+  const response = await fetchJson(`${fifa.apiBase}/calendar/matches?${params}`);
+  return Array.isArray(response.Results) ? response.Results : [];
+}
+
+async function fetchFifaLiveMatch(match) {
+  const url = `${fifa.apiBase}/live/football/${match.IdCompetition}/${match.IdSeason}/${match.IdStage}/${match.IdMatch}?language=${fifa.language}`;
+  return await fetchJson(url);
+}
+
+async function addOfficialLineups(data) {
+  const fetchedAt = new Date().toISOString();
+  const matches = await fetchFifaMatches();
+  const matchesByTeams = indexFifaMatches(matches);
+  const liveMatches = new Map();
+  const games = data.games.games;
+
+  for (const game of games) {
+    const home = normalizeTeamName(game.home_team_name_en);
+    const away = normalizeTeamName(game.away_team_name_en);
+    const fifaMatch = matchesByTeams.get(`${home}::${away}`);
+    if (!fifaMatch) continue;
+
+    game.official_match = {
+      provider: "FIFA",
+      idCompetition: fifaMatch.IdCompetition,
+      idSeason: fifaMatch.IdSeason,
+      idStage: fifaMatch.IdStage,
+      idMatch: fifaMatch.IdMatch,
+      matchStatus: fifaMatch.MatchStatus,
+      url: fifaMatchUrl(fifaMatch),
+    };
+
+    if (!matchNeedsLiveFetch(fifaMatch)) continue;
+
+    try {
+      const live = await fetchFifaLiveMatch(fifaMatch);
+      liveMatches.set(fifaMatch.IdMatch, live);
+      const homeLineup = fifaTeamLineup(live.HomeTeam);
+      const awayLineup = fifaTeamLineup(live.AwayTeam);
+      const hasLineup = homeLineup.starters.length || awayLineup.starters.length;
+
+      game.official_match.matchStatus = live.MatchStatus ?? fifaMatch.MatchStatus;
+      game.official_match.fetchedAt = fetchedAt;
+
+      if (hasLineup) {
+        game.official_lineups = {
+          provider: "FIFA",
+          fetchedAt,
+          url: fifaMatchUrl(fifaMatch),
+          home: homeLineup,
+          away: awayLineup,
+        };
+      }
+    } catch (error) {
+      game.official_match.lineupError = error.message;
+    }
+  }
+
+  data.fifa = {
+    provider: "FIFA",
+    apiBase: fifa.apiBase,
+    competitionId: fifa.competitionId,
+    seasonId: fifa.seasonId,
+    fetchedAt,
+    matchCount: matches.length,
+    liveCheckedCount: liveMatches.size,
+    lineupMatchCount: games.filter((game) => game.official_lineups).length,
+  };
+}
+
 const data = {
   fetchedAt: new Date().toISOString(),
   groups: await fetchJson(endpoints.groups),
@@ -55,8 +265,25 @@ const data = {
 
 assertShape(data);
 
+try {
+  await addOfficialLineups(data);
+} catch (error) {
+  data.fifa = {
+    provider: "FIFA",
+    apiBase: fifa.apiBase,
+    competitionId: fifa.competitionId,
+    seasonId: fifa.seasonId,
+    fetchedAt: new Date().toISOString(),
+    error: error.message,
+  };
+  console.warn(`FIFA lineup fetch skipped: ${error.message}`);
+}
+
 const output = `window.WC2026_LIVE_DATA = ${JSON.stringify(data, null, 2)};\n`;
 await writeFile(outputPath, output, "utf8");
 
 console.log(`Updated ${outputPath}`);
 console.log(`Fetched at ${data.fetchedAt}`);
+if (data.fifa) {
+  console.log(`FIFA matches: ${data.fifa.matchCount || 0}, live checked: ${data.fifa.liveCheckedCount || 0}, lineups: ${data.fifa.lineupMatchCount || 0}`);
+}

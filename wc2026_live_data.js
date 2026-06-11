@@ -1,5 +1,5 @@
 window.WC2026_LIVE_DATA = {
-  "fetchedAt": "2026-06-11T06:48:02.028Z",
+  "fetchedAt": "2026-06-11T08:19:27.469Z",
   "groups": {
     "groups": [
       {
@@ -1182,7 +1182,17 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Mexico",
         "home_team_name_fa": "مکزیک",
         "away_team_name_en": "South Africa",
-        "away_team_name_fa": "آفریقای جنوبی"
+        "away_team_name_fa": "آفریقای جنوبی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021443",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021443",
+          "fetchedAt": "2026-06-11T08:19:30.495Z"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e002",
@@ -1204,7 +1214,17 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "South Korea",
         "home_team_name_fa": "کره جنوبی",
         "away_team_name_en": "Czech Republic",
-        "away_team_name_fa": "جمهوری چک"
+        "away_team_name_fa": "جمهوری چک",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021441",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021441",
+          "fetchedAt": "2026-06-11T08:19:30.495Z"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e003",
@@ -1226,7 +1246,17 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Canada",
         "home_team_name_fa": "کانادا",
         "away_team_name_en": "Bosnia and Herzegovina",
-        "away_team_name_fa": "بوسنی و هرزگوین"
+        "away_team_name_fa": "بوسنی و هرزگوین",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021449",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021449",
+          "fetchedAt": "2026-06-11T08:19:30.495Z"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e004",
@@ -1248,7 +1278,17 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "United States",
         "home_team_name_fa": "آمریکا",
         "away_team_name_en": "Paraguay",
-        "away_team_name_fa": "پاراگوئه"
+        "away_team_name_fa": "پاراگوئه",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021458",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021458",
+          "fetchedAt": "2026-06-11T08:19:30.495Z"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e005",
@@ -1270,7 +1310,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Haiti",
         "home_team_name_fa": "هائیتی",
         "away_team_name_en": "Scotland",
-        "away_team_name_fa": "اسکاتلند"
+        "away_team_name_fa": "اسکاتلند",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021453",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021453"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e006",
@@ -1292,7 +1341,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Australia",
         "home_team_name_fa": "استرالیا",
         "away_team_name_en": "Turkey",
-        "away_team_name_fa": "ترکیه"
+        "away_team_name_fa": "ترکیه",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021463",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021463"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e007",
@@ -1314,7 +1372,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Brazil",
         "home_team_name_fa": "برزیل",
         "away_team_name_en": "Morocco",
-        "away_team_name_fa": "مراکش"
+        "away_team_name_fa": "مراکش",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021456",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021456"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e008",
@@ -1336,7 +1403,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Qatar",
         "home_team_name_fa": "قطر",
         "away_team_name_en": "Switzerland",
-        "away_team_name_fa": "سوئیس"
+        "away_team_name_fa": "سوئیس",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021447",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021447"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e009",
@@ -1358,7 +1434,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Ivory Coast",
         "home_team_name_fa": "ساحل عاج",
         "away_team_name_en": "Ecuador",
-        "away_team_name_fa": "اکوادور"
+        "away_team_name_fa": "اکوادور",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021467",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021467"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e010",
@@ -1380,7 +1465,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Germany",
         "home_team_name_fa": "آلمان",
         "away_team_name_en": "Curaçao",
-        "away_team_name_fa": "کوراسائو"
+        "away_team_name_fa": "کوراسائو",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021464",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021464"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e011",
@@ -1402,7 +1496,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Netherlands",
         "home_team_name_fa": "هلند",
         "away_team_name_en": "Japan",
-        "away_team_name_fa": "ژاپن"
+        "away_team_name_fa": "ژاپن",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021470",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021470"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e012",
@@ -1424,7 +1527,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Sweden",
         "home_team_name_fa": "سوئد",
         "away_team_name_en": "Tunisia",
-        "away_team_name_fa": "تونس"
+        "away_team_name_fa": "تونس",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021474",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021474"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e013",
@@ -1446,7 +1558,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Iran",
         "home_team_name_fa": "ایران",
         "away_team_name_en": "New Zealand",
-        "away_team_name_fa": "نیوزیلند"
+        "away_team_name_fa": "نیوزیلند",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021476",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021476"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e014",
@@ -1468,7 +1589,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Spain",
         "home_team_name_fa": "اسپانیا",
         "away_team_name_en": "Cape Verde",
-        "away_team_name_fa": "کیپ ورد"
+        "away_team_name_fa": "کیپ ورد",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021482",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021482"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e015",
@@ -1490,7 +1620,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Belgium",
         "home_team_name_fa": "بلژیک",
         "away_team_name_en": "Egypt",
-        "away_team_name_fa": "مصر"
+        "away_team_name_fa": "مصر",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021478",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021478"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e016",
@@ -1512,7 +1651,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Saudi Arabia",
         "home_team_name_fa": "عربستان",
         "away_team_name_en": "Uruguay",
-        "away_team_name_fa": "اروگوئه"
+        "away_team_name_fa": "اروگوئه",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021486",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021486"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e017",
@@ -1534,7 +1682,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "France",
         "home_team_name_fa": "فرانسه",
         "away_team_name_en": "Senegal",
-        "away_team_name_fa": "سنگال"
+        "away_team_name_fa": "سنگال",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021490",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021490"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e018",
@@ -1556,7 +1713,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Iraq",
         "home_team_name_fa": "عراق",
         "away_team_name_en": "Norway",
-        "away_team_name_fa": "نروژ"
+        "away_team_name_fa": "نروژ",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021488",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021488"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e019",
@@ -1578,7 +1744,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Argentina",
         "home_team_name_fa": "آرژانتین",
         "away_team_name_en": "Algeria",
-        "away_team_name_fa": "الجزایر"
+        "away_team_name_fa": "الجزایر",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021496",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021496"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e020",
@@ -1600,7 +1775,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Austria",
         "home_team_name_fa": "اتریش",
         "away_team_name_en": "Jordan",
-        "away_team_name_fa": "اردن"
+        "away_team_name_fa": "اردن",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021498",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021498"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e021",
@@ -1622,7 +1806,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Portugal",
         "home_team_name_fa": "پرتغال",
         "away_team_name_en": "Democratic Republic of the Congo",
-        "away_team_name_fa": "جمهوری دموکراتیک کنگو"
+        "away_team_name_fa": "جمهوری دموکراتیک کنگو",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021502",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021502"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e022",
@@ -1644,7 +1837,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "England",
         "home_team_name_fa": "انگلستان",
         "away_team_name_en": "Croatia",
-        "away_team_name_fa": "کرواسی"
+        "away_team_name_fa": "کرواسی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021507",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021507"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e023",
@@ -1666,7 +1868,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Uzbekistan",
         "home_team_name_fa": "ازبکستان",
         "away_team_name_en": "Colombia",
-        "away_team_name_fa": "کلمبیا"
+        "away_team_name_fa": "کلمبیا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021504",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021504"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e024",
@@ -1688,7 +1899,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Ghana",
         "home_team_name_fa": "غنا",
         "away_team_name_en": "Panama",
-        "away_team_name_fa": "پاناما"
+        "away_team_name_fa": "پاناما",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021510",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021510"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e025",
@@ -1710,7 +1930,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Mexico",
         "home_team_name_fa": "مکزیک",
         "away_team_name_en": "South Korea",
-        "away_team_name_fa": "کره جنوبی"
+        "away_team_name_fa": "کره جنوبی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021442",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021442"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e026",
@@ -1732,7 +1961,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Switzerland",
         "home_team_name_fa": "سوئیس",
         "away_team_name_en": "Bosnia and Herzegovina",
-        "away_team_name_fa": "بوسنی و هرزگوین"
+        "away_team_name_fa": "بوسنی و هرزگوین",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021446",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021446"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e027",
@@ -1754,7 +1992,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Canada",
         "home_team_name_fa": "کانادا",
         "away_team_name_en": "Qatar",
-        "away_team_name_fa": "قطر"
+        "away_team_name_fa": "قطر",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021450",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021450"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e028",
@@ -1776,7 +2023,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Czech Republic",
         "home_team_name_fa": "جمهوری چک",
         "away_team_name_en": "South Africa",
-        "away_team_name_fa": "آفریقای جنوبی"
+        "away_team_name_fa": "آفریقای جنوبی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021440",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021440"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e029",
@@ -1798,7 +2054,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Brazil",
         "home_team_name_fa": "برزیل",
         "away_team_name_en": "Haiti",
-        "away_team_name_fa": "هائیتی"
+        "away_team_name_fa": "هائیتی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021457",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021457"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e030",
@@ -1820,7 +2085,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Scotland",
         "home_team_name_fa": "اسکاتلند",
         "away_team_name_en": "Morocco",
-        "away_team_name_fa": "مراکش"
+        "away_team_name_fa": "مراکش",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021454",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021454"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e031",
@@ -1842,7 +2116,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "United States",
         "home_team_name_fa": "آمریکا",
         "away_team_name_en": "Australia",
-        "away_team_name_fa": "استرالیا"
+        "away_team_name_fa": "استرالیا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021462",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021462"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e032",
@@ -1864,7 +2147,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Turkey",
         "home_team_name_fa": "ترکیه",
         "away_team_name_en": "Paraguay",
-        "away_team_name_fa": "پاراگوئه"
+        "away_team_name_fa": "پاراگوئه",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021460",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021460"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e033",
@@ -1886,7 +2178,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Germany",
         "home_team_name_fa": "آلمان",
         "away_team_name_en": "Ivory Coast",
-        "away_team_name_fa": "ساحل عاج"
+        "away_team_name_fa": "ساحل عاج",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021469",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021469"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e034",
@@ -1908,7 +2209,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Ecuador",
         "home_team_name_fa": "اکوادور",
         "away_team_name_en": "Curaçao",
-        "away_team_name_fa": "کوراسائو"
+        "away_team_name_fa": "کوراسائو",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021465",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021465"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e035",
@@ -1930,7 +2240,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Netherlands",
         "home_team_name_fa": "هلند",
         "away_team_name_en": "Sweden",
-        "away_team_name_fa": "سوئد"
+        "away_team_name_fa": "سوئد",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021472",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021472"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e036",
@@ -1952,7 +2271,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Tunisia",
         "home_team_name_fa": "تونس",
         "away_team_name_en": "Japan",
-        "away_team_name_fa": "ژاپن"
+        "away_team_name_fa": "ژاپن",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021475",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021475"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e037",
@@ -1974,7 +2302,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Belgium",
         "home_team_name_fa": "بلژیک",
         "away_team_name_en": "Iran",
-        "away_team_name_fa": "ایران"
+        "away_team_name_fa": "ایران",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021477",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021477"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e038",
@@ -1996,7 +2333,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "New Zealand",
         "home_team_name_fa": "نیوزیلند",
         "away_team_name_en": "Egypt",
-        "away_team_name_fa": "مصر"
+        "away_team_name_fa": "مصر",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021480",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021480"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e039",
@@ -2018,7 +2364,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Spain",
         "home_team_name_fa": "اسپانیا",
         "away_team_name_en": "Saudi Arabia",
-        "away_team_name_fa": "عربستان"
+        "away_team_name_fa": "عربستان",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021483",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021483"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e040",
@@ -2040,7 +2395,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Uruguay",
         "home_team_name_fa": "اروگوئه",
         "away_team_name_en": "Cape Verde",
-        "away_team_name_fa": "کیپ ورد"
+        "away_team_name_fa": "کیپ ورد",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021487",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021487"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e041",
@@ -2062,7 +2426,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "France",
         "home_team_name_fa": "فرانسه",
         "away_team_name_en": "Iraq",
-        "away_team_name_fa": "عراق"
+        "away_team_name_fa": "عراق",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021492",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021492"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e042",
@@ -2084,7 +2457,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Norway",
         "home_team_name_fa": "نروژ",
         "away_team_name_en": "Senegal",
-        "away_team_name_fa": "سنگال"
+        "away_team_name_fa": "سنگال",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021491",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021491"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e043",
@@ -2106,7 +2488,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Argentina",
         "home_team_name_fa": "آرژانتین",
         "away_team_name_en": "Austria",
-        "away_team_name_fa": "اتریش"
+        "away_team_name_fa": "اتریش",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021494",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021494"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e044",
@@ -2128,7 +2519,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Jordan",
         "home_team_name_fa": "اردن",
         "away_team_name_en": "Algeria",
-        "away_team_name_fa": "الجزایر"
+        "away_team_name_fa": "الجزایر",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021499",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021499"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e045",
@@ -2150,7 +2550,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Portugal",
         "home_team_name_fa": "پرتغال",
         "away_team_name_en": "Uzbekistan",
-        "away_team_name_fa": "ازبکستان"
+        "away_team_name_fa": "ازبکستان",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021503",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021503"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e046",
@@ -2172,7 +2581,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Panama",
         "home_team_name_fa": "پاناما",
         "away_team_name_en": "Croatia",
-        "away_team_name_fa": "کرواسی"
+        "away_team_name_fa": "کرواسی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021511",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021511"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e047",
@@ -2194,7 +2612,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Colombia",
         "home_team_name_fa": "کلمبیا",
         "away_team_name_en": "Democratic Republic of the Congo",
-        "away_team_name_fa": "جمهوری دموکراتیک کنگو"
+        "away_team_name_fa": "جمهوری دموکراتیک کنگو",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021501",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021501"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e048",
@@ -2216,7 +2643,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "England",
         "home_team_name_fa": "انگلستان",
         "away_team_name_en": "Ghana",
-        "away_team_name_fa": "غنا"
+        "away_team_name_fa": "غنا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021506",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021506"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e049",
@@ -2238,7 +2674,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Scotland",
         "home_team_name_fa": "اسکاتلند",
         "away_team_name_en": "Brazil",
-        "away_team_name_fa": "برزیل"
+        "away_team_name_fa": "برزیل",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021455",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021455"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e050",
@@ -2260,7 +2705,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Morocco",
         "home_team_name_fa": "مراکش",
         "away_team_name_en": "Haiti",
-        "away_team_name_fa": "هائیتی"
+        "away_team_name_fa": "هائیتی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021452",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021452"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e051",
@@ -2282,7 +2736,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "South Africa",
         "home_team_name_fa": "آفریقای جنوبی",
         "away_team_name_en": "South Korea",
-        "away_team_name_fa": "کره جنوبی"
+        "away_team_name_fa": "کره جنوبی",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021445",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021445"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e052",
@@ -2304,7 +2767,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Czech Republic",
         "home_team_name_fa": "جمهوری چک",
         "away_team_name_en": "Mexico",
-        "away_team_name_fa": "مکزیک"
+        "away_team_name_fa": "مکزیک",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021444",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021444"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e053",
@@ -2326,7 +2798,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Bosnia and Herzegovina",
         "home_team_name_fa": "بوسنی و هرزگوین",
         "away_team_name_en": "Qatar",
-        "away_team_name_fa": "قطر"
+        "away_team_name_fa": "قطر",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021448",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021448"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e054",
@@ -2348,7 +2829,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Switzerland",
         "home_team_name_fa": "سوئیس",
         "away_team_name_en": "Canada",
-        "away_team_name_fa": "کانادا"
+        "away_team_name_fa": "کانادا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021451",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021451"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e055",
@@ -2370,7 +2860,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Curaçao",
         "home_team_name_fa": "کوراسائو",
         "away_team_name_en": "Ivory Coast",
-        "away_team_name_fa": "ساحل عاج"
+        "away_team_name_fa": "ساحل عاج",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021468",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021468"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e056",
@@ -2392,7 +2891,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Ecuador",
         "home_team_name_fa": "اکوادور",
         "away_team_name_en": "Germany",
-        "away_team_name_fa": "آلمان"
+        "away_team_name_fa": "آلمان",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021466",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021466"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e057",
@@ -2414,7 +2922,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Paraguay",
         "home_team_name_fa": "پاراگوئه",
         "away_team_name_en": "Australia",
-        "away_team_name_fa": "استرالیا"
+        "away_team_name_fa": "استرالیا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021461",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021461"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e058",
@@ -2436,7 +2953,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Turkey",
         "home_team_name_fa": "ترکیه",
         "away_team_name_en": "United States",
-        "away_team_name_fa": "آمریکا"
+        "away_team_name_fa": "آمریکا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021459",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021459"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e059",
@@ -2458,7 +2984,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Japan",
         "home_team_name_fa": "ژاپن",
         "away_team_name_en": "Sweden",
-        "away_team_name_fa": "سوئد"
+        "away_team_name_fa": "سوئد",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021471",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021471"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e060",
@@ -2480,7 +3015,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Tunisia",
         "home_team_name_fa": "تونس",
         "away_team_name_en": "Netherlands",
-        "away_team_name_fa": "هلند"
+        "away_team_name_fa": "هلند",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021473",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021473"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e061",
@@ -2502,7 +3046,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Senegal",
         "home_team_name_fa": "سنگال",
         "away_team_name_en": "Iraq",
-        "away_team_name_fa": "عراق"
+        "away_team_name_fa": "عراق",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021493",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021493"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e062",
@@ -2524,7 +3077,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Norway",
         "home_team_name_fa": "نروژ",
         "away_team_name_en": "France",
-        "away_team_name_fa": "فرانسه"
+        "away_team_name_fa": "فرانسه",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021489",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021489"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e063",
@@ -2546,7 +3108,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Egypt",
         "home_team_name_fa": "مصر",
         "away_team_name_en": "Iran",
-        "away_team_name_fa": "ایران"
+        "away_team_name_fa": "ایران",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021479",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021479"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e064",
@@ -2568,7 +3139,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "New Zealand",
         "home_team_name_fa": "نیوزیلند",
         "away_team_name_en": "Belgium",
-        "away_team_name_fa": "بلژیک"
+        "away_team_name_fa": "بلژیک",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021481",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021481"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e065",
@@ -2590,7 +3170,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Cape Verde",
         "home_team_name_fa": "کیپ ورد",
         "away_team_name_en": "Saudi Arabia",
-        "away_team_name_fa": "عربستان"
+        "away_team_name_fa": "عربستان",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021485",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021485"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e066",
@@ -2612,7 +3201,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Uruguay",
         "home_team_name_fa": "اروگوئه",
         "away_team_name_en": "Spain",
-        "away_team_name_fa": "اسپانیا"
+        "away_team_name_fa": "اسپانیا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021484",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021484"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e067",
@@ -2634,7 +3232,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Panama",
         "home_team_name_fa": "پاناما",
         "away_team_name_en": "England",
-        "away_team_name_fa": "انگلستان"
+        "away_team_name_fa": "انگلستان",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021508",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021508"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e068",
@@ -2656,7 +3263,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Croatia",
         "home_team_name_fa": "کرواسی",
         "away_team_name_en": "Ghana",
-        "away_team_name_fa": "غنا"
+        "away_team_name_fa": "غنا",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021509",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021509"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e069",
@@ -2678,7 +3294,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Algeria",
         "home_team_name_fa": "الجزایر",
         "away_team_name_en": "Austria",
-        "away_team_name_fa": "اتریش"
+        "away_team_name_fa": "اتریش",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021497",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021497"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e070",
@@ -2700,7 +3325,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Jordan",
         "home_team_name_fa": "اردن",
         "away_team_name_en": "Argentina",
-        "away_team_name_fa": "آرژانتین"
+        "away_team_name_fa": "آرژانتین",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021495",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021495"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e071",
@@ -2722,7 +3356,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Colombia",
         "home_team_name_fa": "کلمبیا",
         "away_team_name_en": "Portugal",
-        "away_team_name_fa": "پرتغال"
+        "away_team_name_fa": "پرتغال",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021505",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021505"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e072",
@@ -2744,7 +3387,16 @@ window.WC2026_LIVE_DATA = {
         "home_team_name_en": "Democratic Republic of the Congo",
         "home_team_name_fa": "جمهوری دموکراتیک کنگو",
         "away_team_name_en": "Uzbekistan",
-        "away_team_name_fa": "ازبکستان"
+        "away_team_name_fa": "ازبکستان",
+        "official_match": {
+          "provider": "FIFA",
+          "idCompetition": "17",
+          "idSeason": "285023",
+          "idStage": "289273",
+          "idMatch": "400021500",
+          "matchStatus": 1,
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021500"
+        }
       },
       {
         "_id": "679c9c8a5749c4077500e073",
@@ -3387,5 +4039,15 @@ window.WC2026_LIVE_DATA = {
         "away_team_label": "Winner Match 102"
       }
     ]
+  },
+  "fifa": {
+    "provider": "FIFA",
+    "apiBase": "https://api.fifa.com/api/v3",
+    "competitionId": "17",
+    "seasonId": "285023",
+    "fetchedAt": "2026-06-11T08:19:30.495Z",
+    "matchCount": 104,
+    "liveCheckedCount": 4,
+    "lineupMatchCount": 0
   }
 };
