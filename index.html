@@ -201,20 +201,21 @@
       inset: 0;
       z-index: 50;
       display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: rgba(6, 10, 14, .72);
+      pointer-events: none;
     }
-    .lineup-modal.open { display: flex; }
+    .lineup-modal.open { display: block; }
     .lineup-dialog {
-      width: min(520px, 100%);
-      max-height: min(86vh, 720px);
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      width: min(420px, calc(100vw - 28px));
+      max-height: min(78vh, 560px);
       overflow: auto;
       background: #131b22;
       border: 1px solid var(--line);
       border-radius: 8px;
-      box-shadow: 0 22px 80px rgba(0, 0, 0, .45);
+      box-shadow: 0 18px 58px rgba(0, 0, 0, .48);
+      pointer-events: auto;
     }
     .lineup-head {
       display: flex;
@@ -853,6 +854,8 @@
     ];
 
     let TODAY_MATCH_ROWS = [];
+    let LINEUP_CLOSE_TIMER = null;
+    let ACTIVE_LINEUP_TRIGGER = null;
 
     function esc(text) {
       return String(text).replace(/[&<>"']/g, (ch) => ({
@@ -1181,7 +1184,43 @@
       return [];
     }
 
-    function showLineup(matchIndex, side) {
+    function positionLineup(anchor) {
+      const modal = document.getElementById("lineupModal");
+      const dialog = modal && modal.querySelector(".lineup-dialog");
+      if (!anchor || !dialog) return;
+
+      const rect = anchor.getBoundingClientRect();
+      const gap = 8;
+      const margin = 14;
+      const width = dialog.offsetWidth || Math.min(420, window.innerWidth - margin * 2);
+      const height = dialog.offsetHeight || 320;
+
+      let left = rect.left + rect.width / 2 - width / 2;
+      left = Math.max(margin, Math.min(left, window.innerWidth - width - margin));
+
+      let top = rect.bottom + gap;
+      if (top + height > window.innerHeight - margin) {
+        top = rect.top - height - gap;
+      }
+      top = Math.max(margin, top);
+
+      dialog.style.left = `${Math.round(left)}px`;
+      dialog.style.top = `${Math.round(top)}px`;
+    }
+
+    function cancelLineupClose() {
+      if (LINEUP_CLOSE_TIMER) {
+        clearTimeout(LINEUP_CLOSE_TIMER);
+        LINEUP_CLOSE_TIMER = null;
+      }
+    }
+
+    function scheduleLineupClose(delay = 180) {
+      cancelLineupClose();
+      LINEUP_CLOSE_TIMER = setTimeout(closeLineup, delay);
+    }
+
+    function showLineup(matchIndex, side, anchor) {
       const row = TODAY_MATCH_ROWS[Number(matchIndex)];
       if (!row || !row[side]) return;
 
@@ -1192,6 +1231,9 @@
       const content = document.getElementById("lineupContent");
       const close = document.getElementById("lineupClose");
       if (!modal || !title || !meta || !team || !content) return;
+
+      cancelLineupClose();
+      ACTIVE_LINEUP_TRIGGER = anchor || null;
 
       const lineup = lineupFor(row, side);
       const selectedTeam = row[side];
@@ -1219,13 +1261,14 @@
 
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-      if (close) close.focus();
+      positionLineup(anchor);
     }
 
     function closeLineup() {
       const modal = document.getElementById("lineupModal");
       if (!modal) return;
+      cancelLineupClose();
+      ACTIVE_LINEUP_TRIGGER = null;
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
@@ -1234,21 +1277,51 @@
     function bindLineupEvents() {
       const root = document.getElementById("todayMatches");
       if (root && !root.dataset.lineupBound) {
+        root.addEventListener("pointerover", (event) => {
+          if (event.pointerType === "touch") return;
+          const trigger = event.target.closest(".lineup-trigger");
+          if (!trigger || trigger.contains(event.relatedTarget)) return;
+          showLineup(trigger.dataset.matchIndex, trigger.dataset.side, trigger);
+        });
+        root.addEventListener("pointerout", (event) => {
+          if (event.pointerType === "touch") return;
+          const trigger = event.target.closest(".lineup-trigger");
+          if (!trigger || trigger.contains(event.relatedTarget)) return;
+          scheduleLineupClose();
+        });
+        root.addEventListener("focusin", (event) => {
+          const trigger = event.target.closest(".lineup-trigger");
+          if (!trigger) return;
+          showLineup(trigger.dataset.matchIndex, trigger.dataset.side, trigger);
+        });
+        root.addEventListener("focusout", (event) => {
+          const trigger = event.target.closest(".lineup-trigger");
+          if (!trigger || trigger.contains(event.relatedTarget)) return;
+          scheduleLineupClose();
+        });
         root.addEventListener("click", (event) => {
           const trigger = event.target.closest(".lineup-trigger");
           if (!trigger) return;
-          showLineup(trigger.dataset.matchIndex, trigger.dataset.side);
+          showLineup(trigger.dataset.matchIndex, trigger.dataset.side, trigger);
         });
         root.dataset.lineupBound = "true";
       }
 
       const modal = document.getElementById("lineupModal");
       if (modal && !modal.dataset.lineupBound) {
+        const dialog = modal.querySelector(".lineup-dialog");
+        if (dialog) {
+          dialog.addEventListener("pointerenter", cancelLineupClose);
+          dialog.addEventListener("pointerleave", () => scheduleLineupClose(220));
+        }
         modal.addEventListener("click", (event) => {
           if (event.target.id === "lineupModal" || event.target.id === "lineupClose") closeLineup();
         });
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape") closeLineup();
+        });
+        window.addEventListener("resize", () => {
+          if (ACTIVE_LINEUP_TRIGGER) positionLineup(ACTIVE_LINEUP_TRIGGER);
         });
         modal.dataset.lineupBound = "true";
       }
