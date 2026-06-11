@@ -48,6 +48,13 @@
       line-height: 1.6;
       white-space: nowrap;
     }
+    #dataStatus {
+      font-weight: 800;
+    }
+    #dataStatus.status-ok { color: #c9f4e5; }
+    #dataStatus.status-warn { color: #ffe1a6; }
+    #dataStatus.status-stale { color: #ffd7ca; }
+    #dataStatus.status-static { color: var(--muted); }
 
     .legend {
       display: flex;
@@ -1155,16 +1162,28 @@
     function renderStatus(live) {
       const el = document.getElementById("dataStatus");
       if (!live || !live.fetchedAt) {
+        el.className = "status-static";
         el.textContent = "오프라인 정적 데이터";
         return;
       }
       const date = new Date(live.fetchedAt);
+      if (!Number.isFinite(date.getTime())) {
+        el.className = "status-warn";
+        el.textContent = `갱신 시간 확인 필요: ${live.fetchedAt}`;
+        return;
+      }
+      const ageMinutes = Math.max(0, Math.round((Date.now() - date.getTime()) / 60000));
+      const state =
+        ageMinutes >= 30 ? { cls: "status-stale", text: "갱신 지연" } :
+        ageMinutes >= 15 ? { cls: "status-warn", text: "갱신 확인 중" } :
+        { cls: "status-ok", text: "자동 갱신 정상" };
       const label = Number.isFinite(date.getTime())
         ? new Intl.DateTimeFormat("ko-KR", {
             month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit"
           }).format(date)
         : live.fetchedAt;
-      el.textContent = `온라인 갱신: ${label}`;
+      el.className = state.cls;
+      el.textContent = `${state.text}: ${label} · ${ageMinutes}분 전`;
     }
 
     function startDashboard() {
