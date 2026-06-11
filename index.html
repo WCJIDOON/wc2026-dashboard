@@ -28,6 +28,7 @@
       font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
     }
     body { padding: 18px; overflow-x: hidden; }
+    body.modal-open { overflow: hidden; }
     .shell { max-width: 1320px; margin: 0 auto; }
 
     .top {
@@ -147,6 +148,25 @@
     .today-side.away .team-wrap {
       justify-content: flex-end;
     }
+    .lineup-trigger {
+      appearance: none;
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      padding: 3px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .lineup-trigger:hover {
+      background: rgba(224, 182, 73, .1);
+    }
+    .lineup-trigger:focus-visible {
+      outline: 2px solid rgba(224, 182, 73, .75);
+      outline-offset: 2px;
+    }
     .today-score {
       min-width: 42px;
       color: var(--text);
@@ -174,6 +194,106 @@
       border-radius: 8px;
       padding: 12px;
       font-size: 12px;
+      text-align: center;
+    }
+    .lineup-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(6, 10, 14, .72);
+    }
+    .lineup-modal.open { display: flex; }
+    .lineup-dialog {
+      width: min(520px, 100%);
+      max-height: min(86vh, 720px);
+      overflow: auto;
+      background: #131b22;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 22px 80px rgba(0, 0, 0, .45);
+    }
+    .lineup-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 14px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .lineup-title {
+      margin: 0;
+      color: var(--accent);
+      font-size: 17px;
+      line-height: 1.25;
+    }
+    .lineup-meta {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .lineup-close {
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #182129;
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .lineup-body {
+      padding: 14px;
+    }
+    .lineup-team {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .lineup-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .lineup-player {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 34px;
+      padding: 8px 10px;
+      border: 1px solid #2b3a46;
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .lineup-player-name {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-weight: 800;
+    }
+    .lineup-player-meta {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .lineup-empty {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      color: var(--muted);
+      line-height: 1.55;
       text-align: center;
     }
 
@@ -444,6 +564,22 @@
       </div>
       <div class="today-list" id="todayMatches"></div>
     </section>
+
+    <div class="lineup-modal" id="lineupModal" aria-hidden="true">
+      <section class="lineup-dialog" role="dialog" aria-modal="true" aria-labelledby="lineupTitle">
+        <div class="lineup-head">
+          <div>
+            <h2 class="lineup-title" id="lineupTitle">선발 라인업</h2>
+            <div class="lineup-meta" id="lineupMeta"></div>
+          </div>
+          <button class="lineup-close" type="button" id="lineupClose" aria-label="닫기" title="닫기">&times;</button>
+        </div>
+        <div class="lineup-body">
+          <div class="lineup-team" id="lineupTeam"></div>
+          <div id="lineupContent"></div>
+        </div>
+      </section>
+    </div>
 
     <section class="stats-grid">
       <article class="stat-panel">
@@ -716,6 +852,8 @@
       ["2026년 6월 25일 10:00", "대한민국 대 남아프리카공화국", "몬테레이"]
     ];
 
+    let TODAY_MATCH_ROWS = [];
+
     function esc(text) {
       return String(text).replace(/[&<>"']/g, (ch) => ({
         "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -858,6 +996,7 @@
         const kstDate = gameKstDate(game);
         const stadium = STADIUM_META[String(game.stadium_id)] || {};
         return {
+          raw: game,
           kstDate,
           dateKey: kstDate ? kstDateKey(kstDate) : "",
           home: gameTeam(game, "home"),
@@ -879,6 +1018,7 @@
         const [homeName, awayName] = teams.split(" 대 ");
         const kstDate = new Date(Date.UTC(2026, Number(month) - 1, Number(day), Number(hour), Number(minute)));
         return {
+          raw: null,
           kstDate,
           dateKey: kstDateKey(kstDate),
           home: { team: homeName || "미정", flag: STATIC_FLAGS[homeName] || "", code: STATIC_CODES[homeName] || "" },
@@ -892,16 +1032,25 @@
       }).sort((a, b) => a.kstDate - b.kstDate);
     }
 
-    function todayMatchCard(row) {
+    function lineupButton(team, side, index) {
+      const label = side === "home" ? "홈" : "원정";
+      return `
+        <button class="lineup-trigger" type="button" data-match-index="${index}" data-side="${side}" aria-label="${esc(team.team)} ${label} 선발 라인업 보기" title="선발 라인업 보기">
+          ${teamCell(team)}
+        </button>
+      `;
+    }
+
+    function todayMatchCard(row, index) {
       const statusClass = row.statusClass ? ` ${row.statusClass}` : "";
       const venue = row.venue ? `<span>${esc(row.venue)}</span>` : "<span></span>";
       return `
         <article class="today-card${statusClass}">
           <div class="today-time">${esc(formatKstTime(row.kstDate))}</div>
           <div class="today-teams">
-            <div class="today-side home">${teamCell(row.home)}</div>
+            <div class="today-side home">${lineupButton(row.home, "home", index)}</div>
             <div class="today-score">${esc(row.score)}</div>
-            <div class="today-side away">${teamCell(row.away)}</div>
+            <div class="today-side away">${lineupButton(row.away, "away", index)}</div>
           </div>
           <div class="today-meta">
             <span>${esc(row.stage)} · ${esc(row.status)}</span>
@@ -934,16 +1083,175 @@
       }
 
       if (!visible.length) {
+        TODAY_MATCH_ROWS = [];
         sub.textContent = "한국시간 기준";
         count.textContent = "오늘 0경기";
         root.innerHTML = `<div class="today-empty">오늘 예정된 경기가 없습니다.</div>`;
         return;
       }
 
+      TODAY_MATCH_ROWS = visible;
       const label = formatKstDate(visible[0].kstDate);
       sub.textContent = mode === "today" ? `${label} · 한국시간` : `다음 경기일 · ${label} · 한국시간`;
       count.textContent = `${mode === "today" ? "오늘" : "다음"} ${visible.length}경기`;
       root.innerHTML = visible.map(todayMatchCard).join("");
+    }
+
+    function playerEntry(value) {
+      if (value == null) return null;
+      if (typeof value === "string" || typeof value === "number") {
+        const name = cleanPlayerName(value);
+        return name ? { name, meta: "" } : null;
+      }
+
+      const name = cleanPlayerName(
+        value.name || value.player || value.player_name || value.name_en ||
+        value.full_name || value.fullName || value.label || ""
+      );
+      if (!name) return null;
+
+      const number = value.number || value.no || value.shirt || value.shirt_number || value.jersey || value.jersey_number;
+      const position = value.position || value.pos || value.role;
+      const meta = [number ? `#${number}` : "", position || ""].filter(Boolean).join(" · ");
+      return { name, meta };
+    }
+
+    function parseLineupValue(value) {
+      if (value == null) return [];
+
+      if (typeof value === "string") {
+        const text = value.trim();
+        if (!text || ["null", "undefined", "[]", "{}"].includes(text.toLowerCase())) return [];
+        if (/^[\[{]/.test(text)) {
+          try {
+            return parseLineupValue(JSON.parse(text));
+          } catch (_) {
+            return [];
+          }
+        }
+        return text
+          .split(/\r?\n|,|;/)
+          .map((item) => playerEntry(item))
+          .filter(Boolean);
+      }
+
+      if (Array.isArray(value)) {
+        return value.map((item) => playerEntry(item)).filter(Boolean);
+      }
+
+      if (typeof value === "object") {
+        for (const key of ["starting", "starters", "starting11", "starting_11", "lineup", "players", "squad"]) {
+          if (Array.isArray(value[key]) || typeof value[key] === "string") {
+            const parsed = parseLineupValue(value[key]);
+            if (parsed.length) return parsed;
+          }
+        }
+        const single = playerEntry(value);
+        if (single) return [single];
+        return Object.values(value).flatMap((item) => parseLineupValue(item)).filter(Boolean);
+      }
+
+      return [];
+    }
+
+    function lineupFor(row, side) {
+      const game = row && row.raw;
+      if (!game) return [];
+
+      const prefix = side === "home" ? "home" : "away";
+      const candidates = [
+        game[`${prefix}_lineup`],
+        game[`${prefix}_lineups`],
+        game[`${prefix}_starting_lineup`],
+        game[`${prefix}_starting11`],
+        game[`${prefix}_starting_11`],
+        game[`${prefix}_players`],
+        game[`${prefix}_squad`],
+        game[`${prefix}_team_lineup`],
+        game.lineups && game.lineups[prefix],
+        game.lineup && game.lineup[prefix],
+        game.starting_lineups && game.starting_lineups[prefix],
+        game.starting11 && game.starting11[prefix]
+      ];
+
+      for (const candidate of candidates) {
+        const parsed = parseLineupValue(candidate);
+        if (parsed.length) return parsed;
+      }
+      return [];
+    }
+
+    function showLineup(matchIndex, side) {
+      const row = TODAY_MATCH_ROWS[Number(matchIndex)];
+      if (!row || !row[side]) return;
+
+      const modal = document.getElementById("lineupModal");
+      const title = document.getElementById("lineupTitle");
+      const meta = document.getElementById("lineupMeta");
+      const team = document.getElementById("lineupTeam");
+      const content = document.getElementById("lineupContent");
+      const close = document.getElementById("lineupClose");
+      if (!modal || !title || !meta || !team || !content) return;
+
+      const lineup = lineupFor(row, side);
+      const selectedTeam = row[side];
+      title.textContent = "선발 라인업";
+      meta.textContent = `${formatKstTime(row.kstDate)} · ${row.stage} · ${row.status} · ${row.score}`;
+      team.innerHTML = teamCell(selectedTeam);
+
+      if (lineup.length) {
+        content.innerHTML = `
+          <ol class="lineup-list">
+            ${lineup.map((player) => `
+              <li class="lineup-player">
+                <span class="lineup-player-name">${esc(player.name)}</span>
+                ${player.meta ? `<span class="lineup-player-meta">${esc(player.meta)}</span>` : ""}
+              </li>
+            `).join("")}
+          </ol>
+        `;
+      } else {
+        const message = row.raw
+          ? "아직 공개 API에 이 팀의 선발 라인업 데이터가 없습니다. 라인업이 제공되기 시작하면 이 창에 자동으로 표시됩니다."
+          : "정적 일정 데이터에는 선발 라인업이 포함되어 있지 않습니다. 경기 데이터가 갱신되면 다시 확인해주세요.";
+        content.innerHTML = `<div class="lineup-empty">${message}</div>`;
+      }
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      if (close) close.focus();
+    }
+
+    function closeLineup() {
+      const modal = document.getElementById("lineupModal");
+      if (!modal) return;
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    function bindLineupEvents() {
+      const root = document.getElementById("todayMatches");
+      if (root && !root.dataset.lineupBound) {
+        root.addEventListener("click", (event) => {
+          const trigger = event.target.closest(".lineup-trigger");
+          if (!trigger) return;
+          showLineup(trigger.dataset.matchIndex, trigger.dataset.side);
+        });
+        root.dataset.lineupBound = "true";
+      }
+
+      const modal = document.getElementById("lineupModal");
+      if (modal && !modal.dataset.lineupBound) {
+        modal.addEventListener("click", (event) => {
+          if (event.target.id === "lineupModal" || event.target.id === "lineupClose") closeLineup();
+        });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") closeLineup();
+        });
+        modal.dataset.lineupBound = "true";
+      }
     }
 
     function liveStandings() {
@@ -1193,6 +1501,7 @@
 
       const live = liveStandings();
       renderTodayMatches(live);
+      bindLineupEvents();
       renderStats(live);
       renderGroups(live);
       renderKorea();
