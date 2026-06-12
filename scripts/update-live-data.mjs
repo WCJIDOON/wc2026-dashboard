@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+﻿import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -168,6 +168,104 @@ function indexFifaMatches(matches) {
   return byTeams;
 }
 
+function teamIdByNormalizedName(data) {
+  const byName = new Map();
+  for (const team of data.teams.teams) {
+    const normalized = normalizeTeamName(team.name_en);
+    if (normalized) byName.set(normalized, String(team.id));
+  }
+  return byName;
+}
+
+function blankStanding(team) {
+  return {
+    team_id: String(team.id),
+    mp: "0",
+    w: "0",
+    l: "0",
+    d: "0",
+    pts: "0",
+    gf: "0",
+    ga: "0",
+    gd: "0",
+  };
+}
+
+function addStandingResult(row, gf, ga) {
+  const mp = Number(row.mp) + 1;
+  const w = Number(row.w) + (gf > ga ? 1 : 0);
+  const d = Number(row.d) + (gf === ga ? 1 : 0);
+  const l = Number(row.l) + (gf < ga ? 1 : 0);
+  const totalGf = Number(row.gf) + gf;
+  const totalGa = Number(row.ga) + ga;
+
+  row.mp = String(mp);
+  row.w = String(w);
+  row.d = String(d);
+  row.l = String(l);
+  row.pts = String(w * 3 + d);
+  row.gf = String(totalGf);
+  row.ga = String(totalGa);
+  row.gd = String(totalGf - totalGa);
+}
+
+function groupLetter(match) {
+  const description = fifaText(match.GroupName);
+  const found = description.match(/\bGroup\s+([A-L])\b/i);
+  return found ? found[1].toUpperCase() : "";
+}
+
+function isCompletedGroupMatch(match) {
+  return (
+    fifaText(match.StageName).toLowerCase() === "first stage" &&
+    groupLetter(match) &&
+    match.Home &&
+    match.Away &&
+    Number(match.MatchStatus) === 0 &&
+    Number(match.ResultType) > 0 &&
+    Number.isFinite(Number(match.HomeTeamScore)) &&
+    Number.isFinite(Number(match.AwayTeamScore))
+  );
+}
+
+function rebuildGroupsFromFifa(data, matches) {
+  const byName = teamIdByNormalizedName(data);
+  const byGroup = new Map();
+
+  for (const team of data.teams.teams) {
+    const group = String(team.groups || "").toUpperCase();
+    if (!group) continue;
+    if (!byGroup.has(group)) byGroup.set(group, new Map());
+    byGroup.get(group).set(String(team.id), blankStanding(team));
+  }
+
+  for (const match of matches) {
+    if (!isCompletedGroupMatch(match)) continue;
+
+    const group = groupLetter(match);
+    const homeId = byName.get(normalizeTeamName(fifaText(match.Home.TeamName)));
+    const awayId = byName.get(normalizeTeamName(fifaText(match.Away.TeamName)));
+    const rows = byGroup.get(group);
+    if (!homeId || !awayId || !rows?.has(homeId) || !rows?.has(awayId)) continue;
+
+    const homeScore = Number(match.HomeTeamScore);
+    const awayScore = Number(match.AwayTeamScore);
+    addStandingResult(rows.get(homeId), homeScore, awayScore);
+    addStandingResult(rows.get(awayId), awayScore, homeScore);
+  }
+
+  data.groups.groups = Array.from(byGroup.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([name, rows]) => ({
+      name,
+      teams: Array.from(rows.values()).sort((a, b) =>
+        Number(b.pts) - Number(a.pts) ||
+        Number(b.gd) - Number(a.gd) ||
+        Number(b.gf) - Number(a.gf) ||
+        Number(a.team_id) - Number(b.team_id)
+      ),
+    }));
+}
 function matchNeedsLiveFetch(match, now = new Date()) {
   const kickoff = new Date(match.Date);
   if (Number.isNaN(kickoff.getTime())) return false;
@@ -201,6 +299,8 @@ async function addOfficialLineups(data) {
   const matchesByTeams = indexFifaMatches(matches);
   const liveMatches = new Map();
   const games = data.games.games;
+
+  rebuildGroupsFromFifa(data, matches);
 
   for (const game of games) {
     const home = normalizeTeamName(game.home_team_name_en);
@@ -287,3 +387,4 @@ console.log(`Fetched at ${data.fetchedAt}`);
 if (data.fifa) {
   console.log(`FIFA matches: ${data.fifa.matchCount || 0}, live checked: ${data.fifa.liveCheckedCount || 0}, lineups: ${data.fifa.lineupMatchCount || 0}`);
 }
+
