@@ -472,18 +472,38 @@
     }
     .match {
       display: grid;
-      grid-template-columns: 38px 1fr;
+      grid-template-columns: 38px 1fr auto;
       gap: 8px;
+      align-items: center;
       color: var(--muted);
       font-size: 11px;
       line-height: 1.45;
       padding: 2px 0;
+    }
+    .match.done {
+      opacity: .62;
+    }
+    .match.done .time,
+    .match.done .teams {
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+      text-decoration-color: rgba(203, 216, 222, .72);
     }
     .time { color: #dbe8ef; font-weight: 800; font-variant-numeric: tabular-nums; }
     .teams {
       color: #cbd8de;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .match-badge {
+      color: #c9f4e5;
+      border: 1px solid rgba(85, 199, 155, .38);
+      border-radius: 999px;
+      padding: 1px 6px;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.3;
       white-space: nowrap;
     }
 
@@ -1567,6 +1587,27 @@
       }));
     }
 
+    function fixtureKstDate(fixture) {
+      const raw = String(fixture && fixture[1] || "");
+      const found = raw.match(/^(\d{2})\/(\d{2})\s+(\d{2}):(\d{2})$/);
+      if (!found) return null;
+      const [, month, day, hour, minute] = found;
+      return new Date(
+        2026,
+        Number(month) - 1,
+        Number(day),
+        Number(hour),
+        Number(minute)
+      );
+    }
+
+    function fixtureIsDone(fixture, now = new Date()) {
+      const kickoff = fixtureKstDate(fixture);
+      if (!kickoff || !Number.isFinite(kickoff.getTime())) return false;
+      const estimatedEnd = new Date(kickoff.getTime() + 150 * 60 * 1000);
+      return now >= estimatedEnd;
+    }
+
     function renderGroups(live) {
       const root = document.getElementById("groups");
       root.innerHTML = Object.keys(GROUPS).map((letter) => {
@@ -1586,9 +1627,14 @@
           </tr>`;
         }).join("");
 
-        const matches = FIXTURES.filter((m) => m[0] === letter).slice(0, 4).map((m) => `
-          <div class="match"><span class="time">${esc(m[1])}</span><span class="teams">${esc(m[2])}</span></div>
-        `).join("");
+        const matches = FIXTURES.filter((m) => m[0] === letter).slice(0, 4).map((m) => {
+          const done = fixtureIsDone(m);
+          return `<div class="match${done ? " done" : ""}">
+            <span class="time">${esc(m[1])}</span>
+            <span class="teams">${esc(m[2])}</span>
+            ${done ? `<span class="match-badge">완료</span>` : ""}
+          </div>`;
+        }).join("");
 
         return `<article class="group">
           <div class="group-head">
