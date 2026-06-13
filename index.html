@@ -780,6 +780,35 @@
       "Panama": "파나마"
     };
 
+    const KO_PLAYER_NAME = {
+      "H.G. Oh": "오현규",
+      "H. G. Oh": "오현규",
+      "I.B. Hwang": "황인범",
+      "I. B. Hwang": "황인범",
+      "H.M. Son": "손흥민",
+      "H. M. Son": "손흥민",
+      "K.I. Lee": "이강인",
+      "K. I. Lee": "이강인",
+      "M.J. Kim": "김민재",
+      "M. J. Kim": "김민재",
+      "J.S. Lee": "이재성",
+      "J. S. Lee": "이재성",
+      "W.Y. Jung": "정우영",
+      "W. Y. Jung": "정우영",
+      "G.S. Cho": "조규성",
+      "G. S. Cho": "조규성",
+      "U.J. Hwang": "황의조",
+      "U. J. Hwang": "황의조",
+      "K.S. Lee": "이기제",
+      "K. S. Lee": "이기제",
+      "S.G. Paik": "백승호",
+      "S. G. Paik": "백승호",
+      "Y.G. Kim": "김영권",
+      "Y. G. Kim": "김영권",
+      "S.W. Cho": "조현우",
+      "S. W. Cho": "조현우"
+    };
+
     const STATIC_FLAGS = {
       "멕시코": "https://flagcdn.com/w80/mx.png",
       "남아프리카공화국": "https://flagcdn.com/w80/za.png",
@@ -1591,6 +1620,11 @@
         .trim();
     }
 
+    function playerNameForTeam(name, team) {
+      if (team !== "대한민국") return name;
+      return KO_PLAYER_NAME[name] || name;
+    }
+
     function parsePeople(raw) {
       if (raw == null) return [];
       if (Array.isArray(raw)) return raw.map(cleanPlayerName).filter(Boolean);
@@ -1620,7 +1654,7 @@
     }
 
     function addPlayerCount(map, player, team, flag) {
-      const name = cleanPlayerName(player);
+      const name = playerNameForTeam(cleanPlayerName(player), team);
       if (!name) return;
       const key = `${name}__${team}`;
       const current = map.get(key) || { name, team, flag, count: 0 };
