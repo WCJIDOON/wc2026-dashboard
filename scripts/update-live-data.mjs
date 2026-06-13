@@ -221,7 +221,6 @@ function isCompletedGroupMatch(match) {
     groupLetter(match) &&
     match.Home &&
     match.Away &&
-    Number(match.MatchStatus) === 0 &&
     Number(match.ResultType) > 0 &&
     Number.isFinite(Number(match.HomeTeamScore)) &&
     Number.isFinite(Number(match.AwayTeamScore))
