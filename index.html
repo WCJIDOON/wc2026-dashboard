@@ -1615,8 +1615,8 @@
         .replace(/\([^)]*\d+[^)]*\)/g, "")
         .replace(/\b\d+\+?\d*'?/g, "")
         .replace(/\b(PEN|Penalty|penalty|OG|Own Goal|own goal)\b/g, "")
-        .replace(/^[\s"'`{}\[\]]+|[\s"'`{}\[\]]+$/g, "")
         .replace(/\s+/g, " ")
+        .replace(/^[\s"'`{}\[\]]+|[\s"'`{}\[\]]+$/g, "")
         .trim();
     }
 
