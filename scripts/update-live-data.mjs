@@ -9,6 +9,7 @@ const endpoints = {
   groups: "https://worldcup26.ir/get/groups",
   teams: "https://worldcup26.ir/get/teams",
   games: "https://worldcup26.ir/get/games",
+  naverTopPlayers: "https://api-gw.sports.naver.com/statistics/categories/worldcup/seasons/3F9X/top-players?includeFields=goals,assists,cleanSheets&limit=10",
 };
 
 const fifa = {
@@ -363,6 +364,21 @@ const data = {
 };
 
 assertShape(data);
+
+try {
+  data.naver = {
+    provider: "NAVER Sports",
+    fetchedAt: new Date().toISOString(),
+    topPlayers: await fetchJson(endpoints.naverTopPlayers),
+  };
+} catch (error) {
+  data.naver = {
+    provider: "NAVER Sports",
+    fetchedAt: new Date().toISOString(),
+    error: error.message,
+  };
+  console.warn(`NAVER top players fetch skipped: ${error.message}`);
+}
 
 try {
   await addOfficialLineups(data);
