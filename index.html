@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -1582,9 +1582,11 @@
 
     function cleanPlayerName(value) {
       return String(value || "")
+        .replace(/^[\s"'`{}\[\]]+|[\s"'`{}\[\]]+$/g, "")
         .replace(/\([^)]*\d+[^)]*\)/g, "")
         .replace(/\b\d+\+?\d*'?/g, "")
         .replace(/\b(PEN|Penalty|penalty|OG|Own Goal|own goal)\b/g, "")
+        .replace(/^[\s"'`{}\[\]]+|[\s"'`{}\[\]]+$/g, "")
         .replace(/\s+/g, " ")
         .trim();
     }
@@ -1592,6 +1594,9 @@
     function parsePeople(raw) {
       if (raw == null) return [];
       if (Array.isArray(raw)) return raw.map(cleanPlayerName).filter(Boolean);
+      if (typeof raw === "object") {
+        return Object.values(raw).flatMap(parsePeople).filter(Boolean);
+      }
 
       const text = String(raw).trim();
       if (!text || text === "null" || text === "[]" || text === "-") return [];
@@ -1599,11 +1604,16 @@
       try {
         const parsed = JSON.parse(text);
         if (Array.isArray(parsed)) return parsed.map(cleanPlayerName).filter(Boolean);
+        if (parsed && typeof parsed === "object") {
+          return Object.values(parsed).flatMap(parsePeople).filter(Boolean);
+        }
+        return [cleanPlayerName(parsed)].filter(Boolean);
       } catch (_) {
         // Plain scorer strings are expected from the free API.
       }
 
       return text
+        .replace(/[{}\[\]]/g, ",")
         .split(/[,;|،]+/)
         .map(cleanPlayerName)
         .filter(Boolean);
@@ -1752,3 +1762,4 @@
   </script>
 </body>
 </html>
+
