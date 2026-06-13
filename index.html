@@ -7,10 +7,10 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #10151b;
-      --panel: #182129;
-      --panel-2: #202b35;
-      --line: #344453;
+      --bg: #07110e;
+      --panel: rgba(20, 31, 38, .9);
+      --panel-2: rgba(28, 41, 48, .9);
+      --line: rgba(74, 101, 110, .78);
       --text: #eef4f7;
       --muted: #9fb0ba;
       --accent: #e0b649;
@@ -27,9 +27,41 @@
       color: var(--text);
       font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
     }
-    body { padding: 18px; overflow-x: hidden; }
+    body {
+      position: relative;
+      padding: 18px;
+      overflow-x: hidden;
+      background:
+        linear-gradient(180deg, #07110e 0%, #10241d 42%, #07100d 100%);
+    }
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+    body::before {
+      z-index: 0;
+      background:
+        linear-gradient(115deg, rgba(232, 197, 95, .22) 0%, rgba(232, 197, 95, 0) 24%),
+        linear-gradient(245deg, rgba(112, 166, 216, .18) 0%, rgba(112, 166, 216, 0) 28%),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, .045) 0 1px, transparent 1px 78px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .035) 0 1px, transparent 1px 58px),
+        linear-gradient(180deg, rgba(255, 255, 255, .05), transparent 28%),
+        linear-gradient(180deg, rgba(8, 24, 20, .15), rgba(8, 24, 20, .88));
+    }
+    body::after {
+      z-index: 0;
+      opacity: .6;
+      background:
+        linear-gradient(90deg, transparent 0 8%, rgba(255, 255, 255, .08) 8% 8.2%, transparent 8.2% 91.8%, rgba(255, 255, 255, .08) 91.8% 92%, transparent 92%),
+        linear-gradient(0deg, transparent 0 64%, rgba(255, 255, 255, .07) 64% 64.4%, transparent 64.4%),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, .035) 0 1px, transparent 1px 13px);
+      mask-image: linear-gradient(180deg, transparent 0%, black 16%, black 92%, transparent 100%);
+    }
     body.modal-open { overflow: hidden; }
-    .shell { max-width: 1320px; margin: 0 auto; }
+    .shell { max-width: 1320px; margin: 0 auto; position: relative; z-index: 1; }
 
     .top {
       display: flex;
@@ -64,7 +96,7 @@
       gap: 14px;
       margin: 0 0 14px;
       padding: 14px 16px;
-      background: #131b22;
+      background: rgba(14, 24, 29, .9);
       border: 1px solid var(--line);
       border-left: 4px solid var(--accent);
       border-radius: 8px;
@@ -145,7 +177,7 @@
     .chip.warn { color: #ffd7ca; border-color: rgba(225, 127, 99, .55); }
 
     .today-match {
-      background: #131b22;
+      background: rgba(14, 24, 29, .9);
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 12px;
@@ -377,14 +409,15 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .24);
+      backdrop-filter: blur(8px);
     }
     .group-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
-      background: linear-gradient(90deg, #243342, #1a2730);
+      background: linear-gradient(90deg, rgba(36, 58, 55, .95), rgba(25, 38, 45, .95));
       padding: 9px 10px;
       border-bottom: 1px solid var(--line);
     }
@@ -460,7 +493,7 @@
     td.pts { color: var(--accent); font-weight: 900; }
 
     .matches {
-      background: #131b22;
+      background: rgba(12, 22, 25, .76);
       border-top: 1px solid var(--line);
       padding: 8px 10px 10px;
     }
@@ -534,6 +567,7 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       overflow: hidden;
+      backdrop-filter: blur(8px);
     }
     .stat-head {
       display: flex;
