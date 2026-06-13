@@ -9,7 +9,7 @@ on:
     - cron: "*/5 * * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -35,6 +37,18 @@ jobs:
 
       - name: Fetch latest World Cup data
         run: node scripts/update-live-data.mjs
+
+      - name: Commit generated live data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wc2026_live_data.js
+          if git diff --cached --quiet; then
+            echo "No live data changes to commit."
+          else
+            git commit -m "Update live data [skip ci]"
+            git push
+          fi
 
       - name: Build static artifact
         run: |
