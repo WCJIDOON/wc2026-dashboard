@@ -1,5 +1,5 @@
 window.WC2026_LIVE_DATA = {
-  "fetchedAt": "2026-06-14T08:56:01.509Z",
+  "fetchedAt": "2026-06-14T15:29:27.056Z",
   "groups": {
     "groups": [
       {
@@ -1231,11 +1231,11 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021453",
           "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021453",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-14T08:56:10.276Z",
+          "fetchedAt": "2026-06-14T15:29:31.141Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021453",
           "home": {
             "team": "Haiti",
@@ -1808,11 +1808,11 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021463",
           "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021463",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-14T08:56:10.276Z",
+          "fetchedAt": "2026-06-14T15:29:31.141Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021463",
           "home": {
             "team": "Australia",
@@ -2385,11 +2385,11 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021456",
           "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021456",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-14T08:56:10.276Z",
+          "fetchedAt": "2026-06-14T15:29:31.141Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021456",
           "home": {
             "team": "Brazil",
@@ -2952,11 +2952,11 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021447",
           "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021447",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-14T08:56:10.276Z",
+          "fetchedAt": "2026-06-14T15:29:31.141Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021447",
           "home": {
             "team": "Qatar",
@@ -3529,7 +3529,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021467",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021467",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -3561,7 +3561,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021464",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021464",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -3593,7 +3593,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021470",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021470",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -3625,7 +3625,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021474",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021474",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -3657,7 +3657,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021476",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021476",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -3689,7 +3689,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021482",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021482",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -3721,7 +3721,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021478",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021478",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -3753,7 +3753,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021486",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021486",
-          "fetchedAt": "2026-06-14T08:56:10.276Z"
+          "fetchedAt": "2026-06-14T15:29:31.141Z"
         }
       },
       {
@@ -6136,7 +6136,7 @@ window.WC2026_LIVE_DATA = {
   },
   "naver": {
     "provider": "NAVER Sports",
-    "fetchedAt": "2026-06-14T08:56:09.212Z",
+    "fetchedAt": "2026-06-14T15:29:29.632Z",
     "topPlayers": {
       "code": 200,
       "success": true,
@@ -7831,7 +7831,7 @@ window.WC2026_LIVE_DATA = {
     "apiBase": "https://api.fifa.com/api/v3",
     "competitionId": "17",
     "seasonId": "285023",
-    "fetchedAt": "2026-06-14T08:56:10.276Z",
+    "fetchedAt": "2026-06-14T15:29:31.141Z",
     "matchCount": 104,
     "liveCheckedCount": 12,
     "lineupMatchCount": 4
