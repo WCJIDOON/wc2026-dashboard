@@ -761,6 +761,13 @@
       venue: "Mexico City Stadium",
       kstLabel: "2026.06.12 04:00 KST"
     };
+    const FIFA_CLIENT = {
+      apiBase: "https://api.fifa.com/api/v3",
+      webBase: "https://www.fifa.com/en/match-centre/match",
+      competitionId: "17",
+      seasonId: "285023",
+      language: "en"
+    };
     let OPENING_COUNTDOWN_TIMER = null;
 
     const GROUPS = {
@@ -1175,6 +1182,7 @@
     function matchStatusLabel(game) {
       const status = String(game.time_elapsed || "").toLowerCase();
       if (!status || status === "notstarted") return "예정";
+      if (status === "lineups") return "라인업 공개";
       if (["finished", "fulltime", "full-time", "ft"].includes(status)) return "종료";
       if (["halftime", "half-time", "ht"].includes(status)) return "하프타임";
       if (/^\d+$/.test(status)) return `${status}분`;
@@ -1210,6 +1218,313 @@
       };
       const key = String(game.type || "").toLowerCase().replace(/\s+/g, "_");
       return labels[key] || "월드컵";
+    }
+
+    function fifaText(value) {
+      if (!Array.isArray(value)) return "";
+      const entry = value.find((item) => String(item.Locale || "").toLowerCase().startsWith("en")) || value[0] || {};
+      return entry.Description || "";
+    }
+
+    function stripMarks(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function normalizeTeamName(value) {
+      const name = stripMarks(value)
+        .toLowerCase()
+        .replace(/&/g, " and ")
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim()
+        .replace(/\s+/g, " ");
+      const aliases = {
+        "bosnia herzegovina": "bosnia and herzegovina",
+        "cabo verde": "cape verde",
+        "cote d ivoire": "ivory coast",
+        "cote divoire": "ivory coast",
+        "czech republic": "czechia",
+        "congo dr": "congo dr",
+        "democratic republic of the congo": "congo dr",
+        "dr congo": "congo dr",
+        "ir iran": "iran",
+        "korea republic": "south korea",
+        "turkey": "turkiye",
+        "united states": "usa",
+        "united states of america": "usa"
+      };
+      return aliases[name] || name;
+    }
+
+    function fifaMatchUrl(match) {
+      return [
+        FIFA_CLIENT.webBase,
+        match.IdCompetition,
+        match.IdSeason,
+        match.IdStage,
+        match.IdMatch
+      ].join("/");
+    }
+
+    async function fetchFifaJson(path) {
+      const response = await fetch(`${FIFA_CLIENT.apiBase}/${path}`, {
+        cache: "no-store",
+        headers: { "accept": "application/json" }
+      });
+      if (!response.ok) throw new Error(`FIFA ${path} ${response.status}`);
+      return response.json();
+    }
+
+    function fifaScore(match, side) {
+      const teamKey = side === "home" ? "HomeTeam" : "AwayTeam";
+      const calendarKey = side === "home" ? "HomeTeamScore" : "AwayTeamScore";
+      const value = match && (match[calendarKey] ?? (match[teamKey] && match[teamKey].Score));
+      return Number.isFinite(Number(value)) ? Number(value) : null;
+    }
+
+    function fifaStatusValue(match) {
+      const status = Number(match && match.MatchStatus);
+      const resultType = Number(match && match.ResultType);
+      const hasScore = fifaScore(match, "home") !== null && fifaScore(match, "away") !== null;
+      if ((status === 0 || resultType > 0) && hasScore) return "finished";
+      if (status === 12) return "lineups";
+      if (status === 3) {
+        const minute = String(match.MatchTime || "").replace(/[^\d+]/g, "");
+        return minute || "live";
+      }
+      return "notstarted";
+    }
+
+    function mergeFifaMatchIntoGame(game, match) {
+      const homeScore = fifaScore(match, "home");
+      const awayScore = fifaScore(match, "away");
+      const status = fifaStatusValue(match);
+      let changed = false;
+
+      if (homeScore !== null && String(game.home_score) !== String(homeScore)) {
+        game.home_score = String(homeScore);
+        changed = true;
+      }
+      if (awayScore !== null && String(game.away_score) !== String(awayScore)) {
+        game.away_score = String(awayScore);
+        changed = true;
+      }
+      if (game.time_elapsed !== status) {
+        game.time_elapsed = status;
+        changed = true;
+      }
+      const finished = status === "finished" ? "TRUE" : "FALSE";
+      if (game.finished !== finished) {
+        game.finished = finished;
+        changed = true;
+      }
+      return changed;
+    }
+
+    function positionLabel(position) {
+      return { 0: "GK", 1: "DF", 2: "MF", 3: "FW" }[position] || "";
+    }
+
+    function fifaPlayer(player) {
+      return {
+        name: fifaText(player.PlayerName) || fifaText(player.ShortName) || String(player.IdPlayer || ""),
+        shortName: fifaText(player.ShortName),
+        number: player.ShirtNumber || "",
+        position: positionLabel(player.Position),
+        captain: Boolean(player.Captain)
+      };
+    }
+
+    function fifaTeamLineup(team) {
+      const players = Array.isArray(team && team.Players) ? team.Players : [];
+      const coaches = Array.isArray(team && team.Coaches) ? team.Coaches : [];
+      return {
+        team: fifaText(team && team.TeamName),
+        code: team && team.Abbreviation || "",
+        formation: team && team.Tactics || "",
+        coach: fifaText(coaches[0] && coaches[0].Name) || fifaText(coaches[0] && coaches[0].Alias),
+        starters: players.filter((player) => player.Status === 1).map(fifaPlayer),
+        substitutes: players.filter((player) => player.Status === 2).map(fifaPlayer)
+      };
+    }
+
+    function indexFifaMatches(matches) {
+      const byTeams = new Map();
+      for (const match of matches) {
+        const home = normalizeTeamName(fifaText(match.Home && match.Home.TeamName));
+        const away = normalizeTeamName(fifaText(match.Away && match.Away.TeamName));
+        if (!home || !away) continue;
+        byTeams.set(`${home}::${away}`, match);
+        byTeams.set(`${away}::${home}`, match);
+      }
+      return byTeams;
+    }
+
+    function teamIdByNormalizedName(data) {
+      const byName = new Map();
+      for (const team of data.teams.teams || []) {
+        const normalized = normalizeTeamName(team.name_en);
+        if (normalized) byName.set(normalized, String(team.id));
+      }
+      return byName;
+    }
+
+    function blankStanding(team) {
+      return {
+        team_id: String(team.id),
+        mp: "0",
+        w: "0",
+        l: "0",
+        d: "0",
+        pts: "0",
+        gf: "0",
+        ga: "0",
+        gd: "0"
+      };
+    }
+
+    function addStandingResult(row, gf, ga) {
+      const mp = Number(row.mp) + 1;
+      const w = Number(row.w) + (gf > ga ? 1 : 0);
+      const d = Number(row.d) + (gf === ga ? 1 : 0);
+      const l = Number(row.l) + (gf < ga ? 1 : 0);
+      const totalGf = Number(row.gf) + gf;
+      const totalGa = Number(row.ga) + ga;
+      row.mp = String(mp);
+      row.w = String(w);
+      row.d = String(d);
+      row.l = String(l);
+      row.pts = String(w * 3 + d);
+      row.gf = String(totalGf);
+      row.ga = String(totalGa);
+      row.gd = String(totalGf - totalGa);
+    }
+
+    function groupLetter(match) {
+      const found = fifaText(match.GroupName).match(/\bGroup\s+([A-L])\b/i);
+      return found ? found[1].toUpperCase() : "";
+    }
+
+    function rebuildGroupsFromFifa(data, matches) {
+      if (!data || !data.groups || !data.teams) return;
+      const byName = teamIdByNormalizedName(data);
+      const byGroup = new Map();
+
+      for (const team of data.teams.teams || []) {
+        const group = String(team.groups || "").toUpperCase();
+        if (!group) continue;
+        if (!byGroup.has(group)) byGroup.set(group, new Map());
+        byGroup.get(group).set(String(team.id), blankStanding(team));
+      }
+
+      for (const match of matches) {
+        const group = groupLetter(match);
+        const homeScore = fifaScore(match, "home");
+        const awayScore = fifaScore(match, "away");
+        const done = fifaText(match.StageName).toLowerCase() === "first stage" &&
+          group && Number(match.ResultType) > 0 && homeScore !== null && awayScore !== null;
+        if (!done) continue;
+
+        const homeId = byName.get(normalizeTeamName(fifaText(match.Home && match.Home.TeamName)));
+        const awayId = byName.get(normalizeTeamName(fifaText(match.Away && match.Away.TeamName)));
+        const rows = byGroup.get(group);
+        if (!homeId || !awayId || !rows || !rows.has(homeId) || !rows.has(awayId)) continue;
+
+        addStandingResult(rows.get(homeId), homeScore, awayScore);
+        addStandingResult(rows.get(awayId), awayScore, homeScore);
+      }
+
+      data.groups.groups = Array.from(byGroup.entries())
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([name, rows]) => ({
+          name,
+          teams: Array.from(rows.values()).sort((a, b) =>
+            Number(b.pts) - Number(a.pts) ||
+            Number(b.gd) - Number(a.gd) ||
+            Number(b.gf) - Number(a.gf) ||
+            Number(a.team_id) - Number(b.team_id)
+          )
+        }));
+    }
+
+    function matchNeedsLiveFetch(match, now = new Date()) {
+      const kickoff = new Date(match.Date);
+      if (!Number.isFinite(kickoff.getTime())) return false;
+      const matchStatus = Number(match.MatchStatus);
+      const isLineupOrLive = [3, 11, 12].includes(matchStatus);
+      const hoursFromKickoff = (kickoff.getTime() - now.getTime()) / 36e5;
+      return isLineupOrLive || (hoursFromKickoff >= -30 && hoursFromKickoff <= 48);
+    }
+
+    async function refreshFifaDataNow() {
+      const data = window.WC2026_LIVE_DATA;
+      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
+      if (!games.length) return false;
+
+      const query = new URLSearchParams({
+        idCompetition: FIFA_CLIENT.competitionId,
+        idSeason: FIFA_CLIENT.seasonId,
+        language: FIFA_CLIENT.language,
+        count: "200"
+      });
+      const calendar = await fetchFifaJson(`calendar/matches?${query}`);
+      const matches = Array.isArray(calendar.Results) ? calendar.Results : [];
+      const matchesByTeams = indexFifaMatches(matches);
+      let changed = false;
+
+      rebuildGroupsFromFifa(data, matches);
+
+      const liveTargets = [];
+      for (const game of games) {
+        const home = normalizeTeamName(game.home_team_name_en);
+        const away = normalizeTeamName(game.away_team_name_en);
+        const fifaMatch = matchesByTeams.get(`${home}::${away}`);
+        if (!fifaMatch) continue;
+
+        game.official_match = {
+          provider: "FIFA",
+          idCompetition: fifaMatch.IdCompetition,
+          idSeason: fifaMatch.IdSeason,
+          idStage: fifaMatch.IdStage,
+          idMatch: fifaMatch.IdMatch,
+          matchStatus: fifaMatch.MatchStatus,
+          url: fifaMatchUrl(fifaMatch),
+          clientFetchedAt: new Date().toISOString()
+        };
+        changed = mergeFifaMatchIntoGame(game, fifaMatch) || changed;
+        if (matchNeedsLiveFetch(fifaMatch)) liveTargets.push({ game, fifaMatch });
+      }
+
+      await Promise.allSettled(liveTargets.map(async ({ game, fifaMatch }) => {
+        const live = await fetchFifaJson(
+          `live/football/${fifaMatch.IdCompetition}/${fifaMatch.IdSeason}/${fifaMatch.IdStage}/${fifaMatch.IdMatch}?language=${FIFA_CLIENT.language}`
+        );
+        changed = mergeFifaMatchIntoGame(game, live) || changed;
+        game.official_match.matchStatus = live.MatchStatus ?? fifaMatch.MatchStatus;
+        game.official_match.clientFetchedAt = new Date().toISOString();
+
+        const homeLineup = fifaTeamLineup(live.HomeTeam);
+        const awayLineup = fifaTeamLineup(live.AwayTeam);
+        if (homeLineup.starters.length || awayLineup.starters.length) {
+          game.official_lineups = {
+            provider: "FIFA",
+            fetchedAt: game.official_match.clientFetchedAt,
+            url: fifaMatchUrl(fifaMatch),
+            home: homeLineup,
+            away: awayLineup
+          };
+          changed = true;
+        }
+      }));
+
+      data.fifa = {
+        ...(data.fifa || {}),
+        provider: "FIFA",
+        clientFetchedAt: new Date().toISOString(),
+        clientLiveCheckedCount: liveTargets.length
+      };
+      return changed || matches.length > 0;
     }
 
     function gameTeam(game, side) {
@@ -1601,7 +1916,11 @@
         );
       }
 
-      return { standings, fetchedAt: data.fetchedAt || "" };
+      return {
+        standings,
+        fetchedAt: data.fetchedAt || "",
+        clientFetchedAt: data.fifa && data.fifa.clientFetchedAt || ""
+      };
     }
 
     function rowsForGroup(letter, live) {
@@ -1846,7 +2165,8 @@
         el.textContent = "오프라인 정적 데이터";
         return;
       }
-      const date = new Date(live.fetchedAt);
+      const source = live.clientFetchedAt ? "FIFA 공식 즉시 확인" : "";
+      const date = new Date(live.clientFetchedAt || live.fetchedAt);
       if (!Number.isFinite(date.getTime())) {
         el.className = "status-warn";
         el.textContent = `갱신 시간 확인 필요: ${live.fetchedAt}`;
@@ -1863,7 +2183,7 @@
           }).format(date)
         : live.fetchedAt;
       el.className = state.cls;
-      el.textContent = `${state.text}: ${label} · ${ageMinutes}분 전`;
+      el.textContent = `${source || state.text}: ${label} · ${ageMinutes}분 전`;
     }
 
     function startDashboard() {
@@ -1880,6 +2200,21 @@
       renderGroups(live);
       renderKorea();
       renderStatus(live);
+
+      refreshFifaDataNow()
+        .then((updated) => {
+          if (!updated) return;
+          const refreshed = liveStandings();
+          renderTodayMatches(refreshed);
+          renderStats(refreshed);
+          renderGroups(refreshed);
+          renderStatus(refreshed);
+          setText("refreshStatus", "FIFA 공식 데이터 즉시 반영 완료");
+        })
+        .catch((error) => {
+          console.warn("FIFA live refresh failed", error);
+          setText("refreshStatus", "자동 새로고침 유지 · FIFA 즉시 확인 실패");
+        });
 
       setTimeout(() => {
         window.location.reload();

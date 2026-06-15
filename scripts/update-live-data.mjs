@@ -154,6 +154,38 @@ function fifaTeamLineup(team) {
   };
 }
 
+function fifaScore(match, side) {
+  const teamKey = side === "home" ? "HomeTeam" : "AwayTeam";
+  const calendarKey = side === "home" ? "HomeTeamScore" : "AwayTeamScore";
+  const value = match?.[calendarKey] ?? match?.[teamKey]?.Score;
+  return Number.isFinite(Number(value)) ? Number(value) : null;
+}
+
+function fifaStatusValue(match) {
+  const status = Number(match?.MatchStatus);
+  const resultType = Number(match?.ResultType);
+  const hasScore = fifaScore(match, "home") !== null && fifaScore(match, "away") !== null;
+
+  if ((status === 0 || resultType > 0) && hasScore) return "finished";
+  if (status === 12) return "lineups";
+  if (status === 3) {
+    const minute = String(match?.MatchTime || "").replace(/[^\d+]/g, "");
+    return minute || "live";
+  }
+  return "notstarted";
+}
+
+function mergeFifaMatchIntoGame(game, match) {
+  const homeScore = fifaScore(match, "home");
+  const awayScore = fifaScore(match, "away");
+  const status = fifaStatusValue(match);
+
+  if (homeScore !== null) game.home_score = String(homeScore);
+  if (awayScore !== null) game.away_score = String(awayScore);
+  game.time_elapsed = status;
+  game.finished = status === "finished" ? "TRUE" : "FALSE";
+}
+
 function indexFifaMatches(matches) {
   const byTeams = new Map();
 
@@ -317,6 +349,7 @@ async function addOfficialLineups(data) {
       matchStatus: fifaMatch.MatchStatus,
       url: fifaMatchUrl(fifaMatch),
     };
+    mergeFifaMatchIntoGame(game, fifaMatch);
 
     if (!matchNeedsLiveFetch(fifaMatch)) continue;
 
@@ -329,6 +362,7 @@ async function addOfficialLineups(data) {
 
       game.official_match.matchStatus = live.MatchStatus ?? fifaMatch.MatchStatus;
       game.official_match.fetchedAt = fetchedAt;
+      mergeFifaMatchIntoGame(game, live);
 
       if (hasLineup) {
         game.official_lineups = {
