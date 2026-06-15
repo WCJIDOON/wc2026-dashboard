@@ -301,7 +301,7 @@
       border: 1px solid rgba(224, 182, 73, .28);
       border-radius: 8px;
     }
-    .today-potm-photo,
+    .today-potm-avatar,
     .today-potm-initial {
       width: 42px;
       height: 42px;
@@ -309,9 +309,18 @@
       background: #101820;
       border: 1px solid rgba(224, 182, 73, .4);
     }
+    .today-potm-avatar {
+      display: block;
+      overflow: hidden;
+    }
     .today-potm-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: 50% 4%;
+      transform: scale(4.1);
+      transform-origin: 50% 6%;
     }
     .today-potm-initial {
       display: inline-flex;
@@ -1818,7 +1827,7 @@
 
       const initial = String(potm.name).trim().charAt(0).toUpperCase() || "M";
       const avatar = potm.image
-        ? `<img class="today-potm-photo" src="${esc(potm.image)}" alt="" loading="lazy" onerror="this.style.display='none'">`
+        ? `<span class="today-potm-avatar"><img class="today-potm-photo" src="${esc(potm.image)}" alt="" loading="lazy" onerror="this.closest('.today-potm-avatar').replaceWith(Object.assign(document.createElement('span'),{className:'today-potm-initial',textContent:'${esc(initial)}'}))"></span>`
         : `<span class="today-potm-initial">${esc(initial)}</span>`;
       const meta = [
         potm.teamCode ? teamNameFromCode(potm.teamCode) : "",
