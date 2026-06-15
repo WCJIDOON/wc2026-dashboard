@@ -671,6 +671,76 @@
       display: grid;
       gap: 0;
     }
+    .leader-card {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      margin: 10px;
+      padding: 10px;
+      background: linear-gradient(135deg, rgba(224, 182, 73, .16), rgba(112, 166, 216, .08));
+      border: 1px solid rgba(224, 182, 73, .34);
+      border-radius: 8px;
+    }
+    .leader-photo,
+    .leader-initial {
+      width: 72px;
+      height: 72px;
+      border-radius: 8px;
+      background: #101820;
+      border: 1px solid rgba(224, 182, 73, .42);
+    }
+    .leader-photo {
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .leader-initial {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 24px;
+      font-weight: 900;
+    }
+    .leader-kicker {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .leader-info {
+      min-width: 0;
+    }
+    .leader-name {
+      margin-top: 4px;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.18;
+      overflow-wrap: anywhere;
+    }
+    .leader-team {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .leader-score {
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .leader-unit {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
     .rank-row {
       display: grid;
       grid-template-columns: 30px 1fr 42px;
@@ -735,7 +805,20 @@
       .stats-grid { grid-template-columns: 1fr; }
       .korea { grid-template-columns: 1fr; }
     }
-    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .leader-card {
+        grid-template-columns: 58px minmax(0, 1fr) auto;
+        gap: 9px;
+      }
+      .leader-photo,
+      .leader-initial {
+        width: 58px;
+        height: 58px;
+      }
+      .leader-name { font-size: 15px; }
+      .leader-score { font-size: 23px; }
+    }
   </style>
 </head>
 <body>
@@ -2376,7 +2459,7 @@
       const name = playerNameForTeam(cleanPlayerName(player), team);
       if (!name) return;
       const key = `${name}__${team}`;
-      const current = map.get(key) || { name, team, flag, count: 0 };
+      const current = map.get(key) || { name, team, flag, image: "", position: "", number: "", count: 0 };
       current.count += 1;
       map.set(key, current);
     }
@@ -2395,9 +2478,13 @@
       return rows
         .filter((row) => num(row[stat]) > 0)
         .map((row) => ({
+          rank: num(row.rank) || 0,
           name: cleanPlayerName(row.playerName || row.shortName || ""),
           team: teamName(row.teamShortName || row.teamName || ""),
           flag: row.teamEmblemUrl || "",
+          image: row.image || "",
+          position: row.position || "",
+          number: row.backNumber || "",
           count: num(row[stat])
         }))
         .filter((row) => row.name && row.team)
@@ -2436,7 +2523,32 @@
         .slice(0, 8);
     }
 
-    function renderRanking(targetId, noteId, rows, unit, emptyText) {
+    function playerInitial(name) {
+      return String(name || "").trim().charAt(0).toUpperCase() || "P";
+    }
+
+    function leaderImage(row) {
+      const initial = playerInitial(row.name);
+      if (!row.image) return `<span class="leader-initial">${esc(initial)}</span>`;
+      return `<img class="leader-photo" src="${esc(row.image)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'leader-initial',textContent:'${esc(initial)}'}))">`;
+    }
+
+    function leaderCard(row, unit, label) {
+      const detail = [row.number ? `#${row.number}` : "", row.position || ""].filter(Boolean).join(" · ");
+      return `
+        <article class="leader-card">
+          ${leaderImage(row)}
+          <div class="leader-info">
+            <div class="leader-kicker">${esc(label)}</div>
+            <div class="leader-name">${esc(row.name)}</div>
+            <div class="leader-team">${teamCell({ team: row.team, flag: row.flag })}${detail ? ` · ${esc(detail)}` : ""}</div>
+          </div>
+          <div class="leader-score">${row.count}<span class="leader-unit">${esc(unit)}</span></div>
+        </article>
+      `;
+    }
+
+    function renderRanking(targetId, noteId, rows, unit, emptyText, leaderLabel) {
       const target = document.getElementById(targetId);
       const note = document.getElementById(noteId);
       note.textContent = rows.length ? `상위 ${rows.length}명` : "데이터 대기 중";
@@ -2446,9 +2558,10 @@
         return;
       }
 
-      target.innerHTML = rows.map((row, index) => `
+      const [leader, ...rest] = rows;
+      const list = rest.map((row, index) => `
         <div class="rank-row">
-          <div class="rank-num">${index + 1}</div>
+          <div class="rank-num">${row.rank || index + 2}</div>
           <div class="player">
             <div class="player-name">${esc(row.name)}</div>
             <div class="player-team">${teamCell({ team: row.team, flag: row.flag })}</div>
@@ -2456,6 +2569,7 @@
           <div class="rank-score">${row.count}${esc(unit)}</div>
         </div>
       `).join("");
+      target.innerHTML = `${leaderCard(leader, unit, leaderLabel)}${list}`;
     }
 
     function renderStats(live) {
@@ -2463,8 +2577,8 @@
       const naverAssists = naverRankings("assists");
       const scorers = naverScorers.length ? naverScorers : collectRankings(live, "goals");
       const assists = naverAssists.length ? naverAssists : collectRankings(live, "assists");
-      renderRanking("scorers", "scorerNote", scorers, "골", "대회 시작 후 득점자가 집계됩니다.");
-      renderRanking("assists", "assistNote", assists, "도움", "공개 API에 도움 데이터가 제공되면 자동 표시됩니다.");
+      renderRanking("scorers", "scorerNote", scorers, "골", "대회 시작 후 득점자가 집계됩니다.", "득점 선두");
+      renderRanking("assists", "assistNote", assists, "도움", "공개 API에 도움 데이터가 제공되면 자동 표시됩니다.", "도움 선두");
     }
 
     function renderKorea() {
