@@ -505,7 +505,7 @@
     }
     .match {
       display: grid;
-      grid-template-columns: 38px 1fr auto;
+      grid-template-columns: 38px minmax(0, 1fr) auto auto;
       gap: 8px;
       align-items: center;
       color: var(--muted);
@@ -513,11 +513,9 @@
       line-height: 1.45;
       padding: 2px 0;
     }
-    .match.done {
-      opacity: .62;
-    }
     .match.done .time,
     .match.done .teams {
+      opacity: .62;
       text-decoration: line-through;
       text-decoration-thickness: 1px;
       text-decoration-color: rgba(203, 216, 222, .72);
@@ -527,6 +525,23 @@
       color: #cbd8de;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .match-score {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .match-winner {
+      color: #c9f4e5;
+      border: 1px solid rgba(85, 199, 155, .38);
+      border-radius: 999px;
+      padding: 1px 6px;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.3;
       white-space: nowrap;
     }
     .match-badge {
@@ -1961,6 +1976,61 @@
       return now >= estimatedEnd;
     }
 
+    function fixtureTeams(fixture) {
+      return String(fixture && fixture[2] || "")
+        .split(" 대 ")
+        .map((team) => team.trim());
+    }
+
+    function fixtureLiveGame(fixture) {
+      const data = window.WC2026_LIVE_DATA;
+      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
+      const group = String(fixture && fixture[0] || "").toUpperCase();
+      const [homeName, awayName] = fixtureTeams(fixture);
+
+      return games.find((game) => {
+        const sameGroup = String(game.group || "").toUpperCase() === group;
+        const home = teamName(game.home_team_name_en || "");
+        const away = teamName(game.away_team_name_en || "");
+        return sameGroup && home === homeName && away === awayName;
+      });
+    }
+
+    function shortResultTeam(team) {
+      return ({
+        "남아프리카공화국": "남아공",
+        "보스니아 헤르체고비나": "보스니아",
+        "콩고민주공화국": "콩고DR",
+        "사우디아라비아": "사우디"
+      })[team] || team;
+    }
+
+    function fixtureResult(fixture) {
+      const game = fixtureLiveGame(fixture);
+      const fallbackDone = fixtureIsDone(fixture);
+      if (!game) return { done: fallbackDone, score: "", winner: "" };
+
+      const status = String(game.time_elapsed || "").toLowerCase();
+      const done = String(game.finished || "").toUpperCase() === "TRUE" ||
+        ["finished", "fulltime", "full-time", "ft"].includes(status);
+      const hasScore = done || (!["", "notstarted", "lineups"].includes(status) && Number.isFinite(Number(game.home_score)) && Number.isFinite(Number(game.away_score)));
+      if (!hasScore) return { done: done || fallbackDone, score: "", winner: "" };
+
+      const homeScore = num(game.home_score);
+      const awayScore = num(game.away_score);
+      const [homeName, awayName] = fixtureTeams(fixture);
+      const winner =
+        homeScore === awayScore ? "무승부" :
+        homeScore > awayScore ? `${shortResultTeam(homeName)} 승` :
+        `${shortResultTeam(awayName)} 승`;
+
+      return {
+        done: done || fallbackDone,
+        score: `${homeScore}-${awayScore}`,
+        winner: done ? winner : "진행 중"
+      };
+    }
+
     function renderGroups(live) {
       const root = document.getElementById("groups");
       root.innerHTML = Object.keys(GROUPS).map((letter) => {
@@ -1981,11 +2051,13 @@
         }).join("");
 
         const matches = FIXTURES.filter((m) => m[0] === letter).slice(0, 4).map((m) => {
-          const done = fixtureIsDone(m);
+          const result = fixtureResult(m);
+          const done = result.done;
           return `<div class="match${done ? " done" : ""}">
             <span class="time">${esc(m[1])}</span>
             <span class="teams">${esc(m[2])}</span>
-            ${done ? `<span class="match-badge">완료</span>` : ""}
+            ${result.score ? `<span class="match-score">${esc(result.score)}</span>` : ""}
+            ${result.winner ? `<span class="match-winner">${esc(result.winner)}</span>` : done ? `<span class="match-badge">완료</span>` : ""}
           </div>`;
         }).join("");
 
