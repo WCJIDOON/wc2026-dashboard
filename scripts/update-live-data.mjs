@@ -10,11 +10,14 @@ const endpoints = {
   teams: "https://worldcup26.ir/get/teams",
   games: "https://worldcup26.ir/get/games",
   naverTopPlayers: "https://api-gw.sports.naver.com/statistics/categories/worldcup/seasons/3F9X/top-players?includeFields=goals,assists,cleanSheets&limit=10",
+  fifaPotmGames: "https://play.fifa.com/json/player_of_the_match_vote/games.json",
+  fifaPotmPlayers: "https://play.fifa.com/json/player_of_the_match_vote/players.json",
 };
 
 const fifa = {
   apiBase: "https://api.fifa.com/api/v3",
   webBase: "https://www.fifa.com/en/match-centre/match",
+  potmPage: "https://play.fifa.com/potm/en/",
   competitionId: "17",
   seasonId: "285023",
   language: "en",
@@ -133,6 +136,7 @@ function fifaPlayer(player) {
     position: positionLabel(player.Position),
     captain: Boolean(player.Captain),
     fifaId: player.IdPlayer || "",
+    image: player.PlayerPicture?.PictureUrl || "",
     lineupX: player.LineupX ?? null,
     lineupY: player.LineupY ?? null,
   };
@@ -309,6 +313,118 @@ function matchNeedsLiveFetch(match, now = new Date()) {
   return isLineupOrLive || (hoursFromKickoff >= -30 && hoursFromKickoff <= 48);
 }
 
+function playerPictureUrl(player) {
+  return player?.PlayerPicture?.PictureUrl || player?.PictureUrl || "";
+}
+
+function findLivePlayerByFeedId(live, feedId) {
+  if (!feedId) return null;
+  const id = String(feedId);
+  const players = [
+    ...(Array.isArray(live?.HomeTeam?.Players) ? live.HomeTeam.Players : []),
+    ...(Array.isArray(live?.AwayTeam?.Players) ? live.AwayTeam.Players : []),
+  ];
+  return players.find((player) => String(player.IdPlayer || "") === id) || null;
+}
+
+async function fetchPotmData() {
+  const [games, players] = await Promise.all([
+    fetchJson(endpoints.fifaPotmGames),
+    fetchJson(endpoints.fifaPotmPlayers),
+  ]);
+  const playerMap = new Map(
+    (Array.isArray(players) ? players : []).map((player) => [String(player.id), player])
+  );
+
+  return {
+    games: Array.isArray(games) ? games : [],
+    playerMap,
+  };
+}
+
+function indexPotmMatches(matches) {
+  const byTeams = new Map();
+
+  for (const match of matches) {
+    const home = normalizeTeamName(match.homeSquadName);
+    const away = normalizeTeamName(match.awaySquadName);
+    const time = Date.parse(match.date);
+    if (!home || !away) continue;
+
+    const entry = { match, time: Number.isFinite(time) ? time : 0 };
+    for (const key of [`${home}::${away}`, `${away}::${home}`]) {
+      if (!byTeams.has(key)) byTeams.set(key, []);
+      byTeams.get(key).push(entry);
+    }
+  }
+
+  return byTeams;
+}
+
+function findPotmMatch(index, match) {
+  const home = normalizeTeamName(fifaText(match.Home?.TeamName));
+  const away = normalizeTeamName(fifaText(match.Away?.TeamName));
+  const candidates = index.get(`${home}::${away}`) || [];
+  if (!candidates.length) return null;
+  if (candidates.length === 1) return candidates[0].match;
+
+  const kickoff = Date.parse(match.Date);
+  if (!Number.isFinite(kickoff)) return candidates[0].match;
+
+  const best = candidates
+    .map((candidate) => ({ ...candidate, diff: Math.abs(candidate.time - kickoff) }))
+    .sort((a, b) => a.diff - b.diff)[0];
+
+  return best && best.diff <= 12 * 60 * 60 * 1000 ? best.match : null;
+}
+
+function potmPayload(match, playerMap, livePlayer = null, fetchedAt = new Date().toISOString()) {
+  if (!match || !match.winnerId || !match.winnerName) return null;
+
+  const player = playerMap.get(String(match.winnerId)) || {};
+  const name = player.knownName || match.winnerName || player.name || player.shortName || "";
+  if (!name) return null;
+
+  return {
+    provider: "FIFA POTM",
+    fetchedAt,
+    status: match.status || "",
+    matchId: match.id ?? "",
+    matchFeedId: match.feedId ?? match.fifaId ?? "",
+    playerId: match.winnerId,
+    playerFeedId: player.feedId || "",
+    name,
+    shortName: player.shortName || match.winnerName || name,
+    teamCode: player.squadAbbreviation || "",
+    position: player.position || "",
+    image: playerPictureUrl(livePlayer),
+    url: fifa.potmPage,
+  };
+}
+
+function mergePotmIntoGame(game, potmMatch, playerMap, livePlayer = null, fetchedAt = new Date().toISOString()) {
+  const payload = potmPayload(potmMatch, playerMap, livePlayer, fetchedAt);
+  if (!payload) return false;
+
+  const previous = JSON.stringify(game.potm || null);
+  const previousImage = game.potm?.image || "";
+  game.potm = {
+    ...(game.potm || {}),
+    ...payload,
+    image: payload.image || previousImage,
+  };
+  return JSON.stringify(game.potm) !== previous;
+}
+
+function enrichPotmImageFromLive(game, live) {
+  if (!game.potm?.playerFeedId) return false;
+  const player = findLivePlayerByFeedId(live, game.potm.playerFeedId);
+  const image = playerPictureUrl(player);
+  if (!image || game.potm.image === image) return false;
+  game.potm.image = image;
+  return true;
+}
+
 async function fetchFifaMatches() {
   const params = new URLSearchParams({
     idCompetition: fifa.competitionId,
@@ -331,6 +447,17 @@ async function addOfficialLineups(data) {
   const matchesByTeams = indexFifaMatches(matches);
   const liveMatches = new Map();
   const games = data.games.games;
+  let potmData = null;
+  let potmError = "";
+
+  try {
+    potmData = await fetchPotmData();
+  } catch (error) {
+    potmError = error.message;
+    console.warn(`FIFA POTM fetch skipped: ${error.message}`);
+  }
+
+  const potmIndex = potmData ? indexPotmMatches(potmData.games) : new Map();
 
   rebuildGroupsFromFifa(data, matches);
 
@@ -351,6 +478,11 @@ async function addOfficialLineups(data) {
     };
     mergeFifaMatchIntoGame(game, fifaMatch);
 
+    const potmMatch = findPotmMatch(potmIndex, fifaMatch);
+    if (potmMatch) {
+      mergePotmIntoGame(game, potmMatch, potmData.playerMap, null, fetchedAt);
+    }
+
     if (!matchNeedsLiveFetch(fifaMatch)) continue;
 
     try {
@@ -363,6 +495,7 @@ async function addOfficialLineups(data) {
       game.official_match.matchStatus = live.MatchStatus ?? fifaMatch.MatchStatus;
       game.official_match.fetchedAt = fetchedAt;
       mergeFifaMatchIntoGame(game, live);
+      enrichPotmImageFromLive(game, live);
 
       if (hasLineup) {
         game.official_lineups = {
@@ -387,6 +520,17 @@ async function addOfficialLineups(data) {
     matchCount: matches.length,
     liveCheckedCount: liveMatches.size,
     lineupMatchCount: games.filter((game) => game.official_lineups).length,
+    potmMatchCount: games.filter((game) => game.potm).length,
+  };
+
+  data.potm = {
+    provider: "FIFA POTM",
+    pageUrl: fifa.potmPage,
+    fetchedAt,
+    matchCount: potmData?.games.length || 0,
+    winnerCount: potmData ? potmData.games.filter((match) => match.winnerId && match.winnerName).length : 0,
+    attachedCount: games.filter((game) => game.potm).length,
+    ...(potmError ? { error: potmError } : {}),
   };
 }
 
