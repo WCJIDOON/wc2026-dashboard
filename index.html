@@ -2464,6 +2464,73 @@
       map.set(key, current);
     }
 
+    function parseProfileJson(value) {
+      if (!value || typeof value !== "string") return {};
+      try {
+        return JSON.parse(value);
+      } catch (_) {
+        return {};
+      }
+    }
+
+    function normalizePersonName(value) {
+      return stripMarks(value)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim()
+        .replace(/\s+/g, " ");
+    }
+
+    function officialPlayerPhotos() {
+      const data = window.WC2026_LIVE_DATA;
+      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
+      const photos = [];
+
+      for (const game of games) {
+        for (const side of ["home", "away"]) {
+          const team = game.official_lineups && game.official_lineups[side];
+          const players = [
+            ...(team && Array.isArray(team.starters) ? team.starters : []),
+            ...(team && Array.isArray(team.substitutes) ? team.substitutes : [])
+          ];
+          for (const player of players) {
+            if (!player.image) continue;
+            photos.push({
+              image: player.image,
+              code: team.code || "",
+              names: [player.name, player.shortName].map(normalizePersonName).filter(Boolean)
+            });
+          }
+        }
+      }
+
+      return photos;
+    }
+
+    function officialImageForRank(row, profile, photos) {
+      const code = STATIC_CODES[teamName(row.teamShortName || row.teamName || "")] || "";
+      const rawNames = [
+        profile.viewName,
+        row.playerName,
+        row.shortName,
+        row.keyword
+      ].flatMap((value) => String(value || "").split(","));
+      const names = rawNames.map(normalizePersonName).filter(Boolean);
+      if (!names.length) return "";
+
+      const sameTeam = photos.filter((photo) => !code || photo.code === code);
+      const pool = sameTeam.length ? sameTeam : photos;
+
+      for (const candidate of pool) {
+        if (candidate.names.some((photoName) =>
+          names.some((name) => photoName === name || photoName.includes(name) || name.includes(photoName))
+        )) {
+          return candidate.image;
+        }
+      }
+      return "";
+    }
+
     function naverRankings(type) {
       const data = window.WC2026_LIVE_DATA;
       const topPlayers = data && data.naver && data.naver.topPlayers && data.naver.topPlayers.result
@@ -2474,19 +2541,25 @@
       const stat = type === "goals" ? "goals" : "assists";
       const block = topPlayers.find((item) => item && item.type === stat);
       const rows = block && Array.isArray(block.ranks) ? block.ranks : [];
+      const photos = officialPlayerPhotos();
 
       return rows
         .filter((row) => num(row[stat]) > 0)
-        .map((row) => ({
-          rank: num(row.rank) || 0,
-          name: cleanPlayerName(row.playerName || row.shortName || ""),
-          team: teamName(row.teamShortName || row.teamName || ""),
-          flag: row.teamEmblemUrl || "",
-          image: row.image || "",
-          position: row.position || "",
-          number: row.backNumber || "",
-          count: num(row[stat])
-        }))
+        .map((row) => {
+          const profile = parseProfileJson(row.profile);
+          const officialImage = officialImageForRank(row, profile, photos);
+          return {
+            rank: num(row.rank) || 0,
+            name: cleanPlayerName(row.playerName || row.shortName || ""),
+            team: teamName(row.teamShortName || row.teamName || ""),
+            flag: row.teamEmblemUrl || "",
+            image: officialImage || row.image || profile.image || "",
+            fallbackImage: officialImage && row.image ? row.image : "",
+            position: row.position || "",
+            number: row.backNumber || "",
+            count: num(row[stat])
+          };
+        })
         .filter((row) => row.name && row.team)
         .slice(0, 8);
     }
@@ -2530,7 +2603,8 @@
     function leaderImage(row) {
       const initial = playerInitial(row.name);
       if (!row.image) return `<span class="leader-initial">${esc(initial)}</span>`;
-      return `<img class="leader-photo" src="${esc(row.image)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'leader-initial',textContent:'${esc(initial)}'}))">`;
+      const fallback = row.fallbackImage && row.fallbackImage !== row.image ? row.fallbackImage : "";
+      return `<img class="leader-photo" src="${esc(row.image)}" alt="" loading="lazy" data-fallback="${esc(fallback)}" onerror="if(this.dataset.fallback&&!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback}else{this.replaceWith(Object.assign(document.createElement('span'),{className:'leader-initial',textContent:'${esc(initial)}'}))}">`;
     }
 
     function leaderCard(row, unit, label) {
