@@ -628,7 +628,6 @@
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
       gap: 14px;
-      margin-bottom: 10px;
       padding: 14px 16px;
       background: linear-gradient(135deg, rgba(224, 182, 73, .18), rgba(85, 199, 155, .08));
       border: 1px solid rgba(224, 182, 73, .42);
@@ -675,20 +674,49 @@
       font-size: 11px;
       line-height: 1.2;
     }
-    .k-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
+    .k-followups {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
     }
-    .k-card {
-      background: var(--panel-2);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 10px 12px;
+    .k-followups::-webkit-scrollbar {
+      display: none;
     }
-    .k-date { color: var(--accent); font-size: 12px; font-weight: 900; margin-bottom: 5px; }
-    .k-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
-    .k-meta { color: var(--muted); font-size: 12px; }
+    .k-followup-label {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .k-followup {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 28px;
+      padding: 5px 9px;
+      color: var(--muted);
+      background: rgba(16, 29, 35, .66);
+      border: 1px solid rgba(151, 174, 189, .22);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .k-followup time {
+      color: var(--accent);
+      font-weight: 900;
+    }
+    .k-followup strong {
+      color: var(--text);
+      font-weight: 900;
+    }
 
     .stats-grid {
       display: grid;
@@ -864,7 +892,11 @@
       .k-next-dday {
         width: 100%;
       }
-      .k-list { grid-template-columns: 1fr; }
+      .k-followups {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        overflow-x: visible;
+      }
     }
     @media (max-width: 560px) {
       .grid { grid-template-columns: 1fr; }
@@ -2751,12 +2783,17 @@
       return { main: `D-${days}`, sub: "남음" };
     }
 
-    function nextKoreaMatch(now = new Date()) {
-      const matches = KOREA.map((item) => ({
+    function koreaMatches() {
+      return KOREA.map((item) => ({
         raw: item,
         date: parseKoreaDate(item[0])
-      })).filter((item) => item.date);
+      }))
+        .filter((item) => item.date)
+        .sort((a, b) => a.date - b.date);
+    }
 
+    function nextKoreaMatch(now = new Date()) {
+      const matches = koreaMatches();
       return matches.find((item) => item.date.getTime() + 150 * 60 * 1000 >= now.getTime()) ||
         matches[matches.length - 1] ||
         null;
@@ -2764,10 +2801,28 @@
 
     function renderKorea() {
       const root = document.getElementById("korea");
-      const next = nextKoreaMatch();
-      const nextCard = next ? (() => {
-        const [dateLabel, title, venue] = next.raw;
+      const now = new Date();
+      const matches = koreaMatches();
+      const next = nextKoreaMatch(now);
+      root.innerHTML = next ? (() => {
+        const [, title, venue] = next.raw;
         const dday = koreaDdayLabel(next.date);
+        const nextIndex = matches.findIndex((item) => item.raw === next.raw);
+        const followups = matches.slice(nextIndex + 1).filter((item) => item.date.getTime() + 150 * 60 * 1000 >= now.getTime());
+        const followupHtml = followups.length ? `
+          <div class="k-followups" aria-label="대한민국 이후 일정">
+            <span class="k-followup-label">이후 일정</span>
+            ${followups.map((item) => {
+              const [, followTitle] = item.raw;
+              return `
+                <span class="k-followup">
+                  <time>${esc(shortKoreaDate(item.date))}</time>
+                  <strong>${esc(koreaMatchTitle(followTitle))}</strong>
+                </span>
+              `;
+            }).join("")}
+          </div>
+        ` : "";
         return `
           <article class="k-next">
             <div>
@@ -2777,18 +2832,9 @@
             </div>
             <div class="k-next-dday">${esc(dday.main)}<span>${esc(dday.sub)}</span></div>
           </article>
+          ${followupHtml}
         `;
       })() : "";
-
-      const list = KOREA.map((m) => `
-        <article class="k-card">
-          <div class="k-date">${esc(m[0])}</div>
-          <div class="k-title">${esc(m[1])}</div>
-          <div class="k-meta">${esc(m[2])}</div>
-        </article>
-      `).join("");
-
-      root.innerHTML = `${nextCard}<div class="k-list">${list}</div>`;
     }
 
     function renderStatus(live) {
