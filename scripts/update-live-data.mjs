@@ -1,4 +1,5 @@
 ﻿import { writeFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -23,7 +24,11 @@ const fifa = {
   language: "en",
 };
 
-async function fetchJson(url) {
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchJsonOnce(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 20_000);
 
@@ -44,6 +49,22 @@ async function fetchJson(url) {
   } finally {
     clearTimeout(timeout);
   }
+}
+
+async function fetchJson(url, attempts = 3) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await fetchJsonOnce(url);
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) {
+        console.warn(`Fetch retry ${attempt}/${attempts}: ${url} (${error.message})`);
+        await sleep(750 * attempt);
+      }
+    }
+  }
+  throw lastError;
 }
 
 function assertShape(data) {
@@ -534,12 +555,47 @@ async function addOfficialLineups(data) {
   };
 }
 
-const data = {
-  fetchedAt: new Date().toISOString(),
-  groups: await fetchJson(endpoints.groups),
-  teams: await fetchJson(endpoints.teams),
-  games: await fetchJson(endpoints.games),
-};
+async function readPreviousLiveData() {
+  try {
+    const source = await readFile(outputPath, "utf8");
+    const match = source.match(/window\.WC2026_LIVE_DATA\s*=\s*([\s\S]*?);\s*$/);
+    if (!match) return null;
+    return JSON.parse(match[1]);
+  } catch {
+    return null;
+  }
+}
+
+async function fetchCoreData() {
+  const fetchedAt = new Date().toISOString();
+  try {
+    const [groups, teams, games] = await Promise.all([
+      fetchJson(endpoints.groups),
+      fetchJson(endpoints.teams),
+      fetchJson(endpoints.games),
+    ]);
+
+    const fresh = { fetchedAt, groups, teams, games };
+    assertShape(fresh);
+    return fresh;
+  } catch (error) {
+    const previous = await readPreviousLiveData();
+    if (!previous) throw error;
+
+    console.warn(`Core data fetch failed; using previous live data: ${error.message}`);
+    return {
+      ...previous,
+      fetchedAt,
+      staleCoreData: true,
+      coreDataError: {
+        fetchedAt,
+        message: error.message,
+      },
+    };
+  }
+}
+
+const data = await fetchCoreData();
 
 assertShape(data);
 
