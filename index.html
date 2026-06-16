@@ -361,6 +361,188 @@
       font-size: 12px;
       text-align: center;
     }
+
+    .calendar-panel {
+      background: rgba(14, 24, 29, .9);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 0 0 14px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
+    }
+    .calendar-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .calendar-title {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .calendar-sub,
+    .calendar-count {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+    .calendar-count {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .calendar-days {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      padding: 2px 0 9px;
+      margin-bottom: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(224, 182, 73, .5) transparent;
+    }
+    .calendar-day {
+      flex: 0 0 auto;
+      min-width: 68px;
+      border: 1px solid #2b3a46;
+      border-radius: 8px;
+      background: #111b22;
+      color: var(--text);
+      padding: 8px 9px;
+      text-align: left;
+      cursor: pointer;
+    }
+    .calendar-day:hover,
+    .calendar-day:focus-visible {
+      border-color: rgba(224, 182, 73, .66);
+      outline: none;
+    }
+    .calendar-day.active {
+      background: rgba(224, 182, 73, .16);
+      border-color: rgba(224, 182, 73, .75);
+    }
+    .calendar-day.today {
+      box-shadow: inset 0 0 0 1px rgba(85, 199, 155, .22);
+    }
+    .calendar-day-date {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .calendar-day-week {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .calendar-day-count {
+      display: block;
+      margin-top: 5px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+    .calendar-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+    .calendar-card {
+      min-width: 0;
+      background: var(--panel);
+      border: 1px solid #2b3a46;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .calendar-card.live {
+      border-color: rgba(85, 199, 155, .55);
+      box-shadow: inset 0 0 0 1px rgba(85, 199, 155, .12);
+    }
+    .calendar-card.done {
+      opacity: .82;
+    }
+    .calendar-time {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+    .calendar-status {
+      color: var(--muted);
+      border: 1px solid rgba(151, 174, 189, .28);
+      border-radius: 999px;
+      padding: 1px 6px;
+      font-size: 10px;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+    .calendar-card.live .calendar-status {
+      color: #c9f4e5;
+      border-color: rgba(85, 199, 155, .38);
+    }
+    .calendar-teams {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: 8px;
+      margin-top: 9px;
+    }
+    .calendar-side {
+      min-width: 0;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .calendar-side.away {
+      text-align: right;
+    }
+    .calendar-side.away .team-wrap {
+      justify-content: flex-end;
+    }
+    .calendar-score {
+      min-width: 44px;
+      color: var(--text);
+      background: #0f161d;
+      border: 1px solid #293845;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .calendar-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .calendar-result {
+      color: var(--accent);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .calendar-empty {
+      color: var(--muted);
+      border: 1px dashed #344453;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+      text-align: center;
+    }
     .lineup-modal {
       position: fixed;
       inset: 0;
@@ -883,6 +1065,8 @@
       .countdown-value { font-size: 23px; }
       .today-top { align-items: start; flex-direction: column; gap: 4px; }
       .today-count { text-align: left; white-space: normal; }
+      .calendar-top { align-items: start; flex-direction: column; gap: 4px; }
+      .calendar-count { text-align: left; white-space: normal; }
       .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
       .stats-grid { grid-template-columns: 1fr; }
       .k-next {
@@ -973,6 +1157,18 @@
         <div class="today-count" id="todayMatchCount"></div>
       </div>
       <div class="today-list" id="todayMatches"></div>
+    </section>
+
+    <section class="calendar-panel" id="worldCupCalendar">
+      <div class="calendar-top">
+        <div>
+          <div class="calendar-title">월드컵 캘린더</div>
+          <div class="calendar-sub" id="calendarSub">한국시간 기준</div>
+        </div>
+        <div class="calendar-count" id="calendarCount"></div>
+      </div>
+      <div class="calendar-days" id="calendarDays" role="tablist" aria-label="경기 날짜"></div>
+      <div class="calendar-list" id="calendarMatches"></div>
     </section>
 
     <div class="lineup-modal" id="lineupModal" aria-hidden="true">
@@ -1309,6 +1505,7 @@
     ];
 
     let TODAY_MATCH_ROWS = [];
+    let CALENDAR_SELECTED_KEY = "";
     let LINEUP_CLOSE_TIMER = null;
     let ACTIVE_LINEUP_TRIGGER = null;
 
@@ -2081,6 +2278,138 @@
       sub.textContent = mode === "today" ? `${label} · 한국시간` : `다음 경기일 · ${label} · 한국시간`;
       count.textContent = `${mode === "today" ? "오늘" : "다음"} ${visible.length}경기`;
       root.innerHTML = visible.map(todayMatchCard).join("");
+    }
+
+    function calendarShortDate(date) {
+      return `${pad2(date.getUTCMonth() + 1)}/${pad2(date.getUTCDate())}`;
+    }
+
+    function calendarWeekday(date) {
+      return new Intl.DateTimeFormat("ko-KR", {
+        timeZone: "UTC",
+        weekday: "short"
+      }).format(date);
+    }
+
+    function calendarKickoffTime(date) {
+      return `${pad2(date.getUTCHours())}:${pad2(date.getUTCMinutes())}`;
+    }
+
+    function calendarDateGroups(rows) {
+      const groups = new Map();
+      for (const row of rows) {
+        if (!row.dateKey) continue;
+        if (!groups.has(row.dateKey)) {
+          groups.set(row.dateKey, {
+            key: row.dateKey,
+            date: row.kstDate,
+            rows: []
+          });
+        }
+        groups.get(row.dateKey).rows.push(row);
+      }
+      return Array.from(groups.values()).sort((a, b) => a.date - b.date);
+    }
+
+    function defaultCalendarKey(groups, now = new Date()) {
+      if (!groups.length) return "";
+      const nowKst = kstClockDate(now);
+      const todayKey = kstDateKey(nowKst);
+      if (groups.some((group) => group.key === todayKey)) return todayKey;
+      const upcoming = groups.find((group) => group.rows.some((row) => row.kstDate >= nowKst));
+      return (upcoming || groups[groups.length - 1]).key;
+    }
+
+    function calendarResultLabel(row) {
+      if (row.statusClass !== "done") return "";
+      const found = String(row.score || "").match(/^(\d+)\s*-\s*(\d+)$/);
+      if (!found) return "";
+      const homeScore = Number(found[1]);
+      const awayScore = Number(found[2]);
+      if (homeScore === awayScore) return "무승부";
+      return homeScore > awayScore
+        ? `${shortResultTeam(row.home.team)} 승`
+        : `${shortResultTeam(row.away.team)} 승`;
+    }
+
+    function calendarMatchCard(row) {
+      const statusClass = row.statusClass ? ` ${row.statusClass}` : "";
+      const venue = row.venue ? ` · ${row.venue}` : "";
+      const result = calendarResultLabel(row);
+      return `
+        <article class="calendar-card${statusClass}">
+          <div class="calendar-time">
+            <span>${esc(calendarKickoffTime(row.kstDate))}</span>
+            <span class="calendar-status">${esc(row.status)}</span>
+          </div>
+          <div class="calendar-teams">
+            <div class="calendar-side home">${teamCell(row.home)}</div>
+            <div class="calendar-score">${esc(row.score)}</div>
+            <div class="calendar-side away">${teamCell(row.away)}</div>
+          </div>
+          <div class="calendar-meta">
+            <span>${esc(row.stage)}${esc(venue)}</span>
+            ${result ? `<span class="calendar-result">${esc(result)}</span>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderCalendar(live, preferredKey = CALENDAR_SELECTED_KEY, now = new Date()) {
+      const daysRoot = document.getElementById("calendarDays");
+      const matchesRoot = document.getElementById("calendarMatches");
+      const sub = document.getElementById("calendarSub");
+      const count = document.getElementById("calendarCount");
+      if (!daysRoot || !matchesRoot || !sub || !count) return;
+
+      const liveRows = liveMatchRows();
+      const rows = liveRows.length ? liveRows : staticMatchRows();
+      const groups = calendarDateGroups(rows);
+      if (!groups.length) {
+        CALENDAR_SELECTED_KEY = "";
+        sub.textContent = "한국시간 기준";
+        count.textContent = "0경기";
+        daysRoot.innerHTML = "";
+        matchesRoot.innerHTML = `<div class="calendar-empty">표시할 경기 일정이 없습니다.</div>`;
+        return;
+      }
+
+      const todayKey = kstDateKey(kstClockDate(now));
+      const validPreferred = groups.some((group) => group.key === preferredKey);
+      const selectedKey = validPreferred ? preferredKey : defaultCalendarKey(groups, now);
+      CALENDAR_SELECTED_KEY = selectedKey;
+      const selected = groups.find((group) => group.key === selectedKey) || groups[0];
+      const selectedRows = selected.rows.slice().sort((a, b) => a.kstDate - b.kstDate);
+
+      daysRoot.innerHTML = groups.map((group) => {
+        const active = group.key === selected.key;
+        const isToday = group.key === todayKey;
+        return `
+          <button class="calendar-day${active ? " active" : ""}${isToday ? " today" : ""}" type="button" role="tab" aria-selected="${active ? "true" : "false"}" data-date-key="${esc(group.key)}">
+            <span class="calendar-day-date">${esc(calendarShortDate(group.date))}</span>
+            <span class="calendar-day-week">${esc(calendarWeekday(group.date))}</span>
+            <span class="calendar-day-count">${group.rows.length}경기</span>
+          </button>
+        `;
+      }).join("");
+
+      sub.textContent = `${formatKstDate(selected.date)} · 한국시간`;
+      count.textContent = `${selectedRows.length}경기`;
+      matchesRoot.innerHTML = selectedRows.length
+        ? selectedRows.map(calendarMatchCard).join("")
+        : `<div class="calendar-empty">이 날짜에 표시할 경기가 없습니다.</div>`;
+    }
+
+    function bindCalendarEvents() {
+      const root = document.getElementById("calendarDays");
+      if (!root || root.dataset.calendarBound) return;
+      root.addEventListener("click", (event) => {
+        const button = event.target.closest(".calendar-day");
+        if (!button) return;
+        CALENDAR_SELECTED_KEY = button.dataset.dateKey || "";
+        renderCalendar(liveStandings());
+      });
+      root.dataset.calendarBound = "true";
     }
 
     function playerEntry(value) {
@@ -2874,6 +3203,8 @@
 
       const live = liveStandings();
       renderTodayMatches(live);
+      renderCalendar(live);
+      bindCalendarEvents();
       bindLineupEvents();
       renderStats(live);
       renderGroups(live);
@@ -2885,6 +3216,7 @@
           if (!updated) return;
           const refreshed = liveStandings();
           renderTodayMatches(refreshed);
+          renderCalendar(refreshed);
           renderStats(refreshed);
           renderGroups(refreshed);
           renderStatus(refreshed);
