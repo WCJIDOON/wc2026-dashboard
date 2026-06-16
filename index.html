@@ -622,6 +622,60 @@
 
     .korea {
       margin: 0 0 14px;
+    }
+    .k-next {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, rgba(224, 182, 73, .18), rgba(85, 199, 155, .08));
+      border: 1px solid rgba(224, 182, 73, .42);
+      border-left: 4px solid var(--good);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
+    }
+    .k-next-kicker {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .k-next-title {
+      margin-top: 4px;
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.15;
+      overflow-wrap: anywhere;
+    }
+    .k-next-meta {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .k-next-dday {
+      min-width: 96px;
+      color: #101820;
+      background: var(--accent);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .k-next-dday span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(16, 24, 32, .72);
+      font-size: 11px;
+      line-height: 1.2;
+    }
+    .k-list {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
@@ -803,7 +857,14 @@
       .today-count { text-align: left; white-space: normal; }
       .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
       .stats-grid { grid-template-columns: 1fr; }
-      .korea { grid-template-columns: 1fr; }
+      .k-next {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+      .k-next-dday {
+        width: 100%;
+      }
+      .k-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
       .grid { grid-template-columns: 1fr; }
@@ -2655,14 +2716,79 @@
       renderRanking("assists", "assistNote", assists, "도움", "공개 API에 도움 데이터가 제공되면 자동 표시됩니다.", "도움 선두");
     }
 
+    function parseKoreaDate(label) {
+      const match = String(label || "").match(/^(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일\s*(\d{1,2}):(\d{2})$/);
+      if (!match) return null;
+      const [, year, month, day, hour, minute] = match;
+      return new Date(
+        Number(year),
+        Number(month) - 1,
+        Number(day),
+        Number(hour),
+        Number(minute)
+      );
+    }
+
+    function koreaMatchTitle(title) {
+      const teams = String(title || "").split(" 대 ").map((item) => item.trim()).filter(Boolean);
+      if (teams.length !== 2) return title;
+      if (teams[0] === "대한민국") return `${teams[0]} vs ${teams[1]}`;
+      if (teams[1] === "대한민국") return `${teams[1]} vs ${teams[0]}`;
+      return `${teams[0]} vs ${teams[1]}`;
+    }
+
+    function shortKoreaDate(date) {
+      return `${pad2(date.getMonth() + 1)}/${pad2(date.getDate())} ${pad2(date.getHours())}:${pad2(date.getMinutes())}`;
+    }
+
+    function koreaDdayLabel(date, now = new Date()) {
+      const diff = date.getTime() - now.getTime();
+      const end = date.getTime() + 150 * 60 * 1000;
+      if (diff <= 0 && now.getTime() <= end) return { main: "LIVE", sub: "진행 중" };
+      if (diff < 0) return { main: "종료", sub: "완료" };
+      const days = Math.ceil(diff / 86400000);
+      if (days <= 0) return { main: "D-DAY", sub: "오늘" };
+      return { main: `D-${days}`, sub: "남음" };
+    }
+
+    function nextKoreaMatch(now = new Date()) {
+      const matches = KOREA.map((item) => ({
+        raw: item,
+        date: parseKoreaDate(item[0])
+      })).filter((item) => item.date);
+
+      return matches.find((item) => item.date.getTime() + 150 * 60 * 1000 >= now.getTime()) ||
+        matches[matches.length - 1] ||
+        null;
+    }
+
     function renderKorea() {
-      document.getElementById("korea").innerHTML = KOREA.map((m) => `
+      const root = document.getElementById("korea");
+      const next = nextKoreaMatch();
+      const nextCard = next ? (() => {
+        const [dateLabel, title, venue] = next.raw;
+        const dday = koreaDdayLabel(next.date);
+        return `
+          <article class="k-next">
+            <div>
+              <div class="k-next-kicker">대한민국 다음 경기</div>
+              <div class="k-next-title">${esc(koreaMatchTitle(title))}</div>
+              <div class="k-next-meta">${esc(shortKoreaDate(next.date))} · ${esc(venue)} · 한국시간</div>
+            </div>
+            <div class="k-next-dday">${esc(dday.main)}<span>${esc(dday.sub)}</span></div>
+          </article>
+        `;
+      })() : "";
+
+      const list = KOREA.map((m) => `
         <article class="k-card">
           <div class="k-date">${esc(m[0])}</div>
           <div class="k-title">${esc(m[1])}</div>
           <div class="k-meta">${esc(m[2])}</div>
         </article>
       `).join("");
+
+      root.innerHTML = `${nextCard}<div class="k-list">${list}</div>`;
     }
 
     function renderStatus(live) {
