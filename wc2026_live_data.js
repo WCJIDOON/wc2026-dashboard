@@ -1,5 +1,5 @@
 window.WC2026_LIVE_DATA = {
-  "fetchedAt": "2026-06-22T16:15:24.072Z",
+  "fetchedAt": "2026-06-22T22:27:28.801Z",
   "groups": {
     "groups": [
       {
@@ -448,25 +448,25 @@ window.WC2026_LIVE_DATA = {
         "teams": [
           {
             "team_id": "37",
-            "mp": "1",
-            "w": "1",
+            "mp": "2",
+            "w": "2",
             "l": "0",
             "d": "0",
-            "pts": "3",
-            "gf": "3",
+            "pts": "6",
+            "gf": "5",
             "ga": "0",
-            "gd": "3"
+            "gd": "5"
           },
           {
             "team_id": "39",
-            "mp": "1",
+            "mp": "2",
             "w": "1",
-            "l": "0",
+            "l": "1",
             "d": "0",
             "pts": "3",
             "gf": "3",
-            "ga": "1",
-            "gd": "2"
+            "ga": "3",
+            "gd": "0"
           },
           {
             "team_id": "40",
@@ -1110,7 +1110,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 1,
           "matchFeedId": 2608241,
@@ -1156,7 +1156,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 2,
           "matchFeedId": 2608242,
@@ -1202,7 +1202,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 3,
           "matchFeedId": 2608243,
@@ -1248,7 +1248,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 4,
           "matchFeedId": 2608247,
@@ -1294,7 +1294,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 7,
           "matchFeedId": 2608246,
@@ -1340,7 +1340,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 8,
           "matchFeedId": 2608248,
@@ -1386,7 +1386,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 6,
           "matchFeedId": 2608245,
@@ -1432,7 +1432,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 5,
           "matchFeedId": 2608244,
@@ -1478,7 +1478,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 11,
           "matchFeedId": 2608250,
@@ -1524,7 +1524,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 9,
           "matchFeedId": 2608249,
@@ -1570,7 +1570,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 10,
           "matchFeedId": 2608251,
@@ -1616,7 +1616,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 12,
           "matchFeedId": 2608252,
@@ -1662,7 +1662,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 16,
           "matchFeedId": 2608254,
@@ -1708,7 +1708,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 13,
           "matchFeedId": 2608255,
@@ -1754,7 +1754,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 14,
           "matchFeedId": 2608253,
@@ -1800,7 +1800,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 15,
           "matchFeedId": 2608256,
@@ -1846,7 +1846,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 17,
           "matchFeedId": 2608257,
@@ -1892,7 +1892,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 18,
           "matchFeedId": 2608258,
@@ -1938,7 +1938,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 19,
           "matchFeedId": 2608259,
@@ -1984,7 +1984,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 20,
           "matchFeedId": 2608260,
@@ -2030,7 +2030,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 21,
           "matchFeedId": 2608261,
@@ -2076,7 +2076,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 22,
           "matchFeedId": 2608263,
@@ -2122,7 +2122,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 24,
           "matchFeedId": 2608262,
@@ -2168,7 +2168,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 23,
           "matchFeedId": 2608264,
@@ -2214,7 +2214,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 28,
           "matchFeedId": 2608265,
@@ -2260,7 +2260,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 26,
           "matchFeedId": 2608268,
@@ -2306,7 +2306,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 27,
           "matchFeedId": 2608267,
@@ -2352,7 +2352,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 25,
           "matchFeedId": 2608266,
@@ -2398,7 +2398,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 31,
           "matchFeedId": 2608269,
@@ -2444,7 +2444,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 30,
           "matchFeedId": 2608270,
@@ -2490,7 +2490,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 29,
           "matchFeedId": 2608271,
@@ -2536,7 +2536,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 32,
           "matchFeedId": 2608272,
@@ -2582,7 +2582,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 34,
           "matchFeedId": 2608273,
@@ -2592,605 +2592,8 @@ window.WC2026_LIVE_DATA = {
           "shortName": "D. Undav",
           "teamCode": "GER",
           "position": "FWD",
-          "image": "https://digitalhub.fifa.com/transform/3ec30e08-a7eb-4781-aea8-0e9ff86ebef1/UNDAV-Deniz_484851",
+          "image": "",
           "url": "https://play.fifa.com/potm/en/"
-        },
-        "official_lineups": {
-          "provider": "FIFA",
-          "fetchedAt": "2026-06-21T22:00:30.280Z",
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021469",
-          "home": {
-            "team": "Germany",
-            "code": "GER",
-            "formation": "4-2-3-1",
-            "coach": "Mads BUTTGEREIT",
-            "starters": [
-              {
-                "name": "Manuel NEUER",
-                "shortName": "Manuel NEUER",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "228912",
-                "image": "https://digitalhub.fifa.com/transform/e3701d06-66b5-4728-8bad-fea05319b6b8/NEUER-Manuel_228912",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jonathan TAH",
-                "shortName": "Jonathan TAH",
-                "number": 4,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "401378",
-                "image": "https://digitalhub.fifa.com/transform/34f74ca0-1102-446c-b098-02decdf58b8d/TAH-Jonathan_401378",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Joshua KIMMICH",
-                "shortName": "Joshua KIMMICH",
-                "number": 6,
-                "position": "DF",
-                "captain": true,
-                "fifaId": "386413",
-                "image": "https://digitalhub.fifa.com/transform/ada33dfd-5b01-4792-88f4-14c06641509e/KIMMICH-Joshua_386413",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nico SCHLOTTERBECK",
-                "shortName": "Nico SCHLOTTERBECK",
-                "number": 15,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430667",
-                "image": "https://digitalhub.fifa.com/transform/3ece206c-50ae-4b63-ac21-a174f2fbb35a/SCHLOTTERBECK-Nico_430667",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nathaniel BROWN",
-                "shortName": "Nathaniel BROWN",
-                "number": 18,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "511015",
-                "image": "https://digitalhub.fifa.com/transform/68e13808-182e-46b6-a6ec-a54136a57c1b/BROWN-Nathaniel_511015",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Aleksandar PAVLOVIC",
-                "shortName": "Aleksandar PAVLOVIC",
-                "number": 5,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "484849",
-                "image": "https://digitalhub.fifa.com/transform/7cfb5f20-6f8a-4329-97a2-be3cb66fea0f/PAVLOVIC-Aleksandar_484849",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jamal MUSIALA",
-                "shortName": "Jamal MUSIALA",
-                "number": 10,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "429642",
-                "image": "https://digitalhub.fifa.com/transform/05f50027-268f-43ff-ba75-1b477b37ca60/MUSIALA-Jamal_429642",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Florian WIRTZ",
-                "shortName": "Florian WIRTZ",
-                "number": 17,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430669",
-                "image": "https://digitalhub.fifa.com/transform/3a120189-62cc-441f-b862-7fdd2a9abfa4/WIRTZ-Florian_430669",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Leroy SANE",
-                "shortName": "Leroy SANE",
-                "number": 19,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "404353",
-                "image": "https://digitalhub.fifa.com/transform/097a6749-47b0-4285-a1f9-8aa0ac0e2c12/SANE-Leroy_404353",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Felix NMECHA",
-                "shortName": "Felix NMECHA",
-                "number": 23,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "492363",
-                "image": "https://digitalhub.fifa.com/transform/9895941b-9be6-4900-a336-493f1237b0e6/NMECHA-Felix_492363",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kai HAVERTZ",
-                "shortName": "Kai HAVERTZ",
-                "number": 7,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "411367",
-                "image": "https://digitalhub.fifa.com/transform/1fdd4d11-97d1-4392-b345-5a5eecc54839/HAVERTZ-Kai_411367",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Oliver Baumann",
-                "shortName": "Oliver BAUMANN",
-                "number": 12,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "306538",
-                "image": "https://digitalhub.fifa.com/transform/9da65f41-ea53-4209-b2f6-c59e69dbc193/BAUMANN-Oliver_306538",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alexander NUEBEL",
-                "shortName": "Alexander NUEBEL",
-                "number": 21,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "429639",
-                "image": "https://digitalhub.fifa.com/transform/9d30bb13-c082-4759-90e7-e0bde4305d1f/NUEBEL-Alexander_429639",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Antonio RUEDIGER",
-                "shortName": "Antonio RUEDIGER",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "379955",
-                "image": "https://digitalhub.fifa.com/transform/88c43fe2-0c78-437c-a2bf-388c3673c58c/RUEDIGER-Antonio_379955",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Waldemar ANTON",
-                "shortName": "Waldemar ANTON",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430658",
-                "image": "https://digitalhub.fifa.com/transform/2bdd66d9-f9dc-44ab-8c6e-ededdb004f77/ANTON-Waldemar_430658",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "David RAUM",
-                "shortName": "David RAUM",
-                "number": 22,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430657",
-                "image": "https://digitalhub.fifa.com/transform/ce3509c6-13ad-441a-8d05-9d42f8a4578c/RAUM-David_430657",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Malick THIAW",
-                "shortName": "Malick THIAW",
-                "number": 24,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "514188",
-                "image": "https://digitalhub.fifa.com/transform/eaa37355-0eca-4954-845c-437aa602db42/THIAW-Malick_514188",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Leon GORETZKA",
-                "shortName": "Leon GORETZKA",
-                "number": 8,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "379953",
-                "image": "https://digitalhub.fifa.com/transform/a5e5e083-d89c-4be7-a367-8456e0f8cb35/GORETZKA-Leon_379953",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jamie LEWELING",
-                "shortName": "Jamie LEWELING",
-                "number": 9,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "491218",
-                "image": "https://digitalhub.fifa.com/transform/a53f7aa4-eaba-4bb1-9654-e563adb10d2e/LEWELING-Jamie_491218",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Pascal GROSS",
-                "shortName": "Pascal GROSS",
-                "number": 13,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "484848",
-                "image": "https://digitalhub.fifa.com/transform/c7eaa0cd-48e1-4349-a6d9-dd00553b7913/GROSS-Pascal_484848",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Angelo Stiller",
-                "shortName": "Angelo STILLER",
-                "number": 16,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "429640",
-                "image": "https://digitalhub.fifa.com/transform/69c7b030-2ce8-479c-9cd4-a7d62e48d9a4/STILLER-Angelo_429640",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nadiem Amiri",
-                "shortName": "Nadiem AMIRI",
-                "number": 20,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "395471",
-                "image": "https://digitalhub.fifa.com/transform/3c1dcefe-5f38-479a-ac6a-091a86cb7663/AMIRI-Nadiem_395471",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Assan OUEDRAOGO",
-                "shortName": "Assan OUEDRAOGO",
-                "number": 25,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "475195",
-                "image": "https://digitalhub.fifa.com/transform/3bdd0feb-2965-4dff-9aa1-22b6d769e90d/OUEDRAOGO-Assan_475195",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nick WOLTEMADE",
-                "shortName": "Nick WOLTEMADE",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "498416",
-                "image": "https://digitalhub.fifa.com/transform/e93d4ee5-827d-47bc-b3d5-3f1c38e7293e/WOLTEMADE-Nick_498416",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Maximilian BEIER",
-                "shortName": "Maximilian BEIER",
-                "number": 14,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "484850",
-                "image": "https://digitalhub.fifa.com/transform/34e90391-c4b4-4a96-9b57-71c45bb584c2/BEIER-Maximilian_484850",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Deniz UNDAV",
-                "shortName": "Deniz UNDAV",
-                "number": 26,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "484851",
-                "image": "https://digitalhub.fifa.com/transform/3ec30e08-a7eb-4781-aea8-0e9ff86ebef1/UNDAV-Deniz_484851",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          },
-          "away": {
-            "team": "Côte d'Ivoire",
-            "code": "CIV",
-            "formation": "4-1-2-3",
-            "coach": "Alain GOUAMENE",
-            "starters": [
-              {
-                "name": "Yahia Fofana",
-                "shortName": "Yahia FOFANA",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "405873",
-                "image": "https://digitalhub.fifa.com/transform/c5bc8a38-479f-4c33-b8f6-9ab95bb45b57/FOFANA-Yahia_405873",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ghislain KONAN",
-                "shortName": "Ghislain KONAN",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "407343",
-                "image": "https://digitalhub.fifa.com/transform/8b0c92b7-4756-42a3-8cc8-b997693ff4aa/KONAN-Ghislain_407343",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Wilfried SINGO",
-                "shortName": "Wilfried SINGO",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430854",
-                "image": "https://digitalhub.fifa.com/transform/3b02f719-a68a-46ae-a249-e7b6538a5714/SINGO-Wilfried_430854",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Odilon KOSSOUNOU",
-                "shortName": "Odilon KOSSOUNOU",
-                "number": 7,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "477825",
-                "image": "https://digitalhub.fifa.com/transform/c3d01f63-7112-4a0d-a50b-0d85927676e9/KOSSOUNOU-Odilon_477825",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Emmanuel AGBADOU",
-                "shortName": "Emmanuel AGBADOU",
-                "number": 20,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "486268",
-                "image": "https://digitalhub.fifa.com/transform/d092f8c9-f80e-40e0-ad73-bfa861784408/AGBADOU-Emmanuel_486268",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Franck KESSIE",
-                "shortName": "Franck KESSIE",
-                "number": 8,
-                "position": "MF",
-                "captain": true,
-                "fifaId": "371609",
-                "image": "https://digitalhub.fifa.com/transform/2e649ed1-5e23-4de2-aafc-79fac130f5f0/KESSIE-Franck_371609",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ibrahim SANGARE",
-                "shortName": "Ibrahim SANGARE",
-                "number": 18,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430831",
-                "image": "https://digitalhub.fifa.com/transform/daeaedd3-2c74-4fef-a968-2247f5ac962e/SANGARE-Ibrahim_430831",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Christ Inao OULAI",
-                "shortName": "Christ Inao OULAI",
-                "number": 26,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "514208",
-                "image": "https://digitalhub.fifa.com/transform/a1bae10b-b280-4234-81c1-063fa931cd02/OULAI-Christ-Inao_514208",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ange-Yoan BONNY",
-                "shortName": "Ange-Yoan BONNY",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "464103",
-                "image": "https://digitalhub.fifa.com/transform/c2bd7f75-2634-437d-9b8e-45d23380a755/BONNY-Ange-Yoan_464103",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yan DIOMANDE",
-                "shortName": "Yan DIOMANDE",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "510922",
-                "image": "https://digitalhub.fifa.com/transform/4218dafb-b39b-4640-ac2f-e1d9f104aa6a/DIOMANDE-Yan_510922",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Amad DIALLO",
-                "shortName": "Amad DIALLO",
-                "number": 15,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "430822",
-                "image": "https://digitalhub.fifa.com/transform/92354f59-681a-4409-b1eb-0e0744a78da8/DIALLO-Amad_430822",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Mohamed KONE",
-                "shortName": "Mohamed KONE",
-                "number": 16,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "486259",
-                "image": "https://digitalhub.fifa.com/transform/937ed103-c12b-4931-83f1-ee615a67858e/HASSAN-ALTAMBAKTI_403335",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alban Lafont",
-                "shortName": "Alban LAFONT",
-                "number": 23,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "403090",
-                "image": "https://digitalhub.fifa.com/transform/4387ca2a-2c1e-4bee-baad-95e9485a4ba0/LAFONT-Alban_403090",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ousmane DIOMANDE",
-                "shortName": "Ousmane DIOMANDE",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "477802",
-                "image": "https://digitalhub.fifa.com/transform/45b55597-6503-4470-a778-af125afb698a/DIOMANDE-Ousmane_477802",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Christopher OPERI",
-                "shortName": "Christopher OPERI",
-                "number": 13,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "486260",
-                "image": "https://digitalhub.fifa.com/transform/7ed2ec22-290b-40bb-a4a9-4c3374aa3e91/OPERI-Christopher_486260",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Guela DOUE",
-                "shortName": "Guela DOUE",
-                "number": 17,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "486317",
-                "image": "https://digitalhub.fifa.com/transform/9c597f58-ad63-4248-ac8b-b36e71f7b811/DOUE-Guela_486317",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Evan NDICKA",
-                "shortName": "Evan NDICKA",
-                "number": 21,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "419172",
-                "image": "https://digitalhub.fifa.com/transform/e308dd93-4706-4ed9-80a2-1db8e4a52d6c/PAUGAIN-Wilguens_419172",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jean Michael SERI",
-                "shortName": "Jean Michael SERI",
-                "number": 4,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "335807",
-                "image": "https://digitalhub.fifa.com/transform/115c99fd-ddc4-4f97-bc20-2cb7dae80735/SERI-Jean-Michael_335807",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Seko Fofana",
-                "shortName": "Seko FOFANA",
-                "number": 6,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "405175",
-                "image": "https://digitalhub.fifa.com/transform/08197d78-88b8-458f-9ad9-de192f25313c/FOFANA-Seko_405175",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Parfait GUIAGON",
-                "shortName": "Parfait GUIAGON",
-                "number": 25,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430834",
-                "image": "https://digitalhub.fifa.com/transform/675938a7-c82b-4d9f-8cf8-6e7a42146489/GUIAGON-Parfait_430834",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Simon ADINGRA",
-                "shortName": "Simon ADINGRA",
-                "number": 10,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "477778",
-                "image": "https://digitalhub.fifa.com/transform/ba7341af-8a89-4260-9711-37bec1618ff2/ADINGRA-Simon_477778",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Elye WAHI",
-                "shortName": "Elye WAHI",
-                "number": 12,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "464133",
-                "image": "https://digitalhub.fifa.com/transform/088ceea5-0bdc-4615-9fc2-a99fe888fe44/WAHI-Elye_464133",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Oumar DIAKITE",
-                "shortName": "Oumar DIAKITE",
-                "number": 14,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "477777",
-                "image": "https://digitalhub.fifa.com/transform/1c9072f7-1c82-483b-9f41-a749332fff71/DIAKITE-Oumar_477777",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nicolas PEPE",
-                "shortName": "Nicolas PEPE",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "402261",
-                "image": "https://digitalhub.fifa.com/transform/1c7519d2-960c-4d19-83e7-40a155f1a8eb/PEPE-Nicolas_402261",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Evann GUESSAND",
-                "shortName": "Evann GUESSAND",
-                "number": 22,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "485675",
-                "image": "https://digitalhub.fifa.com/transform/a5543d71-798f-42a0-aef9-201b86bc75c1/GUESSAND-Evann_485675",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Bazoumana TOURE",
-                "shortName": "Bazoumana TOURE",
-                "number": 24,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "506202",
-                "image": "https://digitalhub.fifa.com/transform/fa213cf7-928a-49ab-acc9-b6f5059b188c/TOURE-Bazoumana_506202",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          }
         }
       },
       {
@@ -3225,7 +2628,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 35,
           "matchFeedId": 2608274,
@@ -3235,605 +2638,8 @@ window.WC2026_LIVE_DATA = {
           "shortName": "E. Room",
           "teamCode": "CUW",
           "position": "GK",
-          "image": "https://digitalhub.fifa.com/transform/5bd9ff87-6801-46d2-8f10-ca9eb3ea2ea4/ROOM-Eloy_390650",
+          "image": "",
           "url": "https://play.fifa.com/potm/en/"
-        },
-        "official_lineups": {
-          "provider": "FIFA",
-          "fetchedAt": "2026-06-21T22:00:30.280Z",
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021465",
-          "home": {
-            "team": "Ecuador",
-            "code": "ECU",
-            "formation": "3-5-2",
-            "coach": "Sebastián Andrés Beccacece",
-            "starters": [
-              {
-                "name": "Hernan GALINDEZ",
-                "shortName": "Hernan GALINDEZ",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "441236",
-                "image": "https://digitalhub.fifa.com/transform/679fc90e-2f98-4494-a4dd-f26442fae6d3/GALINDEZ-Hernan_441236",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Piero HINCAPIE",
-                "shortName": "Piero HINCAPIE",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "424031",
-                "image": "https://digitalhub.fifa.com/transform/b8f68e80-3057-4fbf-be1e-8cf885a713e1/HINCAPIE-Piero_424031",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Willian PACHO",
-                "shortName": "Willian PACHO",
-                "number": 6,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "448290",
-                "image": "https://digitalhub.fifa.com/transform/cda5e4c5-69a6-46ee-b6d1-230be57c4847/PACHO-Willian_448290",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Pervis ESTUPINAN",
-                "shortName": "Pervis ESTUPINAN",
-                "number": 7,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "389782",
-                "image": "https://digitalhub.fifa.com/transform/85df33e2-083f-4cef-9fa2-3a8fc7d29466/ESTUPINAN-Pervis_389782",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jordy ALCIVAR",
-                "shortName": "Jordy ALCIVAR",
-                "number": 5,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "419005",
-                "image": "https://digitalhub.fifa.com/transform/7f7492dc-4cdc-41c2-8acc-91ccad4d9664/ALCIVAR-Jordy_419005",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Pedro VITE",
-                "shortName": "Pedro VITE",
-                "number": 15,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "424036",
-                "image": "https://digitalhub.fifa.com/transform/0eceba19-8ceb-4cbc-ba7c-81b158e277bd/VITE-Pedro_424036",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alan FRANCO",
-                "shortName": "Alan FRANCO",
-                "number": 21,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "389784",
-                "image": "https://digitalhub.fifa.com/transform/59ffe3d1-0963-44f5-861e-9eb6590d8fce/FRANCO-Alan_389784",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Moises CAICEDO",
-                "shortName": "Moises CAICEDO",
-                "number": 23,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "428885",
-                "image": "https://digitalhub.fifa.com/transform/ae32bbc5-09f0-4743-ae0a-5b80461bdc79/CAICEDO-Moises_428885",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "John YEBOAH",
-                "shortName": "John YEBOAH",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "405920",
-                "image": "https://digitalhub.fifa.com/transform/1fc64d7c-4383-4c61-bd76-f22f22b91a8f/YEBOAH-John_405920",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Enner VALENCIA",
-                "shortName": "Enner VALENCIA",
-                "number": 13,
-                "position": "FW",
-                "captain": true,
-                "fifaId": "373400",
-                "image": "https://digitalhub.fifa.com/transform/4688cb2a-6446-4439-ba5f-e4db7b5a18c5/VALENCIA-Enner_373400",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Gonzalo PLATA",
-                "shortName": "Gonzalo PLATA",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "419020",
-                "image": "https://digitalhub.fifa.com/transform/743cc231-ab9e-45b7-8d59-ce8655280ae1/PLATA-Gonzalo_419020",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Moises RAMIREZ",
-                "shortName": "Moises RAMIREZ",
-                "number": 12,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "419002",
-                "image": "https://digitalhub.fifa.com/transform/3a641146-b759-48d0-983f-b85bb1232cc4/RAMIREZ-Moises_419002",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Gonzalo VALLE",
-                "shortName": "Gonzalo VALLE",
-                "number": 22,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "448295",
-                "image": "https://digitalhub.fifa.com/transform/d67ebe06-be17-4735-a8a7-9659eb37cf37/VALLE-Gonzalo_448295",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Felix TORRES",
-                "shortName": "Felix TORRES",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "402979",
-                "image": "https://digitalhub.fifa.com/transform/755ac13c-2122-42ff-b40a-4582be61e59e/TORRES-Felix_402979",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Joel ORDONEZ",
-                "shortName": "Joel ORDONEZ",
-                "number": 4,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "463465",
-                "image": "https://digitalhub.fifa.com/transform/54a42d16-279a-4566-8c46-ac75d8ea095a/ORDONEZ-Joel_463465",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Angelo PRECIADO",
-                "shortName": "Angelo PRECIADO",
-                "number": 17,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "402974",
-                "image": "https://digitalhub.fifa.com/transform/2e9be79f-76b7-4f12-8ba0-c4c21ec8b39d/PRECIADO-Angelo_402974",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jackson POROZO",
-                "shortName": "Jackson POROZO",
-                "number": 25,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "419003",
-                "image": "https://digitalhub.fifa.com/transform/17ccf39c-5480-439a-be5f-90045606ca37/POROZO-Jackson_419003",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yaimar MEDINA",
-                "shortName": "Yaimar MEDINA",
-                "number": 26,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "463489",
-                "image": "https://digitalhub.fifa.com/transform/84400276-88b5-4054-b0fb-f8206f384291/MEDINA-Yaimar_463489",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Anthony VALENCIA",
-                "shortName": "Anthony VALENCIA",
-                "number": 8,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "448299",
-                "image": "https://digitalhub.fifa.com/transform/b21d23fa-c045-4f5d-9721-59740e4006b2/VALENCIA-Anthony_448299",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kendry PAEZ",
-                "shortName": "Kendry PAEZ",
-                "number": 10,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "463495",
-                "image": "https://digitalhub.fifa.com/transform/ee18ba2f-5e31-4e33-8739-f0d59033c409/PAEZ-Kendry_463495",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alan MINDA",
-                "shortName": "Alan MINDA",
-                "number": 14,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "463468",
-                "image": "https://digitalhub.fifa.com/transform/b43c46a0-9e62-4202-b9e4-c625b36afc16/MINDA-Alan_463468",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Denil CASTILLO",
-                "shortName": "Denil CASTILLO",
-                "number": 18,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "463476",
-                "image": "https://digitalhub.fifa.com/transform/60f9a338-e7cb-45a0-a0ae-926740080bec/CASTILLO-Denil_463476",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kevin RODRIGUEZ",
-                "shortName": "Kevin RODRIGUEZ",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "448310",
-                "image": "https://digitalhub.fifa.com/transform/c35d8b13-4ad6-45d8-853e-8d7f6bd98214/RODRIGUEZ-Kevin_448310",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jordy CAICEDO",
-                "shortName": "Jordy CAICEDO",
-                "number": 16,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "402985",
-                "image": "https://digitalhub.fifa.com/transform/d4d93e2b-74aa-4bbf-89b2-22ebff655348/CAICEDO-Jordy_402985",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nilson ANGULO",
-                "shortName": "Nilson ANGULO",
-                "number": 20,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "448312",
-                "image": "https://digitalhub.fifa.com/transform/b90df9f2-8054-4d40-b375-f7728a31a069/ANGULO-Nilson_448312",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jeremy AREVALO",
-                "shortName": "Jeremy AREVALO",
-                "number": 24,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "514326",
-                "image": "https://digitalhub.fifa.com/transform/9c839f83-e77a-4938-a764-95685591b367/AREVALO-Jeremy_514326",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          },
-          "away": {
-            "team": "Curaçao",
-            "code": "CUW",
-            "formation": "5-3-2",
-            "coach": "Dick ADVOCAAT",
-            "starters": [
-              {
-                "name": "Eloy ROOM",
-                "shortName": "Eloy ROOM",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "390650",
-                "image": "https://digitalhub.fifa.com/transform/5bd9ff87-6801-46d2-8f10-ca9eb3ea2ea4/ROOM-Eloy_390650",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jurien GAARI",
-                "shortName": "Jurien GAARI",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "431698",
-                "image": "https://digitalhub.fifa.com/transform/4744d27b-6a5c-48be-a849-48facb6f6d6e/GAARI-Jurien_431698",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Sherel FLORANUS",
-                "shortName": "Sherel FLORANUS",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "466350",
-                "image": "https://digitalhub.fifa.com/transform/8baacb6b-39cd-4a37-8999-58dd5a1d9fec/FLORANUS-Sherel_466350",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Armando OBISPO",
-                "shortName": "Armando OBISPO",
-                "number": 18,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "511141",
-                "image": "https://digitalhub.fifa.com/transform/c2384459-9ca9-4dce-b232-5bbfbcd07316/OBISPO-Armando_511141",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Joshua BRENET",
-                "shortName": "Joshua BRENET",
-                "number": 20,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "401023",
-                "image": "https://digitalhub.fifa.com/transform/2069bb09-aaf0-41dc-81e4-a8f4df33b4e5/BRENET-Joshua_401023",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Deveron FONVILLE",
-                "shortName": "Deveron FONVILLE",
-                "number": 24,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "506471",
-                "image": "https://digitalhub.fifa.com/transform/29abb3b9-0b95-4101-ae19-0aa95d77e362/FONVILLE-Deveron_506471",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Juninho BACUNA",
-                "shortName": "Juninho BACUNA",
-                "number": 7,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "466317",
-                "image": "https://digitalhub.fifa.com/transform/804768d8-badb-4492-9aef-1e523440aed4/BACUNA-Juninho_466317",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Livano COMENENCIA",
-                "shortName": "Livano COMENENCIA",
-                "number": 8,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "494989",
-                "image": "https://digitalhub.fifa.com/transform/860cc6e0-a995-485f-ae21-56b451017adf/COMENENCIA-Livano_494989",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Leandro BACUNA",
-                "shortName": "Leandro BACUNA",
-                "number": 10,
-                "position": "MF",
-                "captain": true,
-                "fifaId": "466340",
-                "image": "https://digitalhub.fifa.com/transform/ae48f357-6b53-4d49-b62f-fbfb4a041b62/BACUNA-Leandro_466340",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Tahith CHONG",
-                "shortName": "Tahith CHONG",
-                "number": 21,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "485347",
-                "image": "https://digitalhub.fifa.com/transform/402300d2-89f5-4c17-97be-494664b73565/CHONG-Tahith_485347",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Juergen LOCADIA",
-                "shortName": "Juergen LOCADIA",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "407680",
-                "image": "https://digitalhub.fifa.com/transform/95d67c13-c534-48f4-a2de-e831079a0d42/LOCADIA-Juergen_407680",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Tyrick BODAK",
-                "shortName": "Tyrick BODAK",
-                "number": 25,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "466370",
-                "image": "https://digitalhub.fifa.com/transform/c806d05b-ee7a-482f-beb5-b9a6b5871a11/BODAK-Tyrick_466370",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Trevor DOORNBUSCH",
-                "shortName": "Trevor DOORNBUSCH",
-                "number": 26,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "466382",
-                "image": "https://digitalhub.fifa.com/transform/f6d2d4d6-a63d-4278-a520-5edb0dc24e69/DOORNBUSCH-Trevor_466382",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Shurandy SAMBO",
-                "shortName": "Shurandy SAMBO",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "485379",
-                "image": "https://digitalhub.fifa.com/transform/4d41ae09-f81a-44fc-a53b-6e1b3e46521b/SAMBO-Shurandy_485379",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Roshon VAN EIJMA",
-                "shortName": "Roshon VAN EIJMA",
-                "number": 4,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "466361",
-                "image": "https://digitalhub.fifa.com/transform/f03c40c7-6eef-405c-a287-a1f7f1860a30/VAN-EIJMA-Roshon_466361",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Riechedly Bazoer",
-                "shortName": "Riechedly BAZOER",
-                "number": 23,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "398569",
-                "image": "https://digitalhub.fifa.com/transform/93fcbe0f-13ca-41f6-b453-447b45aea6ef/BAZOER-Riechedly_398569",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Godfried ROEMERATOE",
-                "shortName": "Godfried ROEMERATOE",
-                "number": 6,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "466359",
-                "image": "https://digitalhub.fifa.com/transform/6ed36808-8d19-481f-acce-2a905fbc364c/ROEMERATOE-Godfried_466359",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Arjany MARTHA",
-                "shortName": "Arjany MARTHA",
-                "number": 15,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "485324",
-                "image": "https://digitalhub.fifa.com/transform/d909c1d1-c54d-4dfa-a951-979ae80e7b8a/MARTHA-Arjany_485324",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kevin FELIDA",
-                "shortName": "Kevin FELIDA",
-                "number": 22,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "466365",
-                "image": "https://digitalhub.fifa.com/transform/f9ebf1d2-90fe-4748-8788-19259714fc40/FELIDA-Kevin_466365",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jeremy Antonisse",
-                "shortName": "Jeremy ANTONISSE",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "424047",
-                "image": "https://digitalhub.fifa.com/transform/cd0b7ee9-50b8-4043-a957-44df5860e935/ANTONISSE-Jeremy_424047",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Sontje HANSEN",
-                "shortName": "Sontje HANSEN",
-                "number": 12,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "424056",
-                "image": "https://digitalhub.fifa.com/transform/35e4773d-8580-4100-a87a-239c2e03e179/HANSEN-Sontje_424056",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Tyrese NOSLIN",
-                "shortName": "Tyrese NOSLIN",
-                "number": 13,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "506473",
-                "image": "https://digitalhub.fifa.com/transform/5a1d79e4-2beb-4cc4-aa5d-adea0d32896c/NOSLIN-Tyrese_506473",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kenji GORRE",
-                "shortName": "Kenji GORRE",
-                "number": 14,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "466352",
-                "image": "https://digitalhub.fifa.com/transform/115a2099-2406-4ca6-8905-91cc71efc98d/GORRE-Kenji_466352",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jearl MARGARITHA",
-                "shortName": "Jearl MARGARITHA",
-                "number": 16,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "466363",
-                "image": "https://digitalhub.fifa.com/transform/c0d47ad2-fcb1-4d7f-b854-99b99cc0cadf/MARGARITHA-Jearl_466363",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Brandley KUWAS",
-                "shortName": "Brandley KUWAS",
-                "number": 17,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "466346",
-                "image": "https://digitalhub.fifa.com/transform/e68cdb21-7918-4de8-8a37-8d3f1127184b/KUWAS-Brandley_466346",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Gervane KASTANEER",
-                "shortName": "Gervane KASTANEER",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "466372",
-                "image": "https://digitalhub.fifa.com/transform/18bea3a9-68ef-4e35-ae04-2d494b39971e/KASTANEER-Gervane_466372",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          }
         }
       },
       {
@@ -3868,7 +2674,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 33,
           "matchFeedId": 2608275,
@@ -3878,594 +2684,8 @@ window.WC2026_LIVE_DATA = {
           "shortName": "C. Gakpo",
           "teamCode": "NED",
           "position": "FWD",
-          "image": "https://digitalhub.fifa.com/transform/bbb5637f-0587-4ddd-8a82-604c0d921bb3/GAKPO-Cody_448152",
+          "image": "",
           "url": "https://play.fifa.com/potm/en/"
-        },
-        "official_lineups": {
-          "provider": "FIFA",
-          "fetchedAt": "2026-06-21T22:00:30.280Z",
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021472",
-          "home": {
-            "team": "Netherlands",
-            "code": "NED",
-            "formation": "4-3-3",
-            "coach": "Ruud VAN NISTELROOIJ",
-            "starters": [
-              {
-                "name": "Bart Verbruggen",
-                "shortName": "Bart VERBRUGGEN",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "424081",
-                "image": "https://digitalhub.fifa.com/transform/44bfd693-27d5-4d36-823e-5ff0e6cd2524/VERBRUGGEN-Bart_424081",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Virgil VAN DIJK",
-                "shortName": "Virgil VAN DIJK",
-                "number": 4,
-                "position": "DF",
-                "captain": true,
-                "fifaId": "397786",
-                "image": "https://digitalhub.fifa.com/transform/df0e21eb-c210-4ea6-ab2c-0ac13635a9f8/VAN-DIJK-Virgil_397786",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jan Paul VAN HECKE",
-                "shortName": "Jan Paul VAN HECKE",
-                "number": 6,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "489517",
-                "image": "https://digitalhub.fifa.com/transform/eb113fdd-d066-44a9-a0dc-7bf075fdc57f/VAN-HECKE-Jan-Paul_489517",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Micky VAN DE VEN",
-                "shortName": "Micky VAN DE VEN",
-                "number": 15,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "448140",
-                "image": "https://digitalhub.fifa.com/transform/f9f50877-4cd1-4ab9-83d8-2908ad6fbc70/VAN-DE-VEN-Micky_448140",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Denzel DUMFRIES",
-                "shortName": "Denzel DUMFRIES",
-                "number": 22,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "436612",
-                "image": "https://digitalhub.fifa.com/transform/f2a2746b-7691-40c4-a052-60db3219a856/DUMFRIES-Denzel_436612",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ryan GRAVENBERCH",
-                "shortName": "Ryan GRAVENBERCH",
-                "number": 8,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430176",
-                "image": "https://digitalhub.fifa.com/transform/ad5fe14f-b29c-4c20-8477-b00bf14c413f/GRAVENBERCH-Ryan_430176",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Tijjani REIJNDERS",
-                "shortName": "Tijjani REIJNDERS",
-                "number": 14,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "483526",
-                "image": "https://digitalhub.fifa.com/transform/3f7090ee-2e95-4b6c-a098-729b07484fb2/REIJNDERS-Tijjani_483526",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Frenkie DE JONG",
-                "shortName": "Frenkie DE JONG",
-                "number": 21,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "422657",
-                "image": "https://digitalhub.fifa.com/transform/fe8176f7-bf45-49fc-bd5e-0bfd0c834992/DE-JONG-Frenkie_422657",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Cody GAKPO",
-                "shortName": "Cody GAKPO",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "448152",
-                "image": "https://digitalhub.fifa.com/transform/bbb5637f-0587-4ddd-8a82-604c0d921bb3/GAKPO-Cody_448152",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Donyell Malen",
-                "shortName": "Donyell MALEN",
-                "number": 18,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "433066",
-                "image": "https://digitalhub.fifa.com/transform/15ebb030-92ea-4165-aa63-5136719b5c7f/MALEN-Donyell_433066",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Brian BROBBEY",
-                "shortName": "Brian BROBBEY",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "424051",
-                "image": "https://digitalhub.fifa.com/transform/15246275-ff97-404c-bac3-ce793d98c744/BROBBEY-Brian_424051",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Robin ROEFS",
-                "shortName": "Robin ROEFS",
-                "number": 13,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "506028",
-                "image": "https://digitalhub.fifa.com/transform/557e5592-2bf9-4d43-8d51-ee7e2881cb65/ROEFS-Robin_506028",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mark FLEKKEN",
-                "shortName": "Mark FLEKKEN",
-                "number": 23,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "448151",
-                "image": "https://digitalhub.fifa.com/transform/c3d85e26-25ec-46df-957c-9e5feee3faf3/FLEKKEN-Mark_448151",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Lutsharel GEERTRUIDA",
-                "shortName": "Lutsharel GEERTRUIDA",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "483553",
-                "image": "https://digitalhub.fifa.com/transform/1248c411-1f1f-436d-9731-3b1c3b6db0e6/GEERTRUIDA-Lutsharel_483553",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nathan AKE",
-                "shortName": "Nathan AKE",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "336088",
-                "image": "https://digitalhub.fifa.com/transform/e44b0c79-cb0b-4ce8-bace-7530a516371f/AKE-Nathan_336088",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mats WIEFFER",
-                "shortName": "Mats WIEFFER",
-                "number": 12,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "483481",
-                "image": "https://digitalhub.fifa.com/transform/df746a89-9b34-41d7-8d45-39dc4f010e12/WIEFFER-Mats_483481",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jorrel HATO",
-                "shortName": "Jorrel HATO",
-                "number": 25,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "483512",
-                "image": "https://digitalhub.fifa.com/transform/16b4bf89-fc63-492a-afd1-6f400e8eed92/HATO-Jorrel_483512",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Marten DE ROON",
-                "shortName": "Marten DE ROON",
-                "number": 3,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "402044",
-                "image": "https://digitalhub.fifa.com/transform/bf755ec0-abe7-4790-ad87-a2dc6d709654/DE-ROON-Marten_402044",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Justin KLUIVERT",
-                "shortName": "Justin KLUIVERT",
-                "number": 7,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "478364",
-                "image": "https://digitalhub.fifa.com/transform/a80059a3-3430-4e4a-b6c6-fecc2edf4627/KLUIVERT-Justin_478364",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Guus TIL",
-                "shortName": "Guus TIL",
-                "number": 16,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "448157",
-                "image": "https://digitalhub.fifa.com/transform/79d54014-e674-49c2-8b01-94958f41743a/TIL-Guus_448157",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Teun KOOPMEINERS",
-                "shortName": "Teun KOOPMEINERS",
-                "number": 20,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "448149",
-                "image": "https://digitalhub.fifa.com/transform/dd457729-e889-46e1-9845-f6e1b194893e/KOOPMEINERS-Teun_448149",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Wout WEGHORST",
-                "shortName": "Wout WEGHORST",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "448159",
-                "image": "https://digitalhub.fifa.com/transform/3b0de826-85e3-4404-9dbc-6e6ac7675ae3/WEGHORST-Wout_448159",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Memphis DEPAY",
-                "shortName": "Memphis DEPAY",
-                "number": 10,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "336098",
-                "image": "https://digitalhub.fifa.com/transform/6fe9f49e-5f45-4a44-9807-579be23fc0db/DEPAY-Memphis_336098",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Noa LANG",
-                "shortName": "Noa LANG",
-                "number": 17,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "448153",
-                "image": "https://digitalhub.fifa.com/transform/683cef55-109a-4bc3-a41a-8bb4d64d556f/LANG-Noa_448153",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Crysencio SUMMERVILLE",
-                "shortName": "Crysencio SUMMERVILLE",
-                "number": 24,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "489518",
-                "image": "https://digitalhub.fifa.com/transform/86e9f724-fc5f-4969-92e3-ac658dafacdd/SUMMERVILLE-Crysencio_489518",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          },
-          "away": {
-            "team": "Sweden",
-            "code": "SWE",
-            "formation": "3-5-2",
-            "coach": "Sebastian LARSSON",
-            "starters": [
-              {
-                "name": "Kristoffer NORDFELDT",
-                "shortName": "Kristoffer NORDFELDT",
-                "number": 23,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "360496",
-                "image": "https://digitalhub.fifa.com/transform/747828c3-0592-411d-889a-9a59ae78e0b6/NORDFELDT-Kristoffer_360496",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Gustaf LAGERBIELKE",
-                "shortName": "Gustaf LAGERBIELKE",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "483304",
-                "image": "https://digitalhub.fifa.com/transform/12a80a14-c33d-480f-8742-315485c114c1/LAGERBIELKE-Gustaf_483304",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Victor LINDELOF",
-                "shortName": "Victor LINDELOF",
-                "number": 3,
-                "position": "DF",
-                "captain": true,
-                "fifaId": "395283",
-                "image": "https://digitalhub.fifa.com/transform/88b96376-9f31-40fd-a0fc-ae12aab484c4/LINDELOF-Victor_395283",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Isak HIEN",
-                "shortName": "Isak HIEN",
-                "number": 4,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "483312",
-                "image": "https://digitalhub.fifa.com/transform/0daf43d1-2714-4cc3-ab8b-3cf2020bf150/HIEN-Isak_483312",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Gabriel GUDMUNDSSON",
-                "shortName": "Gabriel GUDMUNDSSON",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "483276",
-                "image": "https://digitalhub.fifa.com/transform/43fd52e9-e3a9-46f6-8432-7bfbbb394678/GUDMUNDSSON-Gabriel_483276",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alexander BERNHARDSSON",
-                "shortName": "Alexander BERNHARDSSON",
-                "number": 21,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "502945",
-                "image": "https://digitalhub.fifa.com/transform/165d5004-48b5-4a8c-86ee-d7c982b9b96c/BERNHARDSSON-Alexander_502945",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Benjamin NYGREN",
-                "shortName": "Benjamin NYGREN",
-                "number": 10,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "502946",
-                "image": "https://digitalhub.fifa.com/transform/e464be99-48c1-41a9-b5aa-2c5760f1d302/NYGREN-Benjamin_502946",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Jesper KARLSTROM",
-                "shortName": "Jesper KARLSTROM",
-                "number": 16,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "441135",
-                "image": "https://digitalhub.fifa.com/transform/0ed50024-cb6d-4fa5-bc7c-ba8a9afa7fd3/KARLSTROM-Jesper_441135",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yasin AYARI",
-                "shortName": "Yasin AYARI",
-                "number": 18,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "489688",
-                "image": "https://digitalhub.fifa.com/transform/ac9ed8a6-7b39-4962-8245-b80556224ca0/AYARI-Yasin_489688",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alexander Isak",
-                "shortName": "Alexander ISAK",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "430150",
-                "image": "https://digitalhub.fifa.com/transform/c6ffe63b-aefd-43b8-bd9d-3c6e31a8f418/ISAK-Alexander_430150",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Viktor GYOKERES",
-                "shortName": "Viktor GYOKERES",
-                "number": 17,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "483327",
-                "image": "https://digitalhub.fifa.com/transform/ca3d75bf-7e31-4269-9933-b296eb3f5bff/GYOKERES-Viktor_483327",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Jacob WIDELL ZETTERSTROM",
-                "shortName": "Jacob WIDELL ZETTERSTROM",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "489685",
-                "image": "https://digitalhub.fifa.com/transform/c93a418b-3456-4b0f-b0e0-8cb27004aebb/WIDELL-ZETTERSTROM-Jacob_489685",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Viktor JOHANSSON",
-                "shortName": "Viktor JOHANSSON",
-                "number": 12,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "483264",
-                "image": "https://digitalhub.fifa.com/transform/c311a4ac-f9ad-48d3-99dc-b9c53345d0f9/JOHANSSON-Viktor_483264",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Herman JOHANSSON",
-                "shortName": "Herman JOHANSSON",
-                "number": 6,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "514639",
-                "image": "https://digitalhub.fifa.com/transform/58eb2743-907e-4e6d-8020-28c8767e5cdc/JOHANSSON-Herman_514639",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Daniel SVENSSON",
-                "shortName": "Daniel SVENSSON",
-                "number": 8,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "491255",
-                "image": "https://digitalhub.fifa.com/transform/49dbfd16-1871-40c2-94d5-995f9e38cc04/SVENSSON-Daniel_491255",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Hjalmar EKDAL",
-                "shortName": "Hjalmar EKDAL",
-                "number": 14,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "483319",
-                "image": "https://digitalhub.fifa.com/transform/23439c93-9021-4c30-b8b1-45141ad89e8c/EKDAL-Hjalmar_483319",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Carl STARFELT",
-                "shortName": "Carl STARFELT",
-                "number": 15,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "441132",
-                "image": "https://digitalhub.fifa.com/transform/7c4b343c-446c-4d27-ab62-bb85ee559985/STARFELT-Carl_441132",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Eric SMITH",
-                "shortName": "Eric SMITH",
-                "number": 20,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "493061",
-                "image": "https://digitalhub.fifa.com/transform/7f7bf320-92e1-4267-bc6b-56f2ec37e94f/SMITH-Eric_493061",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Elliot STROUD",
-                "shortName": "Elliot STROUD",
-                "number": 24,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "519958",
-                "image": "https://digitalhub.fifa.com/transform/12d24b4c-5628-4013-8f4d-bddea4ae2258/STROUD-Elliot_519958",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Lucas BERGVALL",
-                "shortName": "Lucas BERGVALL",
-                "number": 7,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "489689",
-                "image": "https://digitalhub.fifa.com/transform/bd927d6a-bb9d-4424-9e96-53c2ebc7220b/BERGVALL-Lucas_489689",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ken SEMA",
-                "shortName": "Ken SEMA",
-                "number": 13,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "395286",
-                "image": "https://digitalhub.fifa.com/transform/eb495b7c-f859-40c2-9327-9478faf03c24/SEMA-Ken_395286",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mattias SVANBERG",
-                "shortName": "Mattias SVANBERG",
-                "number": 19,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "433795",
-                "image": "https://digitalhub.fifa.com/transform/0d003261-373c-46f2-90c6-34d700c027f6/SVANBERG-Mattias_433795",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Besfort ZENELI",
-                "shortName": "Besfort ZENELI",
-                "number": 22,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "503047",
-                "image": "https://digitalhub.fifa.com/transform/7bd98883-dd6c-4e8f-954e-af31d070eac7/ZENELI-Besfort_503047",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Anthony ELANGA",
-                "shortName": "Anthony ELANGA",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "441137",
-                "image": "https://digitalhub.fifa.com/transform/38e8d10e-aa56-4837-a589-35bc4dcc23a3/ELANGA-Anthony_441137",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Gustaf NILSSON",
-                "shortName": "Gustaf NILSSON",
-                "number": 25,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "489691",
-                "image": "https://digitalhub.fifa.com/transform/ba9d4008-fe99-49d2-afb3-c3a9d7a97da8/NILSSON-Gustaf_489691",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Taha ALI",
-                "shortName": "Taha ALI",
-                "number": 26,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "514202",
-                "image": "https://digitalhub.fifa.com/transform/9a70800c-37c4-4cd9-b195-f307dbaad09b/ALI-Taha_514202",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          }
         }
       },
       {
@@ -4500,7 +2720,7 @@ window.WC2026_LIVE_DATA = {
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 36,
           "matchFeedId": 2608276,
@@ -4510,583 +2730,8 @@ window.WC2026_LIVE_DATA = {
           "shortName": "A. Ueda",
           "teamCode": "JPN",
           "position": "FWD",
-          "image": "https://digitalhub.fifa.com/transform/1b05e82f-94e8-470d-9c12-f9bdf1a0e080/UEDA-Ayase_430413",
+          "image": "",
           "url": "https://play.fifa.com/potm/en/"
-        },
-        "official_lineups": {
-          "provider": "FIFA",
-          "fetchedAt": "2026-06-21T22:00:30.280Z",
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021475",
-          "home": {
-            "team": "Tunisia",
-            "code": "TUN",
-            "formation": "5-3-2",
-            "coach": "Herve RENARD",
-            "starters": [
-              {
-                "name": "Aymen DAHMEN",
-                "shortName": "Aymen DAHMEN",
-                "number": 16,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "433365",
-                "image": "https://digitalhub.fifa.com/transform/90030173-815d-4411-8eac-20fb42834f9d/DAHMEN-Aymen_433365",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ali ABDI",
-                "shortName": "Ali ABDI",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "433362",
-                "image": "https://digitalhub.fifa.com/transform/8ff3509c-8a73-40ea-ac0e-1beed4560b23/ABDI-Ali_433362",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Montassar TALBI",
-                "shortName": "Montassar TALBI",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "433380",
-                "image": "https://digitalhub.fifa.com/transform/253ef705-760c-457f-afde-067d2fb39010/TALBI-Montassar_433380",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Omar Rekik",
-                "shortName": "Omar REKIK",
-                "number": 4,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "433367",
-                "image": "https://digitalhub.fifa.com/transform/2f586126-6a63-4e5b-9f85-6e15800449d9/REKIK-Omar_433367",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Dylan BRONN",
-                "shortName": "Dylan BRONN",
-                "number": 6,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "411653",
-                "image": "https://digitalhub.fifa.com/transform/9a7aa138-5845-4890-aa20-43f4021160ed/BRONN-Dylan_411653",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yan Valery",
-                "shortName": "Yan VALERY",
-                "number": 20,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "419189",
-                "image": "https://digitalhub.fifa.com/transform/6ffa54d7-e23d-400d-a90a-960903c63f8b/VALERY-Yan_419189",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Hannibal MEJBRI",
-                "shortName": "Hannibal MEJBRI",
-                "number": 10,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "433378",
-                "image": "https://digitalhub.fifa.com/transform/856f0cc0-6dcc-48bc-a8db-f4fe26d8ae06/MEJBRI-Hannibal_433378",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ellyes SKHIRI",
-                "shortName": "Ellyes SKHIRI",
-                "number": 17,
-                "position": "MF",
-                "captain": true,
-                "fifaId": "411658",
-                "image": "https://digitalhub.fifa.com/transform/e2ba8e19-b4ab-435f-b12c-e56d655c31e6/SKHIRI-Ellyes_411658",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Anis SLIMANE",
-                "shortName": "Anis SLIMANE",
-                "number": 25,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "433361",
-                "image": "https://digitalhub.fifa.com/transform/5a0e929e-a66f-4563-849e-c7bb62591b5d/SLIMANE-Anis_433361",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Sebastian TOUNEKTI",
-                "shortName": "Sebastian TOUNEKTI",
-                "number": 26,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "504502",
-                "image": "https://digitalhub.fifa.com/transform/29d9d0d2-28ec-4c0c-9861-a9d8062d5f9d/TOUNEKTI-Sebastian_504502",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Elias SAAD",
-                "shortName": "Elias SAAD",
-                "number": 8,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "482885",
-                "image": "https://digitalhub.fifa.com/transform/2037123b-a7b7-4922-adcd-37607cd92c43/SAAD-Elias_482885",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Mouhib CHAMAKH",
-                "shortName": "Mouhib CHAMAKH",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "520245",
-                "image": "https://digitalhub.fifa.com/transform/7047e775-2f2c-4ea2-9ca6-6fc23363c591/CHAMAKH-Mouhib_520245",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Sabri BEN HESSEN",
-                "shortName": "Sabri BEN HESSEN",
-                "number": 22,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "372294",
-                "image": "https://digitalhub.fifa.com/transform/69fa6a49-0e30-42d4-afe1-83d6e38c1eed/BEN-HESSEN-Sabri_372294",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Adam AROUS",
-                "shortName": "Adam AROUS",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "516043",
-                "image": "https://digitalhub.fifa.com/transform/7cbb37f5-5dcd-4fa9-919e-f3fe4f843868/AROUS-Adam_516043",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mortadha BEN OUANES",
-                "shortName": "Mortadha BEN OUANES",
-                "number": 12,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "441362",
-                "image": "https://digitalhub.fifa.com/transform/b9afdecd-b04d-4224-be9b-50643fc77299/BEN-OUANES-Mortadha_441362",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mohamed Amine BEN HMIDA",
-                "shortName": "Mohamed Amine BEN HMIDA",
-                "number": 21,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "425607",
-                "image": "https://digitalhub.fifa.com/transform/cb5fcd59-cbd1-4e4f-b5e7-f9adc81441e5/BEN-HMIDA-Mohamed-Amine_425607",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Moutaz NEFFATI",
-                "shortName": "Moutaz NEFFATI",
-                "number": 23,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "506335",
-                "image": "https://digitalhub.fifa.com/transform/0f6a863a-959a-40ec-a07f-0c77d7c5a322/NEFFATI-Moutaz_506335",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Raed CHIKHAOUI",
-                "shortName": "Raed CHIKHAOUI",
-                "number": 24,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "520246",
-                "image": "https://digitalhub.fifa.com/transform/8ecb6694-a3aa-4efe-b13d-64a020109ec2/CHIKHAOUI-Raed_520246",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ismael GHARBI",
-                "shortName": "Ismael GHARBI",
-                "number": 11,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "464484",
-                "image": "https://digitalhub.fifa.com/transform/cd471dba-dc7d-4688-9021-e704b66cec76/GHARBI-Ismael_464484",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Rani Khedira",
-                "shortName": "Rani KHEDIRA",
-                "number": 13,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "336459",
-                "image": "https://digitalhub.fifa.com/transform/21f404b3-b430-489b-819c-c0460a2c3590/KHEDIRA-Rani_336459",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Khalil AYARI",
-                "shortName": "Khalil AYARI",
-                "number": 14,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "512039",
-                "image": "https://digitalhub.fifa.com/transform/9b51ba77-1740-47cc-93f1-1529287d27ea/AYARI-Khalil_512039",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mohamed HADJ MAHMOUD",
-                "shortName": "Mohamed HADJ MAHMOUD",
-                "number": 15,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "479781",
-                "image": "https://digitalhub.fifa.com/transform/bcdeb1a5-6411-40c5-bac8-576703796438/HADJ-MAHMOUD-Mohamed_479781",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Elias ACHOURI",
-                "shortName": "Elias ACHOURI",
-                "number": 7,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "448662",
-                "image": "https://digitalhub.fifa.com/transform/5ffd95df-83a5-4768-9331-0842c3f433b6/ACHOURI-Elias_448662",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Hazem MASTOURI",
-                "shortName": "Hazem MASTOURI",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "494374",
-                "image": "https://digitalhub.fifa.com/transform/2565fb18-c785-4773-8d83-81c6fd25da1d/MASTOURI-Hazem_494374",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Rayan ELLOUMI",
-                "shortName": "Rayan ELLOUMI",
-                "number": 18,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "520247",
-                "image": "https://digitalhub.fifa.com/transform/15445a99-9bc9-41c4-8d6f-c46ac25b3d5d/ELLOUMI-Rayan_520247",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Firas CHAOUAT",
-                "shortName": "Firas CHAOUAT",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "494375",
-                "image": "https://digitalhub.fifa.com/transform/cf52c447-03a8-450b-a4b8-e238b1e3c071/CHAOUAT-Firas_494375",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          },
-          "away": {
-            "team": "Japan",
-            "code": "JPN",
-            "formation": "3-4-3",
-            "coach": "Toshihide SAITO",
-            "starters": [
-              {
-                "name": "Zion Suzuki",
-                "shortName": "Zion SUZUKI",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "405530",
-                "image": "https://digitalhub.fifa.com/transform/7a045252-7c97-4f14-9493-4977e3e3156e/SUZUKI-Zion_405530",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kou ITAKURA",
-                "shortName": "Kou ITAKURA",
-                "number": 4,
-                "position": "DF",
-                "captain": true,
-                "fifaId": "400511",
-                "image": "https://digitalhub.fifa.com/transform/5797a9db-f271-4f10-a480-1a0fdde80b7b/ITAKURA-Kou_400511",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Hiroki ITO",
-                "shortName": "Hiroki ITO",
-                "number": 21,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "403274",
-                "image": "https://digitalhub.fifa.com/transform/68ebc735-7e69-4908-98b7-b6d691e9cbf7/ITO-Hiroki_403274",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Takehiro TOMIYASU",
-                "shortName": "Takehiro TOMIYASU",
-                "number": 22,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "403289",
-                "image": "https://digitalhub.fifa.com/transform/959b632f-531d-420a-85af-5d0fc3c83d5f/TOMIYASU-Takehiro_403289",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ao TANAKA",
-                "shortName": "Ao TANAKA",
-                "number": 7,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "400514",
-                "image": "https://digitalhub.fifa.com/transform/c041ee70-6920-4696-afe9-5a9982dc9a2b/TANAKA-Ao_400514",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ritsu DOAN",
-                "shortName": "Ritsu DOAN",
-                "number": 10,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "391646",
-                "image": "https://digitalhub.fifa.com/transform/e69df72a-0135-4989-802c-e2c85556cd00/DOAN-Ritsu_391646",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Keito Nakamura",
-                "shortName": "Keito NAKAMURA",
-                "number": 13,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "405522",
-                "image": "https://digitalhub.fifa.com/transform/fa77e0e6-716b-463e-b210-252bbd18e2d9/NAKAMURA-Keito_405522",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Junya ITO",
-                "shortName": "Junya ITO",
-                "number": 14,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "395321",
-                "image": "https://digitalhub.fifa.com/transform/87ce677a-e78d-474c-bfd7-b7dc77e89e62/ITO-Junya_395321",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Daichi KAMADA",
-                "shortName": "Daichi KAMADA",
-                "number": 15,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "448557",
-                "image": "https://digitalhub.fifa.com/transform/40432f8c-1b4a-444e-b3a4-709164e708d6/KAMADA-Daichi_448557",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kaishu SANO",
-                "shortName": "Kaishu SANO",
-                "number": 24,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "479294",
-                "image": "https://digitalhub.fifa.com/transform/f5caca4b-2a48-4d7d-906e-1c2c39a6f15c/SANO-Kaishu_479294",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ayase UEDA",
-                "shortName": "Ayase UEDA",
-                "number": 18,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "430413",
-                "image": "https://digitalhub.fifa.com/transform/1b05e82f-94e8-470d-9c12-f9bdf1a0e080/UEDA-Ayase_430413",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "Keisuke OSAKO",
-                "shortName": "Keisuke OSAKO",
-                "number": 12,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "403305",
-                "image": "https://digitalhub.fifa.com/transform/4304491f-2404-4e52-a9c3-948c95a01f5a/OSAKO-Keisuke_403305",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Tomoki HAYAKAWA",
-                "shortName": "Tomoki HAYAKAWA",
-                "number": 23,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "511710",
-                "image": "https://digitalhub.fifa.com/transform/d81ad421-1126-4549-a89f-3fafd8db2a97/HAYAKAWA-Tomoki_511710",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yukinari Sugawara",
-                "shortName": "Yukinari SUGAWARA",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "405528",
-                "image": "https://digitalhub.fifa.com/transform/09574b48-f59b-436b-b0db-ab4816a96ede/SUGAWARA-Yukinari_405528",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Shogo TANIGUCHI",
-                "shortName": "Shogo TANIGUCHI",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "390541",
-                "image": "https://digitalhub.fifa.com/transform/339c7ce2-356d-4b5f-8aed-58e4040a6f62/TANIGUCHI-Shogo_390541",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yuto NAGATOMO",
-                "shortName": "Yuto NAGATOMO",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "291372",
-                "image": "https://digitalhub.fifa.com/transform/719252dc-c983-411f-875b-13a0f6acd967/NAGATOMO-Yuto_291372",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Tsuyoshi Watanabe",
-                "shortName": "Tsuyoshi WATANABE",
-                "number": 16,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430401",
-                "image": "https://digitalhub.fifa.com/transform/c7ca3373-d0e0-451d-963a-9e68025385e7/WATANABE-Tsuyoshi_430401",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ayumu SEKO",
-                "shortName": "Ayumu SEKO",
-                "number": 20,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "405527",
-                "image": "https://digitalhub.fifa.com/transform/2c33d7cc-d75e-427f-9aa9-2dac0872e561/SEKO-Ayumu_405527",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Junnosuke SUZUKI",
-                "shortName": "Junnosuke SUZUKI",
-                "number": 25,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "498455",
-                "image": "https://digitalhub.fifa.com/transform/8c87dc57-4626-4945-a93a-b6f5a5620947/SUZUKI-Junnosuke_498455",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Daizen MAEDA",
-                "shortName": "Daizen MAEDA",
-                "number": 11,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430407",
-                "image": "https://digitalhub.fifa.com/transform/42bcfad9-f62c-4238-a0e6-2f38b3757e2a/MAEDA-Daizen_430407",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yuito SUZUKI",
-                "shortName": "Yuito SUZUKI",
-                "number": 17,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "485503",
-                "image": "https://digitalhub.fifa.com/transform/820d40f4-df00-46d9-a36f-3f7eb523d099/SUZUKI-Yuito_485503",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Keisuke GOTO",
-                "shortName": "Keisuke GOTO",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "464339",
-                "image": "https://digitalhub.fifa.com/transform/389ec308-0914-4e7e-95e6-302c1d7bb0b0/GOTO-Keisuke_464339",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Koki OGAWA",
-                "shortName": "Koki OGAWA",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "403293",
-                "image": "https://digitalhub.fifa.com/transform/3b346456-0904-4429-ac8d-1acb2c2a1934/OGAWA-Koki_403293",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Kento SHIOGAI",
-                "shortName": "Kento SHIOGAI",
-                "number": 26,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "520218",
-                "image": "https://digitalhub.fifa.com/transform/86999b3c-aa5d-46d6-b42e-1601dd197182/SHIOGAI-Kento_520218",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          }
         }
       },
       {
@@ -5118,11 +2763,11 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021477",
           "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021477",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 38,
           "matchFeedId": 2608277,
@@ -5137,7 +2782,7 @@ window.WC2026_LIVE_DATA = {
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021477",
           "home": {
             "team": "Belgium",
@@ -5718,8 +3363,8 @@ window.WC2026_LIVE_DATA = {
         "away_team_id": "26",
         "home_score": "1",
         "away_score": "3",
-        "home_scorers": "null",
-        "away_scorers": "null",
+        "home_scorers": "{\"Fin Svrman 15'\"}",
+        "away_scorers": "{\"Mostafa Ziko 58'\",\"Mohamed Salah 67'\",\"Mahmoud Hassan Trezeguet 82'\"}",
         "group": "G",
         "matchday": "2",
         "local_date": "06/21/2026 18:00",
@@ -5740,11 +3385,11 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021480",
           "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021480",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 40,
           "matchFeedId": 2608278,
@@ -5759,7 +3404,7 @@ window.WC2026_LIVE_DATA = {
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021480",
           "home": {
             "team": "New Zealand",
@@ -6383,12 +4028,11 @@ window.WC2026_LIVE_DATA = {
           "idStage": "289273",
           "idMatch": "400021483",
           "matchStatus": 0,
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021483",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021483"
         },
         "potm": {
           "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "status": "complete",
           "matchId": 37,
           "matchFeedId": 2608279,
@@ -6398,605 +4042,8 @@ window.WC2026_LIVE_DATA = {
           "shortName": "M. Oyarzabal",
           "teamCode": "ESP",
           "position": "FWD",
-          "image": "https://digitalhub.fifa.com/transform/2f46ed20-b155-4201-8b97-badbc3619450/OYARZABAL-Mikel_430751",
+          "image": "",
           "url": "https://play.fifa.com/potm/en/"
-        },
-        "official_lineups": {
-          "provider": "FIFA",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021483",
-          "home": {
-            "team": "Spain",
-            "code": "ESP",
-            "formation": "4-1-2-3",
-            "coach": "Juanjo GONZALEZ",
-            "starters": [
-              {
-                "name": "Unai SIMON",
-                "shortName": "Unai SIMON",
-                "number": 23,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "430753",
-                "image": "https://digitalhub.fifa.com/transform/41e0f920-bd7d-4bd6-882b-c83ed33e3f26/SIMON-Unai_430753",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Pedro PORRO",
-                "shortName": "Pedro PORRO",
-                "number": 12,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430144",
-                "image": "https://digitalhub.fifa.com/transform/2c33b0c7-c399-4eac-98b2-66f35e77886a/PORRO-Pedro_430144",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Aymeric LAPORTE",
-                "shortName": "Aymeric LAPORTE",
-                "number": 14,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "335999",
-                "image": "https://digitalhub.fifa.com/transform/e923ca38-381d-4187-9d40-9f5f72434530/LAPORTE-Aymeric_335999",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Pau CUBARSI",
-                "shortName": "Pau CUBARSI",
-                "number": 22,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "474973",
-                "image": "https://digitalhub.fifa.com/transform/02b8f052-fa36-41a9-807e-e8f7c6a96d61/CUBARSI-Pau_474973",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Marc CUCURELLA",
-                "shortName": "Marc CUCURELLA",
-                "number": 24,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430735",
-                "image": "https://digitalhub.fifa.com/transform/3bc6b871-a4b2-4201-8885-a77420f4c7c9/CUCURELLA-Marc_430735",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alex BAENA",
-                "shortName": "Alex BAENA",
-                "number": 15,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "447860",
-                "image": "https://digitalhub.fifa.com/transform/19c2a085-e986-4c5b-8af7-aa98f7adc36e/BAENA-Alex_447860",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "RODRI",
-                "shortName": "RODRI",
-                "number": 16,
-                "position": "MF",
-                "captain": true,
-                "fifaId": "411375",
-                "image": "https://digitalhub.fifa.com/transform/295ab5b2-4dbf-42b9-918b-04fb4ae0ec0a/RODRI_411375",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "PEDRI",
-                "shortName": "PEDRI",
-                "number": 20,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "423646",
-                "image": "https://digitalhub.fifa.com/transform/75a5861e-008f-460c-81e4-8085fa2cc961/PEDRI_423646",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Dani OLMO",
-                "shortName": "Dani OLMO",
-                "number": 10,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "430750",
-                "image": "https://digitalhub.fifa.com/transform/c3f3e67a-90c1-469a-a4e1-263a470db989/OLMO-Dani_430750",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Lamine YAMAL",
-                "shortName": "Lamine YAMAL",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "484320",
-                "image": "https://digitalhub.fifa.com/transform/37b631d3-c340-4590-91a8-bb00bd5f1e89/YAMAL-Lamine_484320",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mikel OYARZABAL",
-                "shortName": "Mikel OYARZABAL",
-                "number": 21,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "430751",
-                "image": "https://digitalhub.fifa.com/transform/2f46ed20-b155-4201-8b97-badbc3619450/OYARZABAL-Mikel_430751",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "David RAYA",
-                "shortName": "David RAYA",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "447853",
-                "image": "https://digitalhub.fifa.com/transform/2a0b3279-e7c5-44c9-8f13-897d085e83bf/RAYA-David_447853",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Joan GARCIA",
-                "shortName": "Joan GARCIA",
-                "number": 13,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "484691",
-                "image": "https://digitalhub.fifa.com/transform/08439f96-c835-4b28-9fc5-7e90d4e82738/GARCIA-Joan_484691",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Marc PUBILL",
-                "shortName": "Marc PUBILL",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "484728",
-                "image": "https://digitalhub.fifa.com/transform/fd21bf4f-bf7d-4917-8afd-3def8e7e5069/PUBILL-Marc_484728",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Alex GRIMALDO",
-                "shortName": "Alex GRIMALDO",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "391297",
-                "image": "https://digitalhub.fifa.com/transform/5517003d-ede4-43f5-a595-68e9bd17f6ca/GRIMALDO-Alex_391297",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Eric GARCIA",
-                "shortName": "Eric GARCIA",
-                "number": 4,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "405562",
-                "image": "https://digitalhub.fifa.com/transform/96536fc5-7d12-442c-89ba-c7ccdae45d61/GARCIA-Eric_405562",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Marcos LLORENTE",
-                "shortName": "Marcos LLORENTE",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "382739",
-                "image": "https://digitalhub.fifa.com/transform/ab948683-40c0-4af1-9038-b7f24da3ffc2/LLORENTE-Marcos_382739",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Mikel MERINO",
-                "shortName": "Mikel MERINO",
-                "number": 6,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430733",
-                "image": "https://digitalhub.fifa.com/transform/bcc810b0-5c45-4781-809e-beae8b68e1d8/MERINO-Mikel_430733",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Fabian RUIZ",
-                "shortName": "Fabian RUIZ",
-                "number": 8,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430718",
-                "image": "https://digitalhub.fifa.com/transform/c40ded96-190d-41c8-90f2-6a253a63b33d/RUIZ-Fabian_430718",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "GAVI",
-                "shortName": "GAVI",
-                "number": 9,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "447866",
-                "image": "https://digitalhub.fifa.com/transform/4a8278cb-43c6-4a1a-8aa8-896c67daf977/GAVI_447866",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Martin ZUBIMENDI",
-                "shortName": "Martin ZUBIMENDI",
-                "number": 18,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "430754",
-                "image": "https://digitalhub.fifa.com/transform/640def2c-056d-4b6d-8bcc-613b77f99160/ZUBIMENDI-Martin_430754",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Ferran TORRES",
-                "shortName": "Ferran TORRES",
-                "number": 7,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "405545",
-                "image": "https://digitalhub.fifa.com/transform/aa65d133-f0fb-4379-9b1b-6c9dc2f40195/TORRES-Ferran_405545",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Yeremy PINO",
-                "shortName": "Yeremy PINO",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "423658",
-                "image": "https://digitalhub.fifa.com/transform/40328b78-c5b4-4c63-a11e-e5d1491793ef/PINO-Yeremy_423658",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Nico WILLIAMS",
-                "shortName": "Nico WILLIAMS",
-                "number": 17,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "447855",
-                "image": "https://digitalhub.fifa.com/transform/1792665e-37cb-421d-969b-e6a3edbd8d76/WILLIAMS-Nico_447855",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Victor MUNOZ",
-                "shortName": "Victor MUNOZ",
-                "number": 25,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "492859",
-                "image": "https://digitalhub.fifa.com/transform/73c58323-50f9-463b-88f0-abce4d69067c/MUNOZ-Victor_492859",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Borja IGLESIAS",
-                "shortName": "Borja IGLESIAS",
-                "number": 26,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "447864",
-                "image": "https://digitalhub.fifa.com/transform/e90fda84-dae1-44e9-b030-9ce63b11b2d4/IGLESIAS-Borja_447864",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          },
-          "away": {
-            "team": "Saudi Arabia",
-            "code": "KSA",
-            "formation": "5-4-1",
-            "coach": "Georgios DONIS",
-            "starters": [
-              {
-                "name": "MOHAMMED ALOWAIS",
-                "shortName": "MOHAMMED ALOWAIS",
-                "number": 21,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "396885",
-                "image": "https://digitalhub.fifa.com/transform/be2d88f0-e368-49ef-9a33-c7585955c495/MOHAMMED-ALOWAIS_396885",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "ALI LAJAMI",
-                "shortName": "ALI LAJAMI",
-                "number": 3,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "433439",
-                "image": "https://digitalhub.fifa.com/transform/27fa9b34-d37d-4416-a35f-fb6d234e9e8c/ALI-LAJAMI_433439",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "Abdulelah ALAMRI",
-                "shortName": "ABDULELAH ALAMRI",
-                "number": 4,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "403312",
-                "image": "https://digitalhub.fifa.com/transform/3ec8a8ea-beb5-4f8b-b8f6-66030bda5c4e/ABDULELAH-ALAMRI_403312",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "HASSAN ALTAMBAKTI",
-                "shortName": "HASSAN ALTAMBAKTI",
-                "number": 5,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "403335",
-                "image": "https://digitalhub.fifa.com/transform/e64a0c6b-4cc6-4ffb-bc98-b4af95bed8bf/ALTAMBAKTI-Hassan_403335",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "SAUD ABDULHAMID",
-                "shortName": "SAUD ABDULHAMID",
-                "number": 12,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "419281",
-                "image": "https://digitalhub.fifa.com/transform/66d9e01f-7f5e-4bef-b5bd-68d1ce4d9849/SAUD-ABDULHAMID_419281",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "MOTEB ALHARBI",
-                "shortName": "MOTEB ALHARBI",
-                "number": 24,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "419303",
-                "image": "https://digitalhub.fifa.com/transform/0d671a6b-7632-46ee-91c7-39c01ee4b00c/MOTEB-ALHARBI_419303",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "NASSER ALDAWSARI",
-                "shortName": "NASSER ALDAWSARI",
-                "number": 6,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "403319",
-                "image": "https://digitalhub.fifa.com/transform/81e654c7-8273-4e1f-b909-62613fbf14ea/NASSER-ALDAWSARI_403319",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "MUSAB ALJUWAYR",
-                "shortName": "MUSAB ALJUWAYR",
-                "number": 7,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "436537",
-                "image": "https://digitalhub.fifa.com/transform/c09997bc-1439-46be-a1f4-226d436e9eda/MUSAB-ALJUWAYR_436537",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "ABDULLAH ALKHAIBARI",
-                "shortName": "ABDULLAH ALKHAIBARI",
-                "number": 15,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "411624",
-                "image": "https://digitalhub.fifa.com/transform/16fa6436-2787-4e0c-b661-8fc766d029d6/ABDULLAH-ALKHAIBARI_411624",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "FERAS ALBRIKAN",
-                "shortName": "FERAS ALBRIKAN",
-                "number": 9,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "419291",
-                "image": "https://digitalhub.fifa.com/transform/9d59c398-9c66-4dad-b20d-9694a0f74dd4/FERAS-ALBRIKAN_419291",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "SALEM ALDAWSARI",
-                "shortName": "SALEM ALDAWSARI",
-                "number": 10,
-                "position": "FW",
-                "captain": true,
-                "fifaId": "339745",
-                "image": "https://digitalhub.fifa.com/transform/d167ee25-02d4-48c1-b6bf-ec1eea3a1633/SALEM-ALDAWSARI_339745",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ],
-            "substitutes": [
-              {
-                "name": "NAWAF ALAQIDI",
-                "shortName": "NAWAF ALAQIDI",
-                "number": 1,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "419287",
-                "image": "https://digitalhub.fifa.com/transform/6b95e954-e3fd-4ba9-a171-690c9626eced/NAWAF-ALAQIDI_419287",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "AHMED ALKASSAR",
-                "shortName": "AHMED ALKASSAR",
-                "number": 22,
-                "position": "GK",
-                "captain": false,
-                "fifaId": "339746",
-                "image": "https://digitalhub.fifa.com/transform/1354d5cd-4cb5-4494-9033-efd38b3f1ac0/AHMED-ALKASSAR_339746",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "ALI MAJRASHI",
-                "shortName": "ALI MAJRASHI",
-                "number": 2,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "419326",
-                "image": "https://digitalhub.fifa.com/transform/3b436722-501d-4098-8daf-b298d010c530/ALI-MAJRASHI_419326",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "NAWAF BU WASHL",
-                "shortName": "NAWAF BU WASHL",
-                "number": 13,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "430518",
-                "image": "https://digitalhub.fifa.com/transform/66433f37-d71a-4b14-ba06-da9d762320b4/NAWAF-BU-WASHL_430518",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "HASSAN KADISH",
-                "shortName": "HASSAN KADISH",
-                "number": 14,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "401924",
-                "image": "https://digitalhub.fifa.com/transform/fc41abe4-036c-4c99-aa2a-b56ddece0c2d/HASSAN-KADISH_401924",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "JEHAD THIKRI",
-                "shortName": "JEHAD THIKRI",
-                "number": 25,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "494506",
-                "image": "https://digitalhub.fifa.com/transform/0e99f4e8-6619-4e4c-8970-0443d31b83a0/JEHAD-THIKRI_494506",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "MOHAMMED ABU ALSHAMAT",
-                "shortName": "MOHAMMED ABU ALSHAMAT",
-                "number": 26,
-                "position": "DF",
-                "captain": false,
-                "fifaId": "512183",
-                "image": "https://digitalhub.fifa.com/transform/8aee29b9-06b4-4b46-b529-3bb6adf5f9a6/MOHAMMED-ABU-ALSHAMAT_512183",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "ZIYAD ALJOHANI",
-                "shortName": "ZIYAD ALJOHANI",
-                "number": 16,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "436538",
-                "image": "https://digitalhub.fifa.com/transform/401feff3-37fd-40a9-90f6-d987eb3a8e40/ZIYAD-ALJOHANI_436538",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "ALA ALHAJJI",
-                "shortName": "ALA ALHAJJI",
-                "number": 18,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "523333",
-                "image": "https://digitalhub.fifa.com/transform/2fb42f50-394b-46d4-9038-9d9b09564b98/ALA-ALHAJJI_523333",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "MOHAMED KANNO",
-                "shortName": "MOHAMED KANNO",
-                "number": 23,
-                "position": "MF",
-                "captain": false,
-                "fifaId": "407993",
-                "image": "https://digitalhub.fifa.com/transform/c3eb4162-fd6d-41f1-aad4-1b632b266f19/MOHAMED-KANNO_407993",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "AIMAN YAHYA",
-                "shortName": "AIMAN YAHYA",
-                "number": 8,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "430512",
-                "image": "https://digitalhub.fifa.com/transform/af0837e0-63e3-47e7-9b24-9676dcdf3c5c/AIMAN-YAHYA_430512",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "SALEH ALSHEHRI",
-                "shortName": "SALEH ALSHEHRI",
-                "number": 11,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "425804",
-                "image": "https://digitalhub.fifa.com/transform/a912d91a-f467-4d57-a2fc-7937f8cafb66/SALEH-ALSHEHRI_425804",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "KHALID ALGHANNAM",
-                "shortName": "KHALID ALGHANNAM",
-                "number": 17,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "419300",
-                "image": "https://digitalhub.fifa.com/transform/ab5b27fd-b17e-43a1-bd85-78119d057dab/KHALID-ALGHANNAM_419300",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "ABDULLAH ALHAMDDAN",
-                "shortName": "ABDULLAH ALHAMDDAN",
-                "number": 19,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "419302",
-                "image": "https://digitalhub.fifa.com/transform/2bdfc07a-ee4d-46f1-bc76-a69bd5d9e9be/ABDULLAH-ALHAMDDAN_419302",
-                "lineupX": null,
-                "lineupY": null
-              },
-              {
-                "name": "SULTAN MANDASH",
-                "shortName": "SULTAN MANDASH",
-                "number": 20,
-                "position": "FW",
-                "captain": false,
-                "fifaId": "494800",
-                "image": "https://digitalhub.fifa.com/transform/f360115a-08e8-451c-9fb0-2af3944cd37a/SULTAN-MANDASH_494800",
-                "lineupX": null,
-                "lineupY": null
-              }
-            ]
-          }
         }
       },
       {
@@ -7006,8 +4053,8 @@ window.WC2026_LIVE_DATA = {
         "away_team_id": "30",
         "home_score": "2",
         "away_score": "2",
-        "home_scorers": "null",
-        "away_scorers": "null",
+        "home_scorers": "{\"Maximiliano Araújo 44'\",\"Agustín Canobbio 45+6'\"}",
+        "away_scorers": "{\"Kevin Pina 21'\",\"Hliv Varla 61'\"}",
         "group": "H",
         "matchday": "2",
         "local_date": "06/21/2026 18:00",
@@ -7028,11 +4075,26 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021487",
           "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021487",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
+        },
+        "potm": {
+          "provider": "FIFA POTM",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
+          "status": "complete",
+          "matchId": 39,
+          "matchFeedId": 2608280,
+          "playerId": 1583,
+          "playerFeedId": 477852,
+          "name": "Kevin Pina",
+          "shortName": "K. Gonçalves Pereira de Pina",
+          "teamCode": "CPV",
+          "position": "MID",
+          "image": "https://digitalhub.fifa.com/transform/40e5a4a5-c7f0-4b0e-8a6e-d8ffbaa12d29/KEVIN-PINA_477852",
+          "url": "https://play.fifa.com/potm/en/"
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021487",
           "home": {
             "team": "Uruguay",
@@ -7604,21 +4666,6 @@ window.WC2026_LIVE_DATA = {
               }
             ]
           }
-        },
-        "potm": {
-          "provider": "FIFA POTM",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
-          "status": "complete",
-          "matchId": 39,
-          "matchFeedId": 2608280,
-          "playerId": 1583,
-          "playerFeedId": 477852,
-          "name": "Kevin Pina",
-          "shortName": "K. Gonçalves Pereira de Pina",
-          "teamCode": "CPV",
-          "position": "MID",
-          "image": "https://digitalhub.fifa.com/transform/40e5a4a5-c7f0-4b0e-8a6e-d8ffbaa12d29/KEVIN-PINA_477852",
-          "url": "https://play.fifa.com/potm/en/"
         }
       },
       {
@@ -7626,9 +4673,9 @@ window.WC2026_LIVE_DATA = {
         "id": "41",
         "home_team_id": "33",
         "away_team_id": "35",
-        "home_score": "0",
+        "home_score": "1",
         "away_score": "0",
-        "home_scorers": "null",
+        "home_scorers": "{\"Kylian Mbappé 14'\"}",
         "away_scorers": "null",
         "group": "I",
         "matchday": "2",
@@ -7648,9 +4695,606 @@ window.WC2026_LIVE_DATA = {
           "idSeason": "285023",
           "idStage": "289273",
           "idMatch": "400021492",
-          "matchStatus": 1,
+          "matchStatus": 11,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021492",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
+        },
+        "official_lineups": {
+          "provider": "FIFA",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021492",
+          "home": {
+            "team": "France",
+            "code": "FRA",
+            "formation": "4-2-3-1",
+            "coach": "Guy Stéphan",
+            "starters": [
+              {
+                "name": "Mike MAIGNAN",
+                "shortName": "Mike MAIGNAN",
+                "number": 16,
+                "position": "GK",
+                "captain": false,
+                "fifaId": "448332",
+                "image": "https://digitalhub.fifa.com/transform/3f92a933-a22d-4f58-8f4f-b51370aeacf4/MAIGNAN-Mike_448332",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Lucas Digne",
+                "shortName": "Lucas DIGNE",
+                "number": 3,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "368860",
+                "image": "https://digitalhub.fifa.com/transform/70e09388-6736-4f6c-85cf-0aa2017a6b18/DIGNE-Lucas_368860",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Dayot UPAMECANO",
+                "shortName": "Dayot UPAMECANO",
+                "number": 4,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "389876",
+                "image": "https://digitalhub.fifa.com/transform/daae69ae-72e0-4e42-812f-d19d74d12478/UPAMECANO-Dayot_389876",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Jules KOUNDE",
+                "shortName": "Jules KOUNDE",
+                "number": 5,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "430707",
+                "image": "https://digitalhub.fifa.com/transform/31b384b6-20b7-4629-ab33-aa67cf403fc3/KOUNDE-Jules_430707",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "William SALIBA",
+                "shortName": "William SALIBA",
+                "number": 17,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "419177",
+                "image": "https://digitalhub.fifa.com/transform/242125e7-67c3-4fcd-b0cc-6c5984c319f4/SALIBA-William_419177",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Manu KONE",
+                "shortName": "Manu KONE",
+                "number": 6,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "485677",
+                "image": "https://digitalhub.fifa.com/transform/fab8dcfa-7c16-4c88-adeb-51cf932e3abc/KONE-Manu_485677",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Adrien RABIOT",
+                "shortName": "Adrien RABIOT",
+                "number": 14,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "402047",
+                "image": "https://digitalhub.fifa.com/transform/2daab6cd-9fc6-4a46-acd6-82974aab8415/RABIOT-Adrien_402047",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Ousmane DEMBELE",
+                "shortName": "Ousmane DEMBELE",
+                "number": 7,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "398680",
+                "image": "https://digitalhub.fifa.com/transform/e6eee717-fd8c-4f8f-a7e0-c4f978fe327f/DEMBELE-Ousmane_398680",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Kylian MBAPPE",
+                "shortName": "Kylian MBAPPE",
+                "number": 10,
+                "position": "FW",
+                "captain": true,
+                "fifaId": "389867",
+                "image": "https://digitalhub.fifa.com/transform/66f6087d-9563-4644-8f10-5614ef6e1e51/MBAPPE-Kylian_389867",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Michael OLISE",
+                "shortName": "Michael OLISE",
+                "number": 11,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "485655",
+                "image": "https://digitalhub.fifa.com/transform/979cc206-e23b-4b21-8d40-843607ba8964/OLISE-Michael_485655",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Bradley BARCOLA",
+                "shortName": "Bradley BARCOLA",
+                "number": 12,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "484860",
+                "image": "https://digitalhub.fifa.com/transform/10e80ef7-3aa9-4c07-9639-e8bc04828d31/BARCOLA-Bradley_484860",
+                "lineupX": null,
+                "lineupY": null
+              }
+            ],
+            "substitutes": [
+              {
+                "name": "Brice SAMBA",
+                "shortName": "Brice SAMBA",
+                "number": 1,
+                "position": "GK",
+                "captain": false,
+                "fifaId": "483471",
+                "image": "https://digitalhub.fifa.com/transform/99fa69d0-8c6e-4c11-a78c-98a70aa322f8/SAMBA-Brice_483471",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Robin RISSER",
+                "shortName": "Robin RISSER",
+                "number": 23,
+                "position": "GK",
+                "captain": false,
+                "fifaId": "464127",
+                "image": "https://digitalhub.fifa.com/transform/834e2e38-78ec-4e02-98a8-dbc085a9637c/RISSER-Robin_464127",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Malo GUSTO",
+                "shortName": "Malo GUSTO",
+                "number": 2,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "464055",
+                "image": "https://digitalhub.fifa.com/transform/a747375e-cd17-4ef2-8241-fa7b9a7dab2b/GUSTO-Malo_464055",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Ibrahima KONATE",
+                "shortName": "Ibrahima KONATE",
+                "number": 15,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "419166",
+                "image": "https://digitalhub.fifa.com/transform/de7e635e-41b2-4383-9fbf-d38e6c737d51/KONATE-Ibrahima_419166",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Theo HERNANDEZ",
+                "shortName": "Theo HERNANDEZ",
+                "number": 19,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "408042",
+                "image": "https://digitalhub.fifa.com/transform/6f76533f-feca-4811-a010-e6e296b29db8/HERNANDEZ-Theo_408042",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Lucas HERNANDEZ",
+                "shortName": "Lucas HERNANDEZ",
+                "number": 21,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "411470",
+                "image": "https://digitalhub.fifa.com/transform/6ce8ced5-3b91-4a38-80ca-730e4a2ceb57/HERNANDEZ-Lucas_411470",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Maxence Lacroix",
+                "shortName": "Maxence LACROIX",
+                "number": 26,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "405881",
+                "image": "https://digitalhub.fifa.com/transform/a250ee2e-c181-46bb-b565-27d12a7b1878/LACROIX-Maxence_405881",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Aurelien TCHOUAMENI",
+                "shortName": "Aurelien TCHOUAMENI",
+                "number": 8,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "405893",
+                "image": "https://digitalhub.fifa.com/transform/8575fee6-68ae-4be0-9529-7e5c392e06e6/TCHOUAMENI-Aurelien_405893",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Ngolo KANTE",
+                "shortName": "Ngolo KANTE",
+                "number": 13,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "398681",
+                "image": "https://digitalhub.fifa.com/transform/355040a8-6b40-452b-92af-7c22f91cb87c/KANTE-Ngolo_398681",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Warren ZAIRE-EMERY",
+                "shortName": "Warren ZAIRE-EMERY",
+                "number": 18,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "483549",
+                "image": "https://digitalhub.fifa.com/transform/c4237ad3-cb10-4854-b9de-54126267d251/ZAIRE-EMERY-Warren_483549",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Rayan CHERKI",
+                "shortName": "Rayan CHERKI",
+                "number": 24,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "431861",
+                "image": "https://digitalhub.fifa.com/transform/e1fe82ba-026b-4f05-87ba-c1fb49f670e5/CHERKI-Rayan_431861",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Maghnes AKLIOUCHE",
+                "shortName": "Maghnes AKLIOUCHE",
+                "number": 25,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "485666",
+                "image": "https://digitalhub.fifa.com/transform/86a154a1-3ed6-46b8-977c-3a04925c39bc/AKLIOUCHE-Maghnes_485666",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Marcus THURAM",
+                "shortName": "Marcus THURAM",
+                "number": 9,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "403109",
+                "image": "https://digitalhub.fifa.com/transform/6d9fa458-dba9-47da-87d9-83749fdfce9d/THURAM-Marcus_403109",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Desire DOUE",
+                "shortName": "Desire DOUE",
+                "number": 20,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "464114",
+                "image": "https://digitalhub.fifa.com/transform/ca4e60df-4c45-48e9-89e4-70ce6ac3b3b1/DOUE-Desire_464114",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Jean-Philippe MATETA",
+                "shortName": "Jean-Philippe MATETA",
+                "number": 22,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "403094",
+                "image": "https://digitalhub.fifa.com/transform/91ab0f40-08d4-44bc-8b5b-dddb63b440bf/MATETA-Jean-Philippe_403094",
+                "lineupX": null,
+                "lineupY": null
+              }
+            ]
+          },
+          "away": {
+            "team": "Iraq",
+            "code": "IRQ",
+            "formation": "4-2-3-1",
+            "coach": "Graham James Arnold",
+            "starters": [
+              {
+                "name": "AHMED BASIL",
+                "shortName": "AHMED BASIL",
+                "number": 22,
+                "position": "GK",
+                "captain": false,
+                "fifaId": "433571",
+                "image": "https://digitalhub.fifa.com/transform/a9d30885-9966-457c-9a44-07e5cf8eee93/AHMED-BASIL_433571",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "Hussein Ali",
+                "shortName": "HUSSEIN ALI",
+                "number": 3,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "479553",
+                "image": "https://digitalhub.fifa.com/transform/9c065420-c134-4227-aef3-d6d07f0a9b8d/HUSSEIN-ALI_479553",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "ZAID TAHSEEN",
+                "shortName": "ZAID TAHSEEN",
+                "number": 4,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "434025",
+                "image": "https://digitalhub.fifa.com/transform/84a4d1c5-8fe9-4d23-bb47-5dddfdf566bf/ZAID-TAHSEEN_434025",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "AKAM HASHIM",
+                "shortName": "AKAM HASHIM",
+                "number": 5,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "481183",
+                "image": "https://digitalhub.fifa.com/transform/a0dea4f6-7d64-4613-bdd0-558480ddbc80/AKAM-HASHIM_481183_",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "MERCHAS DOSKI",
+                "shortName": "MERCHAS DOSKI",
+                "number": 23,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "479072",
+                "image": "https://digitalhub.fifa.com/transform/c2ac4751-fd73-4685-8bb6-de4c07266fda/MERCHAS-DOSKI_479072",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "IBRAHIM BAYESH",
+                "shortName": "IBRAHIM BAYESH",
+                "number": 8,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "433585",
+                "image": "https://digitalhub.fifa.com/transform/390fdc3f-232a-445d-a80e-1c9cc8a67df7/IBRAHIM-BAYESH_433585",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "ZIDANE IQBAL",
+                "shortName": "ZIDANE IQBAL",
+                "number": 14,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "434026",
+                "image": "https://digitalhub.fifa.com/transform/d76ebe64-2228-4d03-9c39-fa6332d4d40a/ZIDANE-IQBAL_434026",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "AMIR ALAMMARI",
+                "shortName": "AMIR ALAMMARI",
+                "number": 16,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "433074",
+                "image": "https://digitalhub.fifa.com/transform/d80ff1d4-6bce-462b-bc11-6b4049fe9741/AMIR-ALAMMARI_433074",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "ZAID ISMAEL",
+                "shortName": "ZAID ISMAEL",
+                "number": 24,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "484270",
+                "image": "https://digitalhub.fifa.com/transform/062e505a-0067-4b87-963d-a0e7ad53decb/ZAID-ISMAEL_484270",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "AHMED QASEM",
+                "shortName": "AHMED QASEM",
+                "number": 11,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "523236",
+                "image": "https://digitalhub.fifa.com/transform/66155853-6cb6-47af-84e6-f8c492fd1b6a/AHMED-QASIM_523236",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "AYMEN HUSSEIN",
+                "shortName": "AYMEN HUSSEIN",
+                "number": 18,
+                "position": "FW",
+                "captain": true,
+                "fifaId": "395186",
+                "image": "https://digitalhub.fifa.com/transform/388e5207-980c-407a-828c-270fbd4fdff6/AYMEN-HUSSEIN_395186",
+                "lineupX": null,
+                "lineupY": null
+              }
+            ],
+            "substitutes": [
+              {
+                "name": "FAHAD TALIB",
+                "shortName": "FAHAD TALIB",
+                "number": 1,
+                "position": "GK",
+                "captain": false,
+                "fifaId": "368744",
+                "image": "https://digitalhub.fifa.com/transform/70d6d7cd-dcf4-4952-bee5-0f0b869aead7/FAHAD-TALIB_368744",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "JALAL HASSAN",
+                "shortName": "JALAL HASSAN",
+                "number": 12,
+                "position": "GK",
+                "captain": false,
+                "fifaId": "347085",
+                "image": "https://digitalhub.fifa.com/transform/a7f7a32a-4968-462b-9c34-e8a0d0530b99/JALAL-HASSAN_347085",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "REBIN SULAKA",
+                "shortName": "REBIN SULAKA",
+                "number": 2,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "396158",
+                "image": "https://digitalhub.fifa.com/transform/0e08174c-879f-4de0-9709-8fdc59357236/REBIN-GHAREEB_396158",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "MUNAF YOUNUS",
+                "shortName": "MUNAF YOUNUS",
+                "number": 6,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "434024",
+                "image": "https://digitalhub.fifa.com/transform/3e21999a-9c29-4610-a6e7-2798b41cf9fe/MUNAF-YOUNUS_434024",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "AHMED MAKNAZI",
+                "shortName": "AHMED MAKNAZI",
+                "number": 15,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "484276",
+                "image": "https://digitalhub.fifa.com/transform/b19b8bfa-2aea-4d19-84a9-94cdf65b3445/AHMED-MAKNAZI_484276",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "MUSTAFA SAADOON",
+                "shortName": "MUSTAFA SAADOON",
+                "number": 25,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "479056",
+                "image": "https://digitalhub.fifa.com/transform/0a9bb9d5-b94d-4978-9fee-6d6baf634c05/MUSTAFA-SAADOON_479056",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "FRANS PUTROS",
+                "shortName": "FRANS PUTROS",
+                "number": 26,
+                "position": "DF",
+                "captain": false,
+                "fifaId": "436863",
+                "image": "https://digitalhub.fifa.com/transform/e6406961-d495-4d2f-8851-539b32ab43a9/FRANS-PUTROS_436863",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "YOUSSEF AMYN",
+                "shortName": "YOUSSEF AMYN",
+                "number": 7,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "464458",
+                "image": "https://digitalhub.fifa.com/transform/89fe671d-907a-47be-b4b0-4138dc878986/YOUSSEF-AMYN_464458",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "KEVIN YAKOB",
+                "shortName": "KEVIN YAKOB",
+                "number": 19,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "506069",
+                "image": "https://digitalhub.fifa.com/transform/c9912381-f7e5-4059-a630-ccbee68ebb7f/KEVIN-YAKOB_506069",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "AIMAR SHER",
+                "shortName": "AIMAR SHER",
+                "number": 20,
+                "position": "MF",
+                "captain": false,
+                "fifaId": "493983",
+                "image": "https://digitalhub.fifa.com/transform/254f7d31-32e2-472f-8c9a-97c37d2a41c8/AIMAR-SHER_493983",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "ALI ALHAMADI",
+                "shortName": "ALI ALHAMADI",
+                "number": 9,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "436628",
+                "image": "https://digitalhub.fifa.com/transform/00b5271a-9033-43ab-9073-7b2ec9e4426e/ALI-ALHAMADI_436628",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "MOHANAD ALI",
+                "shortName": "MOHANAD ALI",
+                "number": 10,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "422968",
+                "image": "https://digitalhub.fifa.com/transform/b71272b5-a898-49b9-9de5-35b59168f050/MOHANAD-ALI_422968",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "ALI YOUSIF",
+                "shortName": "ALI YOUSIF",
+                "number": 13,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "434029",
+                "image": "https://digitalhub.fifa.com/transform/e9b9b7b4-162e-40c5-91a3-f573cd6a5d39/ALI-YOUSIF_434029",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "ALI JASIM",
+                "shortName": "ALI JASIM",
+                "number": 17,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "464457",
+                "image": "https://digitalhub.fifa.com/transform/75d61654-11c8-4646-8e47-7c4c977b29b6/ALI-JASIM_464457",
+                "lineupX": null,
+                "lineupY": null
+              },
+              {
+                "name": "MARKO FARJI",
+                "shortName": "MARKO FARJI",
+                "number": 21,
+                "position": "FW",
+                "captain": false,
+                "fifaId": "484262",
+                "image": "https://digitalhub.fifa.com/transform/97055547-246e-4bc9-8130-5903cd33077d/MARKO-FARJI_484262",
+                "lineupX": null,
+                "lineupY": null
+              }
+            ]
+          }
         }
       },
       {
@@ -7682,7 +5326,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021491",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021491",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -7690,17 +5334,17 @@ window.WC2026_LIVE_DATA = {
         "id": "43",
         "home_team_id": "37",
         "away_team_id": "39",
-        "home_score": "0",
+        "home_score": "2",
         "away_score": "0",
-        "home_scorers": "null",
+        "home_scorers": "{\"Lionel Messi 38'\",\"Lionel Messi 90+5'\"}",
         "away_scorers": "null",
         "group": "J",
         "matchday": "2",
         "local_date": "06/22/2026 12:00",
         "persian_date": "1405-04-01 12:00",
         "stadium_id": "4",
-        "finished": "FALSE",
-        "time_elapsed": "notstarted",
+        "finished": "TRUE",
+        "time_elapsed": "finished",
         "type": "group",
         "home_team_name_en": "Argentina",
         "home_team_name_fa": "آرژانتین",
@@ -7712,18 +5356,33 @@ window.WC2026_LIVE_DATA = {
           "idSeason": "285023",
           "idStage": "289273",
           "idMatch": "400021494",
-          "matchStatus": 1,
+          "matchStatus": 0,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021494",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
+        },
+        "potm": {
+          "provider": "FIFA POTM",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
+          "status": "complete",
+          "matchId": 41,
+          "matchFeedId": 2608283,
+          "playerId": 1458,
+          "playerFeedId": 229397,
+          "name": "Lionel Messi",
+          "shortName": "L. Messi",
+          "teamCode": "ARG",
+          "position": "FWD",
+          "image": "https://digitalhub.fifa.com/transform/19823774-fac0-485a-8a8f-572e7324c6c2/MESSI-Lionel_229397",
+          "url": "https://play.fifa.com/potm/en/"
         },
         "official_lineups": {
           "provider": "FIFA",
-          "fetchedAt": "2026-06-22T16:16:03.165Z",
+          "fetchedAt": "2026-06-22T22:27:34.293Z",
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021494",
           "home": {
             "team": "Argentina",
             "code": "ARG",
-            "formation": "4-4-2",
+            "formation": "4-1-3-2",
             "coach": "Roberto AYALA",
             "starters": [
               {
@@ -8343,7 +6002,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021499",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021499",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8375,7 +6034,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021503",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021503",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8407,7 +6066,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021511",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021511",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8439,7 +6098,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021501",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021501",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8471,7 +6130,7 @@ window.WC2026_LIVE_DATA = {
           "idMatch": "400021506",
           "matchStatus": 1,
           "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021506",
-          "fetchedAt": "2026-06-22T16:16:03.165Z"
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8502,7 +6161,8 @@ window.WC2026_LIVE_DATA = {
           "idStage": "289273",
           "idMatch": "400021455",
           "matchStatus": 1,
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021455"
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021455",
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8533,7 +6193,8 @@ window.WC2026_LIVE_DATA = {
           "idStage": "289273",
           "idMatch": "400021452",
           "matchStatus": 1,
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021452"
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021452",
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8626,7 +6287,8 @@ window.WC2026_LIVE_DATA = {
           "idStage": "289273",
           "idMatch": "400021448",
           "matchStatus": 1,
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021448"
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021448",
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -8657,7 +6319,8 @@ window.WC2026_LIVE_DATA = {
           "idStage": "289273",
           "idMatch": "400021451",
           "matchStatus": 1,
-          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021451"
+          "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021451",
+          "fetchedAt": "2026-06-22T22:27:34.293Z"
         }
       },
       {
@@ -9868,7 +7531,7 @@ window.WC2026_LIVE_DATA = {
   },
   "naver": {
     "provider": "NAVER Sports",
-    "fetchedAt": "2026-06-22T16:15:56.925Z",
+    "fetchedAt": "2026-06-22T22:27:32.780Z",
     "topPlayers": {
       "code": 200,
       "success": true,
@@ -10478,6 +8141,43 @@ window.WC2026_LIVE_DATA = {
                 "rank": 1,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
+                "playerId": "390335",
+                "seasonId": "3F9X",
+                "categoryId": "worldcup",
+                "teamId": "8NywJb",
+                "goals": 0,
+                "assists": 0,
+                "expectedAssists": 0.0084,
+                "expectedGoals": 0,
+                "offencePoints": 0,
+                "winningGoals": 0,
+                "goalsPer90Min": 0,
+                "shotsOnTargetPer90Min": 0,
+                "offencePointsPer90Min": 0,
+                "cleanSheets": 2,
+                "savesPer90Min": 0.5,
+                "mom": null,
+                "bestEleven": null,
+                "indexScore": null,
+                "position": "GK",
+                "playerName": "에밀리아노 마르티네스",
+                "shortName": "마르티네스",
+                "countryId": "ARG",
+                "teamName": "아르헨티나",
+                "teamShortName": "아르헨티나",
+                "backNumber": "23",
+                "osId": "311490",
+                "keyword": "에밀리아노 마르티네즈",
+                "pkId": 1,
+                "mra": "bjky",
+                "profile": "{\"name\":\"에밀리아노 마르티네즈\",\"image\":\"https://ssl.pstatic.net/sstatic/people/38/202210042034591971.png\",\"teamName\":\"애스턴 빌라 FC\",\"teamCode\":\"2\",\"position\":\"GK 골키퍼\",\"backNumber\":\"23\",\"retire\":null,\"job\":[\"축구선수\"],\"viewName\":\"Emiliano Martinez, Damian Emiliano Martinez Romero\",\"keyword\":\"에밀리아노마르티네즈\",\"os\":311490}",
+                "image": "https://sports-phinf.pstatic.net/player/wfootball/default/390335.png",
+                "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/8NywJb.png?type=f92_88"
+              },
+              {
+                "rank": 1,
+                "rankType": "cleanSheets",
+                "rankFlag": null,
                 "playerId": "565536",
                 "seasonId": "3F9X",
                 "categoryId": "worldcup",
@@ -10512,7 +8212,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/Sr5v5r.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "SCuonLqf",
@@ -10549,7 +8249,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/nGkImf.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "9rzfCuuM",
@@ -10586,7 +8286,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/eK4tMi.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "jeOa1cyz",
@@ -10623,7 +8323,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/eaytNu.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "iRDJPM5K",
@@ -10660,7 +8360,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/p1TNre.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "RYenoLAi",
@@ -10697,7 +8397,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/fXCQKZ.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "489654",
@@ -10734,7 +8434,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/SDFPwP.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "eGlP7NlI",
@@ -10771,7 +8471,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/9aaPTL.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "5GFSphMf",
@@ -10808,7 +8508,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/h5L8yM.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "1118039",
@@ -10845,7 +8545,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/l4TXxn.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "Fk8Spt7p",
@@ -10882,44 +8582,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/MVgx1u.png?type=f92_88"
               },
               {
-                "rank": 3,
-                "rankType": "cleanSheets",
-                "rankFlag": null,
-                "playerId": "390335",
-                "seasonId": "3F9X",
-                "categoryId": "worldcup",
-                "teamId": "8NywJb",
-                "goals": 0,
-                "assists": 0,
-                "expectedAssists": 0.0081,
-                "expectedGoals": 0,
-                "offencePoints": 0,
-                "winningGoals": 0,
-                "goalsPer90Min": 0,
-                "shotsOnTargetPer90Min": 0,
-                "offencePointsPer90Min": 0,
-                "cleanSheets": 1,
-                "savesPer90Min": 0,
-                "mom": null,
-                "bestEleven": null,
-                "indexScore": null,
-                "position": "GK",
-                "playerName": "에밀리아노 마르티네스",
-                "shortName": "마르티네스",
-                "countryId": "ARG",
-                "teamName": "아르헨티나",
-                "teamShortName": "아르헨티나",
-                "backNumber": "23",
-                "osId": "311490",
-                "keyword": "에밀리아노 마르티네즈",
-                "pkId": 1,
-                "mra": "bjky",
-                "profile": "{\"name\":\"에밀리아노 마르티네즈\",\"image\":\"https://ssl.pstatic.net/sstatic/people/38/202210042034591971.png\",\"teamName\":\"애스턴 빌라 FC\",\"teamCode\":\"2\",\"position\":\"GK 골키퍼\",\"backNumber\":\"23\",\"retire\":null,\"job\":[\"축구선수\"],\"viewName\":\"Emiliano Martinez, Damian Emiliano Martinez Romero\",\"keyword\":\"에밀리아노마르티네즈\",\"os\":311490}",
-                "image": "https://sports-phinf.pstatic.net/player/wfootball/default/390335.png",
-                "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/8NywJb.png?type=f92_88"
-              },
-              {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "33PJYR1S",
@@ -10956,7 +8619,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/5qhrkN.png?type=f92_88"
               },
               {
-                "rank": 3,
+                "rank": 4,
                 "rankType": "cleanSheets",
                 "rankFlag": null,
                 "playerId": "RL6FOgMB",
@@ -11001,6 +8664,43 @@ window.WC2026_LIVE_DATA = {
                 "rank": 1,
                 "rankType": "goals",
                 "rankFlag": null,
+                "playerId": "IAEmZmZJ",
+                "seasonId": "3F9X",
+                "categoryId": "worldcup",
+                "teamId": "8NywJb",
+                "goals": 5,
+                "assists": 0,
+                "expectedAssists": 0.5629,
+                "expectedGoals": 2.8289,
+                "offencePoints": 5,
+                "winningGoals": 2,
+                "goalsPer90Min": 2.64706,
+                "shotsOnTargetPer90Min": 4.23529,
+                "offencePointsPer90Min": 2.64706,
+                "cleanSheets": 1,
+                "savesPer90Min": 0,
+                "mom": null,
+                "bestEleven": null,
+                "indexScore": null,
+                "position": "FW",
+                "playerName": "리오넬 메시",
+                "shortName": "메시",
+                "countryId": "ARG",
+                "teamName": "아르헨티나",
+                "teamShortName": "아르헨티나",
+                "backNumber": "10",
+                "osId": "112602",
+                "keyword": "리오넬 메시",
+                "pkId": 1,
+                "mra": "bjky",
+                "profile": "{\"name\":\"리오넬 메시\",\"image\":\"https://ssl.pstatic.net/sstatic/people/3/201806141425238771.jpg\",\"teamName\":\"인터 마이애미 CF\",\"teamCode\":\"mbRTCw\",\"position\":\"FW 공격수\",\"backNumber\":\"10\",\"retire\":null,\"job\":[\"축구선수\"],\"viewName\":\"Lionel Messi, Lionel Andres Messi\",\"keyword\":\"리오넬메시\",\"os\":112602}",
+                "image": "https://sports-phinf.pstatic.net/player/wfootball/default/IAEmZmZJ.png",
+                "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/8NywJb.png?type=f92_88"
+              },
+              {
+                "rank": 2,
+                "rankType": "goals",
+                "rankFlag": null,
                 "playerId": "826647",
                 "seasonId": "3F9X",
                 "categoryId": "worldcup",
@@ -11035,44 +8735,7 @@ window.WC2026_LIVE_DATA = {
                 "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/adjXRF.png?type=f92_88"
               },
               {
-                "rank": 1,
-                "rankType": "goals",
-                "rankFlag": null,
-                "playerId": "IAEmZmZJ",
-                "seasonId": "3F9X",
-                "categoryId": "worldcup",
-                "teamId": "8NywJb",
-                "goals": 3,
-                "assists": 0,
-                "expectedAssists": 0.3211,
-                "expectedGoals": 1.0528,
-                "offencePoints": 3,
-                "winningGoals": 1,
-                "goalsPer90Min": 3.375,
-                "shotsOnTargetPer90Min": 4.5,
-                "offencePointsPer90Min": 3.375,
-                "cleanSheets": 0,
-                "savesPer90Min": 0,
-                "mom": null,
-                "bestEleven": null,
-                "indexScore": null,
-                "position": "FW",
-                "playerName": "리오넬 메시",
-                "shortName": "메시",
-                "countryId": "ARG",
-                "teamName": "아르헨티나",
-                "teamShortName": "아르헨티나",
-                "backNumber": "10",
-                "osId": "112602",
-                "keyword": "리오넬 메시",
-                "pkId": 1,
-                "mra": "bjky",
-                "profile": "{\"name\":\"리오넬 메시\",\"image\":\"https://ssl.pstatic.net/sstatic/people/3/201806141425238771.jpg\",\"teamName\":\"인터 마이애미 CF\",\"teamCode\":\"mbRTCw\",\"position\":\"FW 공격수\",\"backNumber\":\"10\",\"retire\":null,\"job\":[\"축구선수\"],\"viewName\":\"Lionel Messi, Lionel Andres Messi\",\"keyword\":\"리오넬메시\",\"os\":112602}",
-                "image": "https://sports-phinf.pstatic.net/player/wfootball/default/IAEmZmZJ.png",
-                "teamEmblemUrl": "https://sports-phinf.pstatic.net/team/wfootball/default/8NywJb.png?type=f92_88"
-              },
-              {
-                "rank": 1,
+                "rank": 2,
                 "rankType": "goals",
                 "rankFlag": null,
                 "playerId": "1484558",
@@ -11563,23 +9226,18 @@ window.WC2026_LIVE_DATA = {
     "apiBase": "https://api.fifa.com/api/v3",
     "competitionId": "17",
     "seasonId": "285023",
-    "fetchedAt": "2026-06-22T16:16:03.165Z",
+    "fetchedAt": "2026-06-22T22:27:34.293Z",
     "matchCount": 104,
-    "liveCheckedCount": 12,
-    "lineupMatchCount": 9,
-    "potmMatchCount": 40
+    "liveCheckedCount": 15,
+    "lineupMatchCount": 5,
+    "potmMatchCount": 41
   },
   "potm": {
     "provider": "FIFA POTM",
     "pageUrl": "https://play.fifa.com/potm/en/",
-    "fetchedAt": "2026-06-22T16:16:03.165Z",
+    "fetchedAt": "2026-06-22T22:27:34.293Z",
     "matchCount": 72,
-    "winnerCount": 40,
-    "attachedCount": 40
-  },
-  "staleCoreData": true,
-  "coreDataError": {
-    "fetchedAt": "2026-06-22T16:15:24.072Z",
-    "message": "fetch failed"
+    "winnerCount": 41,
+    "attachedCount": 41
   }
 };
