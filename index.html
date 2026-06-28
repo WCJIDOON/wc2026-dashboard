@@ -595,16 +595,18 @@
     }
     .knockout-board {
       display: grid;
-      grid-template-columns: repeat(6, minmax(210px, 1fr));
-      gap: 10px;
-      padding: 12px;
+      grid-template-columns: repeat(5, minmax(220px, 1fr)) minmax(190px, .82fr);
+      gap: 18px;
+      padding: 14px 18px 18px 14px;
       overflow-x: auto;
+      --bracket-line: rgba(111, 171, 214, .38);
+      --bracket-row: 60px;
     }
     .ko-round {
       min-width: 0;
       display: grid;
-      align-content: start;
-      gap: 8px;
+      grid-template-rows: auto 1fr;
+      gap: 10px;
     }
     .ko-round-title {
       color: var(--blue);
@@ -618,12 +620,65 @@
       font-weight: 700;
       line-height: 1.2;
     }
+    .ko-round-body {
+      position: relative;
+      display: grid;
+      grid-template-rows: repeat(16, var(--bracket-row));
+      align-items: center;
+      min-height: calc(var(--bracket-row) * 16);
+    }
+    .ko-round-side .ko-round-body {
+      grid-template-rows: repeat(4, 1fr);
+      min-height: 310px;
+      align-content: center;
+      gap: 14px;
+      padding-top: 330px;
+    }
+    .ko-slot {
+      position: relative;
+      min-width: 0;
+    }
+    .ko-round:not(.ko-round-r32):not(.ko-round-side) .ko-slot::before {
+      content: "";
+      position: absolute;
+      left: -18px;
+      top: 50%;
+      width: 18px;
+      border-top: 2px solid var(--bracket-line);
+      transform: translateY(-50%);
+    }
+    .ko-round:not(.ko-round-final):not(.ko-round-side) .ko-slot::after {
+      content: "";
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      width: 18px;
+      border-top: 2px solid var(--bracket-line);
+      transform: translateY(-50%);
+    }
+    .ko-round-r32 .ko-slot:nth-child(odd) .ko-match::after,
+    .ko-round-r16 .ko-slot:nth-child(odd) .ko-match::after,
+    .ko-round-qf .ko-slot:nth-child(odd) .ko-match::after,
+    .ko-round-sf .ko-slot:nth-child(odd) .ko-match::after {
+      content: "";
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      height: var(--pair-height, 60px);
+      border-right: 2px solid var(--bracket-line);
+    }
+    .ko-round-r32 { --pair-height: 60px; }
+    .ko-round-r16 { --pair-height: 120px; }
+    .ko-round-qf { --pair-height: 240px; }
+    .ko-round-sf { --pair-height: 480px; }
     .ko-match {
+      position: relative;
       min-width: 0;
       background: rgba(11, 20, 24, .82);
       border: 1px solid #2b3a46;
       border-radius: 8px;
       padding: 9px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
     }
     .ko-match.live {
       border-color: rgba(85, 199, 155, .55);
@@ -782,7 +837,10 @@
       .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
       .knockout-head { align-items: start; flex-direction: column; gap: 5px; }
       .knockout-count { text-align: left; white-space: normal; }
-      .knockout-board { grid-template-columns: repeat(6, minmax(205px, 74vw)); }
+      .knockout-board {
+        grid-template-columns: repeat(5, minmax(215px, 76vw)) minmax(190px, 68vw);
+        --bracket-row: 58px;
+      }
       .stats-grid { grid-template-columns: 1fr; }
       .korea { grid-template-columns: 1fr; }
     }
@@ -2066,6 +2124,30 @@
       </article>`;
     }
 
+    function knockoutRoundClass(key) {
+      const clean = String(key || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+      return clean === "3rd" ? "side" : clean;
+    }
+
+    function knockoutSlotRow(roundKey, index, total) {
+      const slots = {
+        R32: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+        R16: [2, 4, 6, 8, 10, 12, 14, 16],
+        QF: [3, 7, 11, 15],
+        SF: [5, 13],
+        FINAL: [9],
+        "3RD": [2]
+      };
+      const fixed = slots[String(roundKey || "").toUpperCase()];
+      if (fixed && fixed[index]) return fixed[index];
+      return Math.max(1, Math.min(16, Math.round(((index + 0.5) * 16) / Math.max(total, 1))));
+    }
+
+    function knockoutSlot(row, roundKey, index, total) {
+      const slotRow = knockoutSlotRow(roundKey, index, total);
+      return `<div class="ko-slot" style="grid-row:${slotRow};">${knockoutMatchCard(row)}</div>`;
+    }
+
     function renderKnockout() {
       const root = document.getElementById("knockoutBoard");
       const count = document.getElementById("knockoutCount");
@@ -2085,12 +2167,15 @@
 
       root.innerHTML = KNOCKOUT_ROUNDS.map((round) => {
         const roundRows = rows.filter((row) => String(row.game.group || "").toUpperCase() === round.key);
-        return `<section class="ko-round">
+        const roundClass = knockoutRoundClass(round.key);
+        return `<section class="ko-round ko-round-${esc(roundClass)}">
           <div>
             <div class="ko-round-title">${esc(round.title)}</div>
             <div class="ko-round-meta">${roundRows.length}경기</div>
           </div>
-          ${roundRows.length ? roundRows.map(knockoutMatchCard).join("") : `<div class="ko-empty">대기 중</div>`}
+          <div class="ko-round-body">
+            ${roundRows.length ? roundRows.map((row, index) => knockoutSlot(row, round.key, index, roundRows.length)).join("") : `<div class="ko-empty">대기 중</div>`}
+          </div>
         </section>`;
       }).join("");
     }
