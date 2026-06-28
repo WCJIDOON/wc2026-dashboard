@@ -572,22 +572,6 @@
       white-space: nowrap;
     }
 
-    .korea {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-    }
-    .k-card {
-      background: var(--panel-2);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 10px 12px;
-    }
-    .k-date { color: var(--accent); font-size: 12px; font-weight: 900; margin-bottom: 5px; }
-    .k-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
-    .k-meta { color: var(--muted); font-size: 12px; }
-
     .knockout {
       margin: 0 0 14px;
       background: rgba(14, 24, 29, .9);
@@ -945,7 +929,6 @@
         --bracket-row: 56px;
       }
       .stats-grid { grid-template-columns: 1fr; }
-      .korea { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
   </style>
@@ -1057,7 +1040,6 @@
       <summary class="groups-summary">조별예선 결과 확인</summary>
       <section class="grid" id="groups"></section>
     </details>
-    <section class="korea" id="korea"></section>
   </main>
 
   <script>
@@ -1347,12 +1329,6 @@
       ["L", "06/18 08:00", "가나 대 파나마"],
       ["L", "06/24 05:00", "잉글랜드 대 가나"],
       ["L", "06/28 06:00", "파나마 대 잉글랜드"]
-    ];
-
-    const KOREA = [
-      ["2026년 6월 12일 11:00", "대한민국 대 체코", "과달라하라"],
-      ["2026년 6월 19일 10:00", "멕시코 대 대한민국", "과달라하라"],
-      ["2026년 6월 25일 10:00", "대한민국 대 남아프리카공화국", "몬테레이"]
     ];
 
     const KNOCKOUT_ROUNDS = [
@@ -2363,16 +2339,6 @@
       </div>`;
     }
 
-    function renderKorea() {
-      document.getElementById("korea").innerHTML = KOREA.map((m) => `
-        <article class="k-card">
-          <div class="k-date">${esc(m[0])}</div>
-          <div class="k-title">${esc(m[1])}</div>
-          <div class="k-meta">${esc(m[2])}</div>
-        </article>
-      `).join("");
-    }
-
     function renderStatus(live) {
       const el = document.getElementById("dataStatus");
       if (!live || !live.fetchedAt) {
@@ -2413,7 +2379,6 @@
       renderStats(live);
       renderKnockout();
       renderGroups(live);
-      renderKorea();
       renderStatus(live);
 
       setTimeout(() => {
