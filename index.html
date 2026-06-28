@@ -828,7 +828,7 @@
 
     .stats-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
       margin: 0 0 14px;
     }
@@ -863,10 +863,10 @@
     }
     .rank-row {
       display: grid;
-      grid-template-columns: 30px 1fr 42px;
+      grid-template-columns: 30px 34px minmax(0, 1fr) 42px;
       align-items: center;
       gap: 8px;
-      min-height: 34px;
+      min-height: 42px;
       padding: 6px 10px;
       border-bottom: 1px solid #24323e;
       font-size: 12px;
@@ -877,6 +877,22 @@
       font-weight: 900;
       text-align: center;
       font-variant-numeric: tabular-nums;
+    }
+    .player-photo {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #0d171d;
+      border: 1px solid rgba(255, 255, 255, .14);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, .25);
+    }
+    .player-photo.placeholder {
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
     }
     .player {
       min-width: 0;
@@ -903,6 +919,15 @@
       font-weight: 900;
       text-align: right;
       font-variant-numeric: tabular-nums;
+    }
+    .mom-list .rank-row {
+      grid-template-columns: 30px 42px minmax(0, 1fr) 54px;
+      min-height: 50px;
+    }
+    .mom-list .player-photo {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
     }
     .empty-stat {
       color: var(--muted);
@@ -1022,6 +1047,13 @@
           <div class="stat-note" id="assistNote">데이터 대기 중</div>
         </div>
         <div class="rank-list" id="assists"></div>
+      </article>
+      <article class="stat-panel">
+        <div class="stat-head">
+          <div class="stat-title">MOM 선수</div>
+          <div class="stat-note" id="momNote">데이터 대기 중</div>
+        </div>
+        <div class="rank-list mom-list" id="momPlayers"></div>
       </article>
     </section>
 
@@ -2089,27 +2121,78 @@
       map.set(key, current);
     }
 
-    function naverRankings(type) {
+    function naverTopPlayerBlocks() {
       const data = window.WC2026_LIVE_DATA;
       const topPlayers = data && data.naver && data.naver.topPlayers && data.naver.topPlayers.result
         ? data.naver.topPlayers.result.topPlayers
         : [];
-      if (!Array.isArray(topPlayers)) return [];
+      return Array.isArray(topPlayers) ? topPlayers : [];
+    }
 
+    function playerPhoto(row) {
+      if (!row || typeof row !== "object") return "";
+      if (row.image) return row.image;
+      if (row.profile) {
+        try {
+          const profile = JSON.parse(row.profile);
+          return profile && profile.image ? profile.image : "";
+        } catch (_) {
+          return "";
+        }
+      }
+      return "";
+    }
+
+    function naverPlayerRow(row, stat) {
+      return {
+        name: cleanPlayerName(row.playerName || row.shortName || ""),
+        team: teamName(row.teamShortName || row.teamName || ""),
+        flag: row.teamEmblemUrl || "",
+        image: playerPhoto(row),
+        count: num(row[stat])
+      };
+    }
+
+    function naverRankings(type) {
+      const topPlayers = naverTopPlayerBlocks();
       const stat = type === "goals" ? "goals" : "assists";
       const block = topPlayers.find((item) => item && item.type === stat);
       const rows = block && Array.isArray(block.ranks) ? block.ranks : [];
 
       return rows
         .filter((row) => num(row[stat]) > 0)
-        .map((row) => ({
-          name: cleanPlayerName(row.playerName || row.shortName || ""),
-          team: teamName(row.teamShortName || row.teamName || ""),
-          flag: row.teamEmblemUrl || "",
-          count: num(row[stat])
-        }))
+        .map((row) => naverPlayerRow(row, stat))
         .filter((row) => row.name && row.team)
-        .slice(0, 8);
+        .slice(0, 5);
+    }
+
+    function naverMomRankings() {
+      const topPlayers = naverTopPlayerBlocks();
+      const direct = topPlayers.find((item) => item && String(item.type || "").toLowerCase() === "mom");
+      const directRows = direct && Array.isArray(direct.ranks) ? direct.ranks : [];
+      const momRows = directRows.length
+        ? directRows
+        : topPlayers.flatMap((block) => Array.isArray(block.ranks) ? block.ranks : []);
+
+      const seen = new Set();
+      const actual = momRows
+        .filter((row) => num(row.mom) > 0)
+        .map((row) => naverPlayerRow(row, "mom"))
+        .filter((row) => {
+          const key = `${row.name}__${row.team}`;
+          if (!row.name || !row.team || seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, "ko"))
+        .slice(0, 5);
+
+      if (actual.length) return { rows: actual, fallback: false };
+
+      const fallbackRows = naverRankings("goals")
+        .map((row) => ({ ...row, count: "후보" }))
+        .slice(0, 5);
+      return { rows: fallbackRows, fallback: true };
     }
 
     function collectRankings(live, type) {
@@ -2141,7 +2224,13 @@
 
       return Array.from(rankings.values())
         .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, "ko"))
-        .slice(0, 8);
+        .slice(0, 5);
+    }
+
+    function playerPhotoCell(row) {
+      return row.image
+        ? `<img class="player-photo" src="${esc(row.image)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'player-photo placeholder',textContent:'?' }))">`
+        : `<span class="player-photo placeholder">?</span>`;
     }
 
     function renderRanking(targetId, noteId, rows, unit, emptyText) {
@@ -2157,6 +2246,7 @@
       target.innerHTML = rows.map((row, index) => `
         <div class="rank-row">
           <div class="rank-num">${index + 1}</div>
+          ${playerPhotoCell(row)}
           <div class="player">
             <div class="player-name">${esc(row.name)}</div>
             <div class="player-team">${teamCell({ team: row.team, flag: row.flag })}</div>
@@ -2171,8 +2261,13 @@
       const naverAssists = naverRankings("assists");
       const scorers = naverScorers.length ? naverScorers : collectRankings(live, "goals");
       const assists = naverAssists.length ? naverAssists : collectRankings(live, "assists");
+      const mom = naverMomRankings();
       renderRanking("scorers", "scorerNote", scorers, "골", "대회 시작 후 득점자가 집계됩니다.");
       renderRanking("assists", "assistNote", assists, "도움", "공개 API에 도움 데이터가 제공되면 자동 표시됩니다.");
+      renderRanking("momPlayers", "momNote", mom.rows, mom.fallback ? "" : "회", "MOM 데이터가 공개되면 자동 표시됩니다.");
+      if (mom.fallback && mom.rows.length) {
+        document.getElementById("momNote").textContent = "MOM 데이터 대기 · 후보 표시";
+      }
     }
 
     function knockoutGames() {
