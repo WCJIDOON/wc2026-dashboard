@@ -61,7 +61,7 @@
       mask-image: linear-gradient(180deg, transparent 0%, black 16%, black 92%, transparent 100%);
     }
     body.modal-open { overflow: hidden; }
-    .shell { max-width: 1320px; margin: 0 auto; position: relative; z-index: 1; }
+    .shell { max-width: 1760px; margin: 0 auto; position: relative; z-index: 1; }
 
     .top {
       display: flex;
@@ -403,6 +403,38 @@
       grid-template-columns: repeat(4, minmax(260px, 1fr));
       gap: 12px;
     }
+    .groups-collapse {
+      margin-top: 14px;
+      background: rgba(14, 24, 29, .72);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+    .groups-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 12px;
+      color: var(--accent);
+      background: linear-gradient(90deg, rgba(36, 58, 55, .95), rgba(25, 38, 45, .95));
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 900;
+      list-style: none;
+    }
+    .groups-summary::-webkit-details-marker { display: none; }
+    .groups-summary::after {
+      content: "+";
+      color: var(--blue);
+      font-size: 18px;
+      line-height: 1;
+    }
+    .groups-collapse[open] .groups-summary::after { content: "-"; }
+    .groups-collapse .grid {
+      padding: 12px;
+    }
     .group {
       min-width: 0;
       background: var(--panel);
@@ -595,18 +627,18 @@
     }
     .knockout-board {
       display: grid;
-      grid-template-columns: minmax(900px, 1fr);
+      grid-template-columns: minmax(1340px, 1fr);
       padding: 14px;
       overflow-x: auto;
       --bracket-line: rgba(205, 222, 235, .42);
-      --bracket-row: 42px;
+      --bracket-row: 56px;
     }
     .ko-bracket {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(4, minmax(128px, 1fr)) minmax(150px, .9fr) repeat(4, minmax(128px, 1fr));
+      grid-template-columns: repeat(4, minmax(150px, 1fr)) minmax(170px, .9fr) repeat(4, minmax(150px, 1fr));
       gap: 16px;
-      min-width: 1080px;
+      min-width: 1340px;
       padding: 12px;
       border-radius: 8px;
       background:
@@ -731,6 +763,13 @@
       font-size: 9px;
       font-weight: 800;
       line-height: 1.3;
+      min-width: 0;
+    }
+    .ko-meta span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .ko-teams {
       display: grid;
@@ -766,6 +805,9 @@
       color: var(--muted);
       font-size: 9px;
       line-height: 1.35;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .ko-center-card {
       position: sticky;
@@ -778,20 +820,15 @@
       z-index: 1;
     }
     .ko-trophy {
-      display: grid;
-      place-items: center;
-      width: 92px;
-      height: 92px;
+      width: 86px;
+      height: 124px;
       margin: 0 auto;
-      border-radius: 50%;
-      color: #101410;
-      font-size: 12px;
-      font-weight: 900;
-      line-height: 1.05;
-      background:
-        radial-gradient(circle at 42% 30%, #fff2a8, #d7a82e 46%, #7e5619 74%),
-        linear-gradient(145deg, #efcf65, #8a5b18);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, .38), 0 0 30px rgba(235, 190, 74, .22);
+      filter: drop-shadow(0 18px 26px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(235, 190, 74, .24));
+    }
+    .ko-trophy svg {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
     .ko-third {
       opacity: .9;
@@ -904,8 +941,8 @@
       .knockout-head { align-items: start; flex-direction: column; gap: 5px; }
       .knockout-count { text-align: left; white-space: normal; }
       .knockout-board {
-        grid-template-columns: minmax(1000px, 1fr);
-        --bracket-row: 42px;
+        grid-template-columns: minmax(1280px, 1fr);
+        --bracket-row: 56px;
       }
       .stats-grid { grid-template-columns: 1fr; }
       .korea { grid-template-columns: 1fr; }
@@ -1016,7 +1053,10 @@
       <div class="knockout-board" id="knockoutBoard"></div>
     </section>
 
-    <section class="grid" id="groups"></section>
+    <details class="groups-collapse">
+      <summary class="groups-summary">조별예선 결과 확인</summary>
+      <section class="grid" id="groups"></section>
+    </details>
     <section class="korea" id="korea"></section>
   </main>
 
@@ -1127,6 +1167,14 @@
       "Y. G. Kim": "김영권",
       "S.W. Cho": "조현우",
       "S. W. Cho": "조현우"
+    };
+
+    const PLAYER_ALIAS = {
+      "lionel messi": "Goat",
+      "l. messi": "Goat",
+      "messi": "Goat",
+      "리오넬 메시": "Goat",
+      "메시": "Goat"
     };
 
     const STATIC_FLAGS = {
@@ -2010,7 +2058,7 @@
     }
 
     function cleanPlayerName(value) {
-      return String(value || "")
+      const name = String(value || "")
         .replace(/^[\s\\"'`“”‘’{}\[\]]+|[\s\\"'`“”‘’{}\[\]]+$/g, "")
         .replace(/[\\"“”]/g, "")
         .replace(/\([^)]*\d+[^)]*\)/g, "")
@@ -2019,9 +2067,11 @@
         .replace(/\s+/g, " ")
         .replace(/^[\s\\"'`“”‘’{}\[\]]+|[\s\\"'`“”‘’{}\[\]]+$/g, "")
         .trim();
+      return PLAYER_ALIAS[name.toLowerCase()] || name;
     }
 
     function playerNameForTeam(name, team) {
+      if (PLAYER_ALIAS[String(name || "").toLowerCase()]) return PLAYER_ALIAS[String(name || "").toLowerCase()];
       if (team !== "대한민국") return name;
       return KO_PLAYER_NAME[name] || name;
     }
@@ -2248,7 +2298,31 @@
           <div class="ko-round-meta">${finalRows.length}경기${thirdRows.length ? " · 3위 결정전 포함" : ""}</div>
         </div>
         <div class="ko-center-card">
-          <div class="ko-trophy">WORLD<br>CUP<br>2026</div>
+          <div class="ko-trophy" aria-label="월드컵 트로피">
+            <svg viewBox="0 0 96 140" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="trophyGold" x1="22" y1="8" x2="78" y2="132" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#fff0a8"/>
+                  <stop offset=".28" stop-color="#e4b73b"/>
+                  <stop offset=".58" stop-color="#a96d18"/>
+                  <stop offset="1" stop-color="#f0cd63"/>
+                </linearGradient>
+                <radialGradient id="trophyGlow" cx="42%" cy="23%" r="58%">
+                  <stop offset="0" stop-color="#fff7c9"/>
+                  <stop offset=".45" stop-color="#e7bd44"/>
+                  <stop offset="1" stop-color="#7d5417"/>
+                </radialGradient>
+              </defs>
+              <path fill="url(#trophyGlow)" d="M48 4c21 0 35 14 35 33 0 17-10 30-22 39-7 5-9 12-8 20l2 18H41l2-18c1-8-1-15-8-20-12-9-22-22-22-39C13 18 27 4 48 4Z"/>
+              <path fill="#315e35" d="M26 33c8-9 18-11 30-8 10 3 18 1 24-4 2 5 3 10 3 16 0 17-10 30-22 39-7 5-9 12-8 20l1 8H42l1-8c1-8-1-15-8-20-12-9-22-22-22-39 0-5 1-9 3-13 2 8 5 12 10 9Z" opacity=".9"/>
+              <path fill="url(#trophyGold)" d="M34 20c6-8 16-13 26-9 8 4 13 12 12 23-1 12-10 22-22 30-4 3-5 8-5 14v21h-8l2-21c1-9-2-14-9-19-10-8-15-21-11-34 4 6 9 7 15-5Z"/>
+              <path fill="#f6d870" d="M45 17c5-5 13-5 17 0 4 5 3 13-2 19-4 5-10 8-18 12 2-10-3-20 3-31Z" opacity=".88"/>
+              <path fill="#d49a28" d="M33 104h30l4 18H29l4-18Z"/>
+              <path fill="#805318" d="M24 122h48l5 12H19l5-12Z"/>
+              <path fill="#f1cf68" d="M27 119h42l2 6H25l2-6Z"/>
+              <path fill="#21482f" d="M30 127h36l2 5H28l2-5Z"/>
+            </svg>
+          </div>
           <div class="ko-slot" style="grid-row:8 / span 2;">
             <span class="ko-final-link left"></span>
             ${finalCard}
