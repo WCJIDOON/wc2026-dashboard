@@ -288,254 +288,7 @@
       font-size: 11px;
       line-height: 1.35;
     }
-    .today-potm {
-      display: grid;
-      grid-template-columns: 42px minmax(0, 1fr);
-      align-items: center;
-      gap: 9px;
-      margin-top: 10px;
-      padding: 8px;
-      color: inherit;
-      text-decoration: none;
-      background: rgba(224, 182, 73, .1);
-      border: 1px solid rgba(224, 182, 73, .28);
-      border-radius: 8px;
-    }
-    .today-potm-avatar,
-    .today-potm-initial {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      background: #101820;
-      border: 1px solid rgba(224, 182, 73, .4);
-    }
-    .today-potm-avatar {
-      display: block;
-      overflow: hidden;
-    }
-    .today-potm-photo {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 4%;
-      transform: scale(4.1);
-      transform-origin: 50% 6%;
-    }
-    .today-potm-initial {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 15px;
-      font-weight: 900;
-    }
-    .today-potm-kicker {
-      display: block;
-      color: var(--accent);
-      font-size: 10px;
-      font-weight: 900;
-      line-height: 1.2;
-    }
-    .today-potm-name {
-      display: block;
-      margin-top: 2px;
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 900;
-      line-height: 1.25;
-      overflow-wrap: anywhere;
-    }
-    .today-potm-meta {
-      display: block;
-      margin-top: 2px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.3;
-    }
     .today-empty {
-      color: var(--muted);
-      border: 1px dashed #344453;
-      border-radius: 8px;
-      padding: 12px;
-      font-size: 12px;
-      text-align: center;
-    }
-
-    .calendar-panel {
-      background: rgba(14, 24, 29, .9);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px;
-      margin: 0 0 14px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
-    }
-    .calendar-top {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .calendar-title {
-      color: var(--accent);
-      font-size: 16px;
-      font-weight: 900;
-      line-height: 1.2;
-    }
-    .calendar-sub,
-    .calendar-count {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.4;
-    }
-    .calendar-count {
-      text-align: right;
-      white-space: nowrap;
-    }
-    .calendar-days {
-      display: flex;
-      gap: 7px;
-      overflow-x: auto;
-      padding: 2px 0 9px;
-      margin-bottom: 10px;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(224, 182, 73, .5) transparent;
-    }
-    .calendar-day {
-      flex: 0 0 auto;
-      min-width: 68px;
-      border: 1px solid #2b3a46;
-      border-radius: 8px;
-      background: #111b22;
-      color: var(--text);
-      padding: 8px 9px;
-      text-align: left;
-      cursor: pointer;
-    }
-    .calendar-day:hover,
-    .calendar-day:focus-visible {
-      border-color: rgba(224, 182, 73, .66);
-      outline: none;
-    }
-    .calendar-day.active {
-      background: rgba(224, 182, 73, .16);
-      border-color: rgba(224, 182, 73, .75);
-    }
-    .calendar-day.today {
-      box-shadow: inset 0 0 0 1px rgba(85, 199, 155, .22);
-    }
-    .calendar-day-date {
-      display: block;
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 900;
-      line-height: 1.1;
-      font-variant-numeric: tabular-nums;
-    }
-    .calendar-day-week {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 800;
-      line-height: 1.1;
-    }
-    .calendar-day-count {
-      display: block;
-      margin-top: 5px;
-      color: var(--accent);
-      font-size: 10px;
-      font-weight: 900;
-      line-height: 1.1;
-    }
-    .calendar-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 10px;
-    }
-    .calendar-card {
-      min-width: 0;
-      background: var(--panel);
-      border: 1px solid #2b3a46;
-      border-radius: 8px;
-      padding: 10px;
-    }
-    .calendar-card.live {
-      border-color: rgba(85, 199, 155, .55);
-      box-shadow: inset 0 0 0 1px rgba(85, 199, 155, .12);
-    }
-    .calendar-card.done {
-      opacity: .82;
-    }
-    .calendar-time {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 900;
-      font-variant-numeric: tabular-nums;
-    }
-    .calendar-status {
-      color: var(--muted);
-      border: 1px solid rgba(151, 174, 189, .28);
-      border-radius: 999px;
-      padding: 1px 6px;
-      font-size: 10px;
-      line-height: 1.3;
-      white-space: nowrap;
-    }
-    .calendar-card.live .calendar-status {
-      color: #c9f4e5;
-      border-color: rgba(85, 199, 155, .38);
-    }
-    .calendar-teams {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-      align-items: center;
-      gap: 8px;
-      margin-top: 9px;
-    }
-    .calendar-side {
-      min-width: 0;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .calendar-side.away {
-      text-align: right;
-    }
-    .calendar-side.away .team-wrap {
-      justify-content: flex-end;
-    }
-    .calendar-score {
-      min-width: 44px;
-      color: var(--text);
-      background: #0f161d;
-      border: 1px solid #293845;
-      border-radius: 999px;
-      padding: 3px 8px;
-      font-size: 11px;
-      font-weight: 900;
-      text-align: center;
-      font-variant-numeric: tabular-nums;
-    }
-    .calendar-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.35;
-    }
-    .calendar-result {
-      color: var(--accent);
-      font-weight: 900;
-      white-space: nowrap;
-    }
-    .calendar-empty {
       color: var(--muted);
       border: 1px dashed #344453;
       border-radius: 8px;
@@ -752,7 +505,7 @@
     }
     .match {
       display: grid;
-      grid-template-columns: 38px minmax(0, 1fr) auto auto;
+      grid-template-columns: 38px 1fr auto;
       gap: 8px;
       align-items: center;
       color: var(--muted);
@@ -760,9 +513,11 @@
       line-height: 1.45;
       padding: 2px 0;
     }
+    .match.done {
+      opacity: .62;
+    }
     .match.done .time,
     .match.done .teams {
-      opacity: .62;
       text-decoration: line-through;
       text-decoration-thickness: 1px;
       text-decoration-color: rgba(203, 216, 222, .72);
@@ -772,23 +527,6 @@
       color: #cbd8de;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .match-score {
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 900;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
-    .match-winner {
-      color: #c9f4e5;
-      border: 1px solid rgba(85, 199, 155, .38);
-      border-radius: 999px;
-      padding: 1px 6px;
-      font-size: 10px;
-      font-weight: 900;
-      line-height: 1.3;
       white-space: nowrap;
     }
     .match-badge {
@@ -803,101 +541,147 @@
     }
 
     .korea {
-      margin: 0 0 14px;
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
     }
-    .k-next {
+    .k-card {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .k-date { color: var(--accent); font-size: 12px; font-weight: 900; margin-bottom: 5px; }
+    .k-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+    .k-meta { color: var(--muted); font-size: 12px; }
+
+    .knockout {
+      margin: 0 0 14px;
+      background: rgba(14, 24, 29, .9);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .24);
+      backdrop-filter: blur(8px);
+    }
+    .knockout-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 12px;
+      background: linear-gradient(90deg, rgba(36, 58, 55, .95), rgba(25, 38, 45, .95));
+      border-bottom: 1px solid var(--line);
+    }
+    .knockout-title {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .knockout-sub {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .knockout-count {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .knockout-board {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(210px, 1fr));
+      gap: 10px;
+      padding: 12px;
+      overflow-x: auto;
+    }
+    .ko-round {
+      min-width: 0;
+      display: grid;
+      align-content: start;
+      gap: 8px;
+    }
+    .ko-round-title {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .ko-round-meta {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .ko-match {
+      min-width: 0;
+      background: rgba(11, 20, 24, .82);
+      border: 1px solid #2b3a46;
+      border-radius: 8px;
+      padding: 9px;
+    }
+    .ko-match.live {
+      border-color: rgba(85, 199, 155, .55);
+      box-shadow: inset 0 0 0 1px rgba(85, 199, 155, .12);
+    }
+    .ko-match.done { opacity: .88; }
+    .ko-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 7px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .ko-teams {
+      display: grid;
+      gap: 5px;
+    }
+    .ko-team {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
-      gap: 14px;
-      padding: 14px 16px;
-      background: linear-gradient(135deg, rgba(224, 182, 73, .18), rgba(85, 199, 155, .08));
-      border: 1px solid rgba(224, 182, 73, .42);
-      border-left: 4px solid var(--good);
-      border-radius: 8px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
+      gap: 8px;
+      min-height: 26px;
+      padding: 5px 7px;
+      background: rgba(255, 255, 255, .035);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 6px;
     }
-    .k-next-kicker {
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 900;
-      line-height: 1.3;
+    .ko-team.winner {
+      border-color: rgba(85, 199, 155, .44);
+      background: rgba(85, 199, 155, .09);
     }
-    .k-next-title {
-      margin-top: 4px;
-      color: var(--text);
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1.15;
-      overflow-wrap: anywhere;
-    }
-    .k-next-meta {
-      margin-top: 6px;
+    .ko-team.pending .team-label {
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.45;
+      font-weight: 700;
     }
-    .k-next-dday {
-      min-width: 96px;
-      color: #101820;
-      background: var(--accent);
-      border-radius: 8px;
-      padding: 10px 12px;
-      text-align: center;
-      font-size: 22px;
+    .ko-score {
+      color: var(--accent);
+      font-size: 13px;
       font-weight: 900;
-      line-height: 1;
       font-variant-numeric: tabular-nums;
     }
-    .k-next-dday span {
-      display: block;
-      margin-top: 6px;
-      color: rgba(16, 24, 32, .72);
-      font-size: 11px;
-      line-height: 1.2;
-    }
-    .k-followups {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 8px;
-      overflow-x: auto;
-      padding-bottom: 2px;
-      scrollbar-width: none;
-    }
-    .k-followups::-webkit-scrollbar {
-      display: none;
-    }
-    .k-followup-label {
-      flex: 0 0 auto;
+    .ko-status {
+      margin-top: 7px;
       color: var(--muted);
-      font-size: 11px;
-      font-weight: 900;
-      line-height: 1.2;
+      font-size: 10px;
+      line-height: 1.35;
     }
-    .k-followup {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      min-height: 28px;
-      padding: 5px 9px;
+    .ko-empty {
       color: var(--muted);
-      background: rgba(16, 29, 35, .66);
-      border: 1px solid rgba(151, 174, 189, .22);
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-    .k-followup time {
-      color: var(--accent);
-      font-weight: 900;
-    }
-    .k-followup strong {
-      color: var(--text);
-      font-weight: 900;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 12px;
+      text-align: center;
     }
 
     .stats-grid {
@@ -934,76 +718,6 @@
     .rank-list {
       display: grid;
       gap: 0;
-    }
-    .leader-card {
-      display: grid;
-      grid-template-columns: 72px minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 12px;
-      margin: 10px;
-      padding: 10px;
-      background: linear-gradient(135deg, rgba(224, 182, 73, .16), rgba(112, 166, 216, .08));
-      border: 1px solid rgba(224, 182, 73, .34);
-      border-radius: 8px;
-    }
-    .leader-photo,
-    .leader-initial {
-      width: 72px;
-      height: 72px;
-      border-radius: 8px;
-      background: #101820;
-      border: 1px solid rgba(224, 182, 73, .42);
-    }
-    .leader-photo {
-      display: block;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .leader-initial {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 24px;
-      font-weight: 900;
-    }
-    .leader-kicker {
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 900;
-      line-height: 1.2;
-    }
-    .leader-info {
-      min-width: 0;
-    }
-    .leader-name {
-      margin-top: 4px;
-      color: var(--text);
-      font-size: 18px;
-      font-weight: 900;
-      line-height: 1.18;
-      overflow-wrap: anywhere;
-    }
-    .leader-team {
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-    .leader-score {
-      color: var(--accent);
-      font-size: 28px;
-      font-weight: 900;
-      line-height: 1;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-    .leader-unit {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
     }
     .rank-row {
       display: grid;
@@ -1065,37 +779,14 @@
       .countdown-value { font-size: 23px; }
       .today-top { align-items: start; flex-direction: column; gap: 4px; }
       .today-count { text-align: left; white-space: normal; }
-      .calendar-top { align-items: start; flex-direction: column; gap: 4px; }
-      .calendar-count { text-align: left; white-space: normal; }
       .grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+      .knockout-head { align-items: start; flex-direction: column; gap: 5px; }
+      .knockout-count { text-align: left; white-space: normal; }
+      .knockout-board { grid-template-columns: repeat(6, minmax(205px, 74vw)); }
       .stats-grid { grid-template-columns: 1fr; }
-      .k-next {
-        grid-template-columns: 1fr;
-        align-items: start;
-      }
-      .k-next-dday {
-        width: 100%;
-      }
-      .k-followups {
-        align-items: flex-start;
-        flex-wrap: wrap;
-        overflow-x: visible;
-      }
+      .korea { grid-template-columns: 1fr; }
     }
-    @media (max-width: 560px) {
-      .grid { grid-template-columns: 1fr; }
-      .leader-card {
-        grid-template-columns: 58px minmax(0, 1fr) auto;
-        gap: 9px;
-      }
-      .leader-photo,
-      .leader-initial {
-        width: 58px;
-        height: 58px;
-      }
-      .leader-name { font-size: 15px; }
-      .leader-score { font-size: 23px; }
-    }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -1138,8 +829,6 @@
       </div>
     </section>
 
-    <section class="korea" id="korea"></section>
-
     <section class="legend">
       <span class="chip good">1-2위</span>
       <span class="chip warn">3위 후보</span>
@@ -1157,18 +846,6 @@
         <div class="today-count" id="todayMatchCount"></div>
       </div>
       <div class="today-list" id="todayMatches"></div>
-    </section>
-
-    <section class="calendar-panel" id="worldCupCalendar">
-      <div class="calendar-top">
-        <div>
-          <div class="calendar-title">월드컵 캘린더</div>
-          <div class="calendar-sub" id="calendarSub">한국시간 기준</div>
-        </div>
-        <div class="calendar-count" id="calendarCount"></div>
-      </div>
-      <div class="calendar-days" id="calendarDays" role="tablist" aria-label="경기 날짜"></div>
-      <div class="calendar-list" id="calendarMatches"></div>
     </section>
 
     <div class="lineup-modal" id="lineupModal" aria-hidden="true">
@@ -1204,7 +881,19 @@
       </article>
     </section>
 
+    <section class="knockout" id="knockout">
+      <div class="knockout-head">
+        <div>
+          <div class="knockout-title">32강 토너먼트</div>
+          <div class="knockout-sub">한국시간 기준 · 대진 확정/결과 자동 갱신</div>
+        </div>
+        <div class="knockout-count" id="knockoutCount"></div>
+      </div>
+      <div class="knockout-board" id="knockoutBoard"></div>
+    </section>
+
     <section class="grid" id="groups"></section>
+    <section class="korea" id="korea"></section>
   </main>
 
   <script>
@@ -1213,16 +902,6 @@
       title: "Mexico vs South Africa",
       venue: "Mexico City Stadium",
       kstLabel: "2026.06.12 04:00 KST"
-    };
-    const FIFA_CLIENT = {
-      apiBase: "https://api.fifa.com/api/v3",
-      webBase: "https://www.fifa.com/en/match-centre/match",
-      potmGamesUrl: "https://play.fifa.com/json/player_of_the_match_vote/games.json",
-      potmPlayersUrl: "https://play.fifa.com/json/player_of_the_match_vote/players.json",
-      potmPageUrl: "https://play.fifa.com/potm/en/",
-      competitionId: "17",
-      seasonId: "285023",
-      language: "en"
     };
     let OPENING_COUNTDOWN_TIMER = null;
 
@@ -1504,8 +1183,16 @@
       ["2026년 6월 25일 10:00", "대한민국 대 남아프리카공화국", "몬테레이"]
     ];
 
+    const KNOCKOUT_ROUNDS = [
+      { key: "R32", title: "32강" },
+      { key: "R16", title: "16강" },
+      { key: "QF", title: "8강" },
+      { key: "SF", title: "준결승" },
+      { key: "3RD", title: "3위 결정전" },
+      { key: "FINAL", title: "결승" }
+    ];
+
     let TODAY_MATCH_ROWS = [];
-    let CALENDAR_SELECTED_KEY = "";
     let LINEUP_CLOSE_TIMER = null;
     let ACTIVE_LINEUP_TRIGGER = null;
 
@@ -1639,7 +1326,6 @@
     function matchStatusLabel(game) {
       const status = String(game.time_elapsed || "").toLowerCase();
       if (!status || status === "notstarted") return "예정";
-      if (status === "lineups") return "라인업 공개";
       if (["finished", "fulltime", "full-time", "ft"].includes(status)) return "종료";
       if (["halftime", "half-time", "ht"].includes(status)) return "하프타임";
       if (/^\d+$/.test(status)) return `${status}분`;
@@ -1677,453 +1363,6 @@
       return labels[key] || "월드컵";
     }
 
-    function fifaText(value) {
-      if (!Array.isArray(value)) return "";
-      const entry = value.find((item) => String(item.Locale || "").toLowerCase().startsWith("en")) || value[0] || {};
-      return entry.Description || "";
-    }
-
-    function stripMarks(value) {
-      return String(value || "")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-    }
-
-    function normalizeTeamName(value) {
-      const name = stripMarks(value)
-        .toLowerCase()
-        .replace(/&/g, " and ")
-        .replace(/[^a-z0-9]+/g, " ")
-        .trim()
-        .replace(/\s+/g, " ");
-      const aliases = {
-        "bosnia herzegovina": "bosnia and herzegovina",
-        "cabo verde": "cape verde",
-        "cote d ivoire": "ivory coast",
-        "cote divoire": "ivory coast",
-        "czech republic": "czechia",
-        "congo dr": "congo dr",
-        "democratic republic of the congo": "congo dr",
-        "dr congo": "congo dr",
-        "ir iran": "iran",
-        "korea republic": "south korea",
-        "turkey": "turkiye",
-        "united states": "usa",
-        "united states of america": "usa"
-      };
-      return aliases[name] || name;
-    }
-
-    function fifaMatchUrl(match) {
-      return [
-        FIFA_CLIENT.webBase,
-        match.IdCompetition,
-        match.IdSeason,
-        match.IdStage,
-        match.IdMatch
-      ].join("/");
-    }
-
-    async function fetchFifaJson(path) {
-      const response = await fetch(`${FIFA_CLIENT.apiBase}/${path}`, {
-        cache: "no-store",
-        headers: { "accept": "application/json" }
-      });
-      if (!response.ok) throw new Error(`FIFA ${path} ${response.status}`);
-      return response.json();
-    }
-
-    async function fetchJsonUrl(url) {
-      const response = await fetch(url, {
-        cache: "no-store",
-        headers: { "accept": "application/json" }
-      });
-      if (!response.ok) throw new Error(`${url} ${response.status}`);
-      return response.json();
-    }
-
-    function fifaScore(match, side) {
-      const teamKey = side === "home" ? "HomeTeam" : "AwayTeam";
-      const calendarKey = side === "home" ? "HomeTeamScore" : "AwayTeamScore";
-      const value = match && (match[calendarKey] ?? (match[teamKey] && match[teamKey].Score));
-      return Number.isFinite(Number(value)) ? Number(value) : null;
-    }
-
-    function fifaStatusValue(match) {
-      const status = Number(match && match.MatchStatus);
-      const resultType = Number(match && match.ResultType);
-      const hasScore = fifaScore(match, "home") !== null && fifaScore(match, "away") !== null;
-      if ((status === 0 || resultType > 0) && hasScore) return "finished";
-      if (status === 12) return "lineups";
-      if (status === 3) {
-        const minute = String(match.MatchTime || "").replace(/[^\d+]/g, "");
-        return minute || "live";
-      }
-      return "notstarted";
-    }
-
-    function mergeFifaMatchIntoGame(game, match) {
-      const homeScore = fifaScore(match, "home");
-      const awayScore = fifaScore(match, "away");
-      const status = fifaStatusValue(match);
-      let changed = false;
-
-      if (homeScore !== null && String(game.home_score) !== String(homeScore)) {
-        game.home_score = String(homeScore);
-        changed = true;
-      }
-      if (awayScore !== null && String(game.away_score) !== String(awayScore)) {
-        game.away_score = String(awayScore);
-        changed = true;
-      }
-      if (game.time_elapsed !== status) {
-        game.time_elapsed = status;
-        changed = true;
-      }
-      const finished = status === "finished" ? "TRUE" : "FALSE";
-      if (game.finished !== finished) {
-        game.finished = finished;
-        changed = true;
-      }
-      return changed;
-    }
-
-    function positionLabel(position) {
-      return { 0: "GK", 1: "DF", 2: "MF", 3: "FW" }[position] || "";
-    }
-
-    function fifaPlayer(player) {
-      return {
-        name: fifaText(player.PlayerName) || fifaText(player.ShortName) || String(player.IdPlayer || ""),
-        shortName: fifaText(player.ShortName),
-        number: player.ShirtNumber || "",
-        position: positionLabel(player.Position),
-        captain: Boolean(player.Captain),
-        fifaId: player.IdPlayer || "",
-        image: player.PlayerPicture && player.PlayerPicture.PictureUrl || ""
-      };
-    }
-
-    function fifaTeamLineup(team) {
-      const players = Array.isArray(team && team.Players) ? team.Players : [];
-      const coaches = Array.isArray(team && team.Coaches) ? team.Coaches : [];
-      return {
-        team: fifaText(team && team.TeamName),
-        code: team && team.Abbreviation || "",
-        formation: team && team.Tactics || "",
-        coach: fifaText(coaches[0] && coaches[0].Name) || fifaText(coaches[0] && coaches[0].Alias),
-        starters: players.filter((player) => player.Status === 1).map(fifaPlayer),
-        substitutes: players.filter((player) => player.Status === 2).map(fifaPlayer)
-      };
-    }
-
-    function indexFifaMatches(matches) {
-      const byTeams = new Map();
-      for (const match of matches) {
-        const home = normalizeTeamName(fifaText(match.Home && match.Home.TeamName));
-        const away = normalizeTeamName(fifaText(match.Away && match.Away.TeamName));
-        if (!home || !away) continue;
-        byTeams.set(`${home}::${away}`, match);
-        byTeams.set(`${away}::${home}`, match);
-      }
-      return byTeams;
-    }
-
-    function teamIdByNormalizedName(data) {
-      const byName = new Map();
-      for (const team of data.teams.teams || []) {
-        const normalized = normalizeTeamName(team.name_en);
-        if (normalized) byName.set(normalized, String(team.id));
-      }
-      return byName;
-    }
-
-    function blankStanding(team) {
-      return {
-        team_id: String(team.id),
-        mp: "0",
-        w: "0",
-        l: "0",
-        d: "0",
-        pts: "0",
-        gf: "0",
-        ga: "0",
-        gd: "0"
-      };
-    }
-
-    function addStandingResult(row, gf, ga) {
-      const mp = Number(row.mp) + 1;
-      const w = Number(row.w) + (gf > ga ? 1 : 0);
-      const d = Number(row.d) + (gf === ga ? 1 : 0);
-      const l = Number(row.l) + (gf < ga ? 1 : 0);
-      const totalGf = Number(row.gf) + gf;
-      const totalGa = Number(row.ga) + ga;
-      row.mp = String(mp);
-      row.w = String(w);
-      row.d = String(d);
-      row.l = String(l);
-      row.pts = String(w * 3 + d);
-      row.gf = String(totalGf);
-      row.ga = String(totalGa);
-      row.gd = String(totalGf - totalGa);
-    }
-
-    function groupLetter(match) {
-      const found = fifaText(match.GroupName).match(/\bGroup\s+([A-L])\b/i);
-      return found ? found[1].toUpperCase() : "";
-    }
-
-    function rebuildGroupsFromFifa(data, matches) {
-      if (!data || !data.groups || !data.teams) return;
-      const byName = teamIdByNormalizedName(data);
-      const byGroup = new Map();
-
-      for (const team of data.teams.teams || []) {
-        const group = String(team.groups || "").toUpperCase();
-        if (!group) continue;
-        if (!byGroup.has(group)) byGroup.set(group, new Map());
-        byGroup.get(group).set(String(team.id), blankStanding(team));
-      }
-
-      for (const match of matches) {
-        const group = groupLetter(match);
-        const homeScore = fifaScore(match, "home");
-        const awayScore = fifaScore(match, "away");
-        const done = fifaText(match.StageName).toLowerCase() === "first stage" &&
-          group && Number(match.ResultType) > 0 && homeScore !== null && awayScore !== null;
-        if (!done) continue;
-
-        const homeId = byName.get(normalizeTeamName(fifaText(match.Home && match.Home.TeamName)));
-        const awayId = byName.get(normalizeTeamName(fifaText(match.Away && match.Away.TeamName)));
-        const rows = byGroup.get(group);
-        if (!homeId || !awayId || !rows || !rows.has(homeId) || !rows.has(awayId)) continue;
-
-        addStandingResult(rows.get(homeId), homeScore, awayScore);
-        addStandingResult(rows.get(awayId), awayScore, homeScore);
-      }
-
-      data.groups.groups = Array.from(byGroup.entries())
-        .sort(([a], [b]) => a.localeCompare(b))
-        .map(([name, rows]) => ({
-          name,
-          teams: Array.from(rows.values()).sort((a, b) =>
-            Number(b.pts) - Number(a.pts) ||
-            Number(b.gd) - Number(a.gd) ||
-            Number(b.gf) - Number(a.gf) ||
-            Number(a.team_id) - Number(b.team_id)
-          )
-        }));
-    }
-
-    function matchNeedsLiveFetch(match, now = new Date()) {
-      const kickoff = new Date(match.Date);
-      if (!Number.isFinite(kickoff.getTime())) return false;
-      const matchStatus = Number(match.MatchStatus);
-      const isLineupOrLive = [3, 11, 12].includes(matchStatus);
-      const hoursFromKickoff = (kickoff.getTime() - now.getTime()) / 36e5;
-      return isLineupOrLive || (hoursFromKickoff >= -30 && hoursFromKickoff <= 48);
-    }
-
-    function playerPictureUrl(player) {
-      return player && player.PlayerPicture && player.PlayerPicture.PictureUrl || player && player.PictureUrl || "";
-    }
-
-    function findLivePlayerByFeedId(live, feedId) {
-      if (!feedId) return null;
-      const id = String(feedId);
-      const players = [
-        ...((live && live.HomeTeam && Array.isArray(live.HomeTeam.Players)) ? live.HomeTeam.Players : []),
-        ...((live && live.AwayTeam && Array.isArray(live.AwayTeam.Players)) ? live.AwayTeam.Players : [])
-      ];
-      return players.find((player) => String(player.IdPlayer || "") === id) || null;
-    }
-
-    async function fetchPotmData() {
-      const [games, players] = await Promise.all([
-        fetchJsonUrl(FIFA_CLIENT.potmGamesUrl),
-        fetchJsonUrl(FIFA_CLIENT.potmPlayersUrl)
-      ]);
-      return {
-        games: Array.isArray(games) ? games : [],
-        playerMap: new Map((Array.isArray(players) ? players : []).map((player) => [String(player.id), player]))
-      };
-    }
-
-    function indexPotmMatches(matches) {
-      const byTeams = new Map();
-      for (const match of matches || []) {
-        const home = normalizeTeamName(match.homeSquadName);
-        const away = normalizeTeamName(match.awaySquadName);
-        const time = Date.parse(match.date);
-        if (!home || !away) continue;
-        const entry = { match, time: Number.isFinite(time) ? time : 0 };
-        for (const key of [`${home}::${away}`, `${away}::${home}`]) {
-          if (!byTeams.has(key)) byTeams.set(key, []);
-          byTeams.get(key).push(entry);
-        }
-      }
-      return byTeams;
-    }
-
-    function findPotmMatch(index, match) {
-      const home = normalizeTeamName(fifaText(match.Home && match.Home.TeamName));
-      const away = normalizeTeamName(fifaText(match.Away && match.Away.TeamName));
-      const candidates = index.get(`${home}::${away}`) || [];
-      if (!candidates.length) return null;
-      if (candidates.length === 1) return candidates[0].match;
-
-      const kickoff = Date.parse(match.Date);
-      if (!Number.isFinite(kickoff)) return candidates[0].match;
-
-      const best = candidates
-        .map((candidate) => ({ ...candidate, diff: Math.abs(candidate.time - kickoff) }))
-        .sort((a, b) => a.diff - b.diff)[0];
-      return best && best.diff <= 12 * 60 * 60 * 1000 ? best.match : null;
-    }
-
-    function potmPayload(match, playerMap, livePlayer, fetchedAt) {
-      if (!match || !match.winnerId || !match.winnerName) return null;
-      const player = playerMap.get(String(match.winnerId)) || {};
-      const name = player.knownName || match.winnerName || player.name || player.shortName || "";
-      if (!name) return null;
-
-      return {
-        provider: "FIFA POTM",
-        fetchedAt,
-        status: match.status || "",
-        matchId: match.id || "",
-        matchFeedId: match.feedId || match.fifaId || "",
-        playerId: match.winnerId,
-        playerFeedId: player.feedId || "",
-        name,
-        shortName: player.shortName || match.winnerName || name,
-        teamCode: player.squadAbbreviation || "",
-        position: player.position || "",
-        image: playerPictureUrl(livePlayer),
-        url: FIFA_CLIENT.potmPageUrl
-      };
-    }
-
-    function mergePotmIntoGame(game, potmMatch, playerMap, livePlayer, fetchedAt = new Date().toISOString()) {
-      const payload = potmPayload(potmMatch, playerMap, livePlayer, fetchedAt);
-      if (!payload) return false;
-
-      const before = JSON.stringify(game.potm || null);
-      const previousImage = game.potm && game.potm.image || "";
-      game.potm = {
-        ...(game.potm || {}),
-        ...payload,
-        image: payload.image || previousImage
-      };
-      return JSON.stringify(game.potm) !== before;
-    }
-
-    function enrichPotmImageFromLive(game, live) {
-      if (!game.potm || !game.potm.playerFeedId) return false;
-      const player = findLivePlayerByFeedId(live, game.potm.playerFeedId);
-      const image = playerPictureUrl(player);
-      if (!image || game.potm.image === image) return false;
-      game.potm.image = image;
-      return true;
-    }
-
-    async function refreshFifaDataNow() {
-      const data = window.WC2026_LIVE_DATA;
-      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
-      if (!games.length) return false;
-
-      const query = new URLSearchParams({
-        idCompetition: FIFA_CLIENT.competitionId,
-        idSeason: FIFA_CLIENT.seasonId,
-        language: FIFA_CLIENT.language,
-        count: "200"
-      });
-      const calendar = await fetchFifaJson(`calendar/matches?${query}`);
-      const matches = Array.isArray(calendar.Results) ? calendar.Results : [];
-      const matchesByTeams = indexFifaMatches(matches);
-      let potmData = null;
-      let potmError = "";
-      let changed = false;
-
-      rebuildGroupsFromFifa(data, matches);
-
-      try {
-        potmData = await fetchPotmData();
-      } catch (error) {
-        potmError = error.message;
-        console.warn("FIFA POTM refresh failed", error);
-      }
-
-      const potmIndex = potmData ? indexPotmMatches(potmData.games) : new Map();
-
-      const liveTargets = [];
-      for (const game of games) {
-        const home = normalizeTeamName(game.home_team_name_en);
-        const away = normalizeTeamName(game.away_team_name_en);
-        const fifaMatch = matchesByTeams.get(`${home}::${away}`);
-        if (!fifaMatch) continue;
-
-        game.official_match = {
-          provider: "FIFA",
-          idCompetition: fifaMatch.IdCompetition,
-          idSeason: fifaMatch.IdSeason,
-          idStage: fifaMatch.IdStage,
-          idMatch: fifaMatch.IdMatch,
-          matchStatus: fifaMatch.MatchStatus,
-          url: fifaMatchUrl(fifaMatch),
-          clientFetchedAt: new Date().toISOString()
-        };
-        changed = mergeFifaMatchIntoGame(game, fifaMatch) || changed;
-        const potmMatch = findPotmMatch(potmIndex, fifaMatch);
-        if (potmMatch) {
-          changed = mergePotmIntoGame(game, potmMatch, potmData.playerMap, null, game.official_match.clientFetchedAt) || changed;
-        }
-        if (matchNeedsLiveFetch(fifaMatch)) liveTargets.push({ game, fifaMatch });
-      }
-
-      await Promise.allSettled(liveTargets.map(async ({ game, fifaMatch }) => {
-        const live = await fetchFifaJson(
-          `live/football/${fifaMatch.IdCompetition}/${fifaMatch.IdSeason}/${fifaMatch.IdStage}/${fifaMatch.IdMatch}?language=${FIFA_CLIENT.language}`
-        );
-        changed = mergeFifaMatchIntoGame(game, live) || changed;
-        game.official_match.matchStatus = live.MatchStatus ?? fifaMatch.MatchStatus;
-        game.official_match.clientFetchedAt = new Date().toISOString();
-        changed = enrichPotmImageFromLive(game, live) || changed;
-
-        const homeLineup = fifaTeamLineup(live.HomeTeam);
-        const awayLineup = fifaTeamLineup(live.AwayTeam);
-        if (homeLineup.starters.length || awayLineup.starters.length) {
-          game.official_lineups = {
-            provider: "FIFA",
-            fetchedAt: game.official_match.clientFetchedAt,
-            url: fifaMatchUrl(fifaMatch),
-            home: homeLineup,
-            away: awayLineup
-          };
-          changed = true;
-        }
-      }));
-
-      data.fifa = {
-        ...(data.fifa || {}),
-        provider: "FIFA",
-        clientFetchedAt: new Date().toISOString(),
-        clientLiveCheckedCount: liveTargets.length,
-        potmMatchCount: games.filter((game) => game.potm).length
-      };
-      data.potm = {
-        ...(data.potm || {}),
-        provider: "FIFA POTM",
-        pageUrl: FIFA_CLIENT.potmPageUrl,
-        clientFetchedAt: new Date().toISOString(),
-        matchCount: potmData && potmData.games.length || data.potm && data.potm.matchCount || 0,
-        attachedCount: games.filter((game) => game.potm).length,
-        ...(potmError ? { error: potmError } : {})
-      };
-      return changed || matches.length > 0;
-    }
-
     function gameTeam(game, side) {
       const rawName = game[`${side}_team_name_en`];
       const name = rawName ? teamName(rawName) : "미정";
@@ -2132,6 +1371,51 @@
         flag: STATIC_FLAGS[name] || "",
         code: STATIC_CODES[name] || ""
       };
+    }
+
+    function placeholderLabel(value) {
+      let label = String(value || "").trim();
+      if (!label) return "미정";
+      label = label
+        .replace(/^Winner Group ([A-L])$/i, "$1조 1위")
+        .replace(/^Runner-up Group ([A-L])$/i, "$1조 2위")
+        .replace(/^3rd Group ([A-L/]+)$/i, "$1조 3위")
+        .replace(/^Winner Match (\d+)$/i, "$1경기 승자")
+        .replace(/^Loser Match (\d+)$/i, "$1경기 패자");
+      return label.replace(/\//g, "/");
+    }
+
+    function knockoutTeam(game, side) {
+      const rawName = game[`${side}_team_name_en`];
+      const label = game[`${side}_team_label`];
+      const name = rawName ? teamName(rawName) : placeholderLabel(label);
+      const pending = !rawName;
+      return {
+        team: name,
+        flag: pending ? "" : STATIC_FLAGS[name] || "",
+        code: pending ? "" : STATIC_CODES[name] || "",
+        pending
+      };
+    }
+
+    function knockoutScoreValue(game, side) {
+      const status = String(game.time_elapsed || "").toLowerCase();
+      if (!status || status === "notstarted") return "";
+      return String(num(game[`${side}_score`]));
+    }
+
+    function knockoutWinnerSide(game) {
+      const status = String(game.time_elapsed || "").toLowerCase();
+      if (!["finished", "fulltime", "full-time", "ft"].includes(status)) return "";
+      const home = num(game.home_score);
+      const away = num(game.away_score);
+      if (home > away) return "home";
+      if (away > home) return "away";
+      const homePen = num(game.home_penalty_score || game.home_penalty || game.homeTeamPenaltyScore);
+      const awayPen = num(game.away_penalty_score || game.away_penalty || game.awayTeamPenaltyScore);
+      if (homePen > awayPen) return "home";
+      if (awayPen > homePen) return "away";
+      return "";
     }
 
     function liveMatchRows() {
@@ -2186,43 +1470,6 @@
       `;
     }
 
-    function teamNameFromCode(code) {
-      const found = Object.entries(STATIC_CODES).find(([, value]) => value === code);
-      return found ? found[0] : code;
-    }
-
-    function potmCard(row) {
-      const potm = row && row.raw && row.raw.potm;
-      if (!potm || !potm.name) return "";
-
-      const potmStatus = String(potm.status || "").toLowerCase();
-      const isDone = row.statusClass === "done" || potmStatus === "complete";
-      if (!isDone) return "";
-
-      const initial = String(potm.name).trim().charAt(0).toUpperCase() || "M";
-      const avatar = potm.image
-        ? `<span class="today-potm-avatar"><img class="today-potm-photo" src="${esc(potm.image)}" alt="" loading="lazy" onerror="this.closest('.today-potm-avatar').replaceWith(Object.assign(document.createElement('span'),{className:'today-potm-initial',textContent:'${esc(initial)}'}))"></span>`
-        : `<span class="today-potm-initial">${esc(initial)}</span>`;
-      const meta = [
-        potm.teamCode ? teamNameFromCode(potm.teamCode) : "",
-        potm.position || "",
-        potm.provider || "FIFA POTM"
-      ].filter(Boolean).join(" · ");
-      const tag = potmStatus === "complete" ? "Official MOM" : "MOM";
-      const url = potm.url || FIFA_CLIENT.potmPageUrl;
-
-      return `
-        <a class="today-potm" href="${esc(url)}" target="_blank" rel="noopener">
-          ${avatar}
-          <span>
-            <span class="today-potm-kicker">${esc(tag)}</span>
-            <span class="today-potm-name">${esc(potm.name)}</span>
-            ${meta ? `<span class="today-potm-meta">${esc(meta)}</span>` : ""}
-          </span>
-        </a>
-      `;
-    }
-
     function todayMatchCard(row, index) {
       const statusClass = row.statusClass ? ` ${row.statusClass}` : "";
       const venue = row.venue ? `<span>${esc(row.venue)}</span>` : "<span></span>";
@@ -2238,7 +1485,6 @@
             <span>${esc(row.stage)} · ${esc(row.status)}</span>
             ${venue}
           </div>
-          ${potmCard(row)}
         </article>
       `;
     }
@@ -2278,138 +1524,6 @@
       sub.textContent = mode === "today" ? `${label} · 한국시간` : `다음 경기일 · ${label} · 한국시간`;
       count.textContent = `${mode === "today" ? "오늘" : "다음"} ${visible.length}경기`;
       root.innerHTML = visible.map(todayMatchCard).join("");
-    }
-
-    function calendarShortDate(date) {
-      return `${pad2(date.getUTCMonth() + 1)}/${pad2(date.getUTCDate())}`;
-    }
-
-    function calendarWeekday(date) {
-      return new Intl.DateTimeFormat("ko-KR", {
-        timeZone: "UTC",
-        weekday: "short"
-      }).format(date);
-    }
-
-    function calendarKickoffTime(date) {
-      return `${pad2(date.getUTCHours())}:${pad2(date.getUTCMinutes())}`;
-    }
-
-    function calendarDateGroups(rows) {
-      const groups = new Map();
-      for (const row of rows) {
-        if (!row.dateKey) continue;
-        if (!groups.has(row.dateKey)) {
-          groups.set(row.dateKey, {
-            key: row.dateKey,
-            date: row.kstDate,
-            rows: []
-          });
-        }
-        groups.get(row.dateKey).rows.push(row);
-      }
-      return Array.from(groups.values()).sort((a, b) => a.date - b.date);
-    }
-
-    function defaultCalendarKey(groups, now = new Date()) {
-      if (!groups.length) return "";
-      const nowKst = kstClockDate(now);
-      const todayKey = kstDateKey(nowKst);
-      if (groups.some((group) => group.key === todayKey)) return todayKey;
-      const upcoming = groups.find((group) => group.rows.some((row) => row.kstDate >= nowKst));
-      return (upcoming || groups[groups.length - 1]).key;
-    }
-
-    function calendarResultLabel(row) {
-      if (row.statusClass !== "done") return "";
-      const found = String(row.score || "").match(/^(\d+)\s*-\s*(\d+)$/);
-      if (!found) return "";
-      const homeScore = Number(found[1]);
-      const awayScore = Number(found[2]);
-      if (homeScore === awayScore) return "무승부";
-      return homeScore > awayScore
-        ? `${shortResultTeam(row.home.team)} 승`
-        : `${shortResultTeam(row.away.team)} 승`;
-    }
-
-    function calendarMatchCard(row) {
-      const statusClass = row.statusClass ? ` ${row.statusClass}` : "";
-      const venue = row.venue ? ` · ${row.venue}` : "";
-      const result = calendarResultLabel(row);
-      return `
-        <article class="calendar-card${statusClass}">
-          <div class="calendar-time">
-            <span>${esc(calendarKickoffTime(row.kstDate))}</span>
-            <span class="calendar-status">${esc(row.status)}</span>
-          </div>
-          <div class="calendar-teams">
-            <div class="calendar-side home">${teamCell(row.home)}</div>
-            <div class="calendar-score">${esc(row.score)}</div>
-            <div class="calendar-side away">${teamCell(row.away)}</div>
-          </div>
-          <div class="calendar-meta">
-            <span>${esc(row.stage)}${esc(venue)}</span>
-            ${result ? `<span class="calendar-result">${esc(result)}</span>` : ""}
-          </div>
-        </article>
-      `;
-    }
-
-    function renderCalendar(live, preferredKey = CALENDAR_SELECTED_KEY, now = new Date()) {
-      const daysRoot = document.getElementById("calendarDays");
-      const matchesRoot = document.getElementById("calendarMatches");
-      const sub = document.getElementById("calendarSub");
-      const count = document.getElementById("calendarCount");
-      if (!daysRoot || !matchesRoot || !sub || !count) return;
-
-      const liveRows = liveMatchRows();
-      const rows = liveRows.length ? liveRows : staticMatchRows();
-      const groups = calendarDateGroups(rows);
-      if (!groups.length) {
-        CALENDAR_SELECTED_KEY = "";
-        sub.textContent = "한국시간 기준";
-        count.textContent = "0경기";
-        daysRoot.innerHTML = "";
-        matchesRoot.innerHTML = `<div class="calendar-empty">표시할 경기 일정이 없습니다.</div>`;
-        return;
-      }
-
-      const todayKey = kstDateKey(kstClockDate(now));
-      const validPreferred = groups.some((group) => group.key === preferredKey);
-      const selectedKey = validPreferred ? preferredKey : defaultCalendarKey(groups, now);
-      CALENDAR_SELECTED_KEY = selectedKey;
-      const selected = groups.find((group) => group.key === selectedKey) || groups[0];
-      const selectedRows = selected.rows.slice().sort((a, b) => a.kstDate - b.kstDate);
-
-      daysRoot.innerHTML = groups.map((group) => {
-        const active = group.key === selected.key;
-        const isToday = group.key === todayKey;
-        return `
-          <button class="calendar-day${active ? " active" : ""}${isToday ? " today" : ""}" type="button" role="tab" aria-selected="${active ? "true" : "false"}" data-date-key="${esc(group.key)}">
-            <span class="calendar-day-date">${esc(calendarShortDate(group.date))}</span>
-            <span class="calendar-day-week">${esc(calendarWeekday(group.date))}</span>
-            <span class="calendar-day-count">${group.rows.length}경기</span>
-          </button>
-        `;
-      }).join("");
-
-      sub.textContent = `${formatKstDate(selected.date)} · 한국시간`;
-      count.textContent = `${selectedRows.length}경기`;
-      matchesRoot.innerHTML = selectedRows.length
-        ? selectedRows.map(calendarMatchCard).join("")
-        : `<div class="calendar-empty">이 날짜에 표시할 경기가 없습니다.</div>`;
-    }
-
-    function bindCalendarEvents() {
-      const root = document.getElementById("calendarDays");
-      if (!root || root.dataset.calendarBound) return;
-      root.addEventListener("click", (event) => {
-        const button = event.target.closest(".calendar-day");
-        if (!button) return;
-        CALENDAR_SELECTED_KEY = button.dataset.dateKey || "";
-        renderCalendar(liveStandings());
-      });
-      root.dataset.calendarBound = "true";
     }
 
     function playerEntry(value) {
@@ -2683,11 +1797,7 @@
         );
       }
 
-      return {
-        standings,
-        fetchedAt: data.fetchedAt || "",
-        clientFetchedAt: data.fifa && data.fifa.clientFetchedAt || ""
-      };
+      return { standings, fetchedAt: data.fetchedAt || "" };
     }
 
     function rowsForGroup(letter, live) {
@@ -2728,61 +1838,6 @@
       return now >= estimatedEnd;
     }
 
-    function fixtureTeams(fixture) {
-      return String(fixture && fixture[2] || "")
-        .split(" 대 ")
-        .map((team) => team.trim());
-    }
-
-    function fixtureLiveGame(fixture) {
-      const data = window.WC2026_LIVE_DATA;
-      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
-      const group = String(fixture && fixture[0] || "").toUpperCase();
-      const [homeName, awayName] = fixtureTeams(fixture);
-
-      return games.find((game) => {
-        const sameGroup = String(game.group || "").toUpperCase() === group;
-        const home = teamName(game.home_team_name_en || "");
-        const away = teamName(game.away_team_name_en || "");
-        return sameGroup && home === homeName && away === awayName;
-      });
-    }
-
-    function shortResultTeam(team) {
-      return ({
-        "남아프리카공화국": "남아공",
-        "보스니아 헤르체고비나": "보스니아",
-        "콩고민주공화국": "콩고DR",
-        "사우디아라비아": "사우디"
-      })[team] || team;
-    }
-
-    function fixtureResult(fixture) {
-      const game = fixtureLiveGame(fixture);
-      const fallbackDone = fixtureIsDone(fixture);
-      if (!game) return { done: fallbackDone, score: "", winner: "" };
-
-      const status = String(game.time_elapsed || "").toLowerCase();
-      const done = String(game.finished || "").toUpperCase() === "TRUE" ||
-        ["finished", "fulltime", "full-time", "ft"].includes(status);
-      const hasScore = done || (!["", "notstarted", "lineups"].includes(status) && Number.isFinite(Number(game.home_score)) && Number.isFinite(Number(game.away_score)));
-      if (!hasScore) return { done: done || fallbackDone, score: "", winner: "" };
-
-      const homeScore = num(game.home_score);
-      const awayScore = num(game.away_score);
-      const [homeName, awayName] = fixtureTeams(fixture);
-      const winner =
-        homeScore === awayScore ? "무승부" :
-        homeScore > awayScore ? `${shortResultTeam(homeName)} 승` :
-        `${shortResultTeam(awayName)} 승`;
-
-      return {
-        done: done || fallbackDone,
-        score: `${homeScore}-${awayScore}`,
-        winner: done ? winner : "진행 중"
-      };
-    }
-
     function renderGroups(live) {
       const root = document.getElementById("groups");
       root.innerHTML = Object.keys(GROUPS).map((letter) => {
@@ -2803,13 +1858,11 @@
         }).join("");
 
         const matches = FIXTURES.filter((m) => m[0] === letter).slice(0, 4).map((m) => {
-          const result = fixtureResult(m);
-          const done = result.done;
+          const done = fixtureIsDone(m);
           return `<div class="match${done ? " done" : ""}">
             <span class="time">${esc(m[1])}</span>
             <span class="teams">${esc(m[2])}</span>
-            ${result.score ? `<span class="match-score">${esc(result.score)}</span>` : ""}
-            ${result.winner ? `<span class="match-winner">${esc(result.winner)}</span>` : done ? `<span class="match-badge">완료</span>` : ""}
+            ${done ? `<span class="match-badge">완료</span>` : ""}
           </div>`;
         }).join("");
 
@@ -2881,76 +1934,9 @@
       const name = playerNameForTeam(cleanPlayerName(player), team);
       if (!name) return;
       const key = `${name}__${team}`;
-      const current = map.get(key) || { name, team, flag, image: "", position: "", number: "", count: 0 };
+      const current = map.get(key) || { name, team, flag, count: 0 };
       current.count += 1;
       map.set(key, current);
-    }
-
-    function parseProfileJson(value) {
-      if (!value || typeof value !== "string") return {};
-      try {
-        return JSON.parse(value);
-      } catch (_) {
-        return {};
-      }
-    }
-
-    function normalizePersonName(value) {
-      return stripMarks(value)
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, " ")
-        .trim()
-        .replace(/\s+/g, " ");
-    }
-
-    function officialPlayerPhotos() {
-      const data = window.WC2026_LIVE_DATA;
-      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
-      const photos = [];
-
-      for (const game of games) {
-        for (const side of ["home", "away"]) {
-          const team = game.official_lineups && game.official_lineups[side];
-          const players = [
-            ...(team && Array.isArray(team.starters) ? team.starters : []),
-            ...(team && Array.isArray(team.substitutes) ? team.substitutes : [])
-          ];
-          for (const player of players) {
-            if (!player.image) continue;
-            photos.push({
-              image: player.image,
-              code: team.code || "",
-              names: [player.name, player.shortName].map(normalizePersonName).filter(Boolean)
-            });
-          }
-        }
-      }
-
-      return photos;
-    }
-
-    function officialImageForRank(row, profile, photos) {
-      const code = STATIC_CODES[teamName(row.teamShortName || row.teamName || "")] || "";
-      const rawNames = [
-        profile.viewName,
-        row.playerName,
-        row.shortName,
-        row.keyword
-      ].flatMap((value) => String(value || "").split(","));
-      const names = rawNames.map(normalizePersonName).filter(Boolean);
-      if (!names.length) return "";
-
-      const sameTeam = photos.filter((photo) => !code || photo.code === code);
-      const pool = sameTeam.length ? sameTeam : photos;
-
-      for (const candidate of pool) {
-        if (candidate.names.some((photoName) =>
-          names.some((name) => photoName === name || photoName.includes(name) || name.includes(photoName))
-        )) {
-          return candidate.image;
-        }
-      }
-      return "";
     }
 
     function naverRankings(type) {
@@ -2963,25 +1949,15 @@
       const stat = type === "goals" ? "goals" : "assists";
       const block = topPlayers.find((item) => item && item.type === stat);
       const rows = block && Array.isArray(block.ranks) ? block.ranks : [];
-      const photos = officialPlayerPhotos();
 
       return rows
         .filter((row) => num(row[stat]) > 0)
-        .map((row) => {
-          const profile = parseProfileJson(row.profile);
-          const officialImage = officialImageForRank(row, profile, photos);
-          return {
-            rank: num(row.rank) || 0,
-            name: cleanPlayerName(row.playerName || row.shortName || ""),
-            team: teamName(row.teamShortName || row.teamName || ""),
-            flag: row.teamEmblemUrl || "",
-            image: officialImage || row.image || profile.image || "",
-            fallbackImage: officialImage && row.image ? row.image : "",
-            position: row.position || "",
-            number: row.backNumber || "",
-            count: num(row[stat])
-          };
-        })
+        .map((row) => ({
+          name: cleanPlayerName(row.playerName || row.shortName || ""),
+          team: teamName(row.teamShortName || row.teamName || ""),
+          flag: row.teamEmblemUrl || "",
+          count: num(row[stat])
+        }))
         .filter((row) => row.name && row.team)
         .slice(0, 8);
     }
@@ -3018,33 +1994,7 @@
         .slice(0, 8);
     }
 
-    function playerInitial(name) {
-      return String(name || "").trim().charAt(0).toUpperCase() || "P";
-    }
-
-    function leaderImage(row) {
-      const initial = playerInitial(row.name);
-      if (!row.image) return `<span class="leader-initial">${esc(initial)}</span>`;
-      const fallback = row.fallbackImage && row.fallbackImage !== row.image ? row.fallbackImage : "";
-      return `<img class="leader-photo" src="${esc(row.image)}" alt="" loading="lazy" data-fallback="${esc(fallback)}" onerror="if(this.dataset.fallback&&!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src=this.dataset.fallback}else{this.replaceWith(Object.assign(document.createElement('span'),{className:'leader-initial',textContent:'${esc(initial)}'}))}">`;
-    }
-
-    function leaderCard(row, unit, label) {
-      const detail = [row.number ? `#${row.number}` : "", row.position || ""].filter(Boolean).join(" · ");
-      return `
-        <article class="leader-card">
-          ${leaderImage(row)}
-          <div class="leader-info">
-            <div class="leader-kicker">${esc(label)}</div>
-            <div class="leader-name">${esc(row.name)}</div>
-            <div class="leader-team">${teamCell({ team: row.team, flag: row.flag })}${detail ? ` · ${esc(detail)}` : ""}</div>
-          </div>
-          <div class="leader-score">${row.count}<span class="leader-unit">${esc(unit)}</span></div>
-        </article>
-      `;
-    }
-
-    function renderRanking(targetId, noteId, rows, unit, emptyText, leaderLabel) {
+    function renderRanking(targetId, noteId, rows, unit, emptyText) {
       const target = document.getElementById(targetId);
       const note = document.getElementById(noteId);
       note.textContent = rows.length ? `상위 ${rows.length}명` : "데이터 대기 중";
@@ -3054,10 +2004,9 @@
         return;
       }
 
-      const [leader, ...rest] = rows;
-      const list = rest.map((row, index) => `
+      target.innerHTML = rows.map((row, index) => `
         <div class="rank-row">
-          <div class="rank-num">${row.rank || index + 2}</div>
+          <div class="rank-num">${index + 1}</div>
           <div class="player">
             <div class="player-name">${esc(row.name)}</div>
             <div class="player-team">${teamCell({ team: row.team, flag: row.flag })}</div>
@@ -3065,7 +2014,6 @@
           <div class="rank-score">${row.count}${esc(unit)}</div>
         </div>
       `).join("");
-      target.innerHTML = `${leaderCard(leader, unit, leaderLabel)}${list}`;
     }
 
     function renderStats(live) {
@@ -3073,97 +2021,88 @@
       const naverAssists = naverRankings("assists");
       const scorers = naverScorers.length ? naverScorers : collectRankings(live, "goals");
       const assists = naverAssists.length ? naverAssists : collectRankings(live, "assists");
-      renderRanking("scorers", "scorerNote", scorers, "골", "대회 시작 후 득점자가 집계됩니다.", "득점 선두");
-      renderRanking("assists", "assistNote", assists, "도움", "공개 API에 도움 데이터가 제공되면 자동 표시됩니다.", "도움 선두");
+      renderRanking("scorers", "scorerNote", scorers, "골", "대회 시작 후 득점자가 집계됩니다.");
+      renderRanking("assists", "assistNote", assists, "도움", "공개 API에 도움 데이터가 제공되면 자동 표시됩니다.");
     }
 
-    function parseKoreaDate(label) {
-      const match = String(label || "").match(/^(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일\s*(\d{1,2}):(\d{2})$/);
-      if (!match) return null;
-      const [, year, month, day, hour, minute] = match;
-      return new Date(
-        Number(year),
-        Number(month) - 1,
-        Number(day),
-        Number(hour),
-        Number(minute)
-      );
+    function knockoutGames() {
+      const data = window.WC2026_LIVE_DATA;
+      const games = data && data.games && Array.isArray(data.games.games) ? data.games.games : [];
+      const keys = new Set(KNOCKOUT_ROUNDS.map((round) => round.key));
+      return games
+        .filter((game) => keys.has(String(game.group || "").toUpperCase()))
+        .map((game) => ({ game, kstDate: gameKstDate(game) }))
+        .filter((row) => row.kstDate)
+        .sort((a, b) => a.kstDate - b.kstDate);
     }
 
-    function koreaMatchTitle(title) {
-      const teams = String(title || "").split(" 대 ").map((item) => item.trim()).filter(Boolean);
-      if (teams.length !== 2) return title;
-      if (teams[0] === "대한민국") return `${teams[0]} vs ${teams[1]}`;
-      if (teams[1] === "대한민국") return `${teams[1]} vs ${teams[0]}`;
-      return `${teams[0]} vs ${teams[1]}`;
+    function knockoutMatchCard(row) {
+      const game = row.game;
+      const home = knockoutTeam(game, "home");
+      const away = knockoutTeam(game, "away");
+      const winner = knockoutWinnerSide(game);
+      const statusClass = matchStatusClass(game);
+      const stadium = STADIUM_META[String(game.stadium_id)] || {};
+      const venue = stadium.city || stadium.name || "";
+      const matchNo = game.id ? `#${esc(game.id)}` : "";
+
+      const side = (team, key) => `
+        <div class="ko-team${winner === key ? " winner" : ""}${team.pending ? " pending" : ""}">
+          <span>${teamCell(team)}</span>
+          <span class="ko-score">${esc(knockoutScoreValue(game, key))}</span>
+        </div>
+      `;
+
+      return `<article class="ko-match ${esc(statusClass)}">
+        <div class="ko-meta">
+          <span>${matchNo}</span>
+          <span>${esc(formatKstTime(row.kstDate))}</span>
+        </div>
+        <div class="ko-teams">
+          ${side(home, "home")}
+          ${side(away, "away")}
+        </div>
+        <div class="ko-status">${esc(matchStatusLabel(game))}${venue ? ` · ${esc(venue)}` : ""}</div>
+      </article>`;
     }
 
-    function shortKoreaDate(date) {
-      return `${pad2(date.getMonth() + 1)}/${pad2(date.getDate())} ${pad2(date.getHours())}:${pad2(date.getMinutes())}`;
-    }
+    function renderKnockout() {
+      const root = document.getElementById("knockoutBoard");
+      const count = document.getElementById("knockoutCount");
+      if (!root) return;
 
-    function koreaDdayLabel(date, now = new Date()) {
-      const diff = date.getTime() - now.getTime();
-      const end = date.getTime() + 150 * 60 * 1000;
-      if (diff <= 0 && now.getTime() <= end) return { main: "LIVE", sub: "진행 중" };
-      if (diff < 0) return { main: "종료", sub: "완료" };
-      const days = Math.ceil(diff / 86400000);
-      if (days <= 0) return { main: "D-DAY", sub: "오늘" };
-      return { main: `D-${days}`, sub: "남음" };
-    }
+      const rows = knockoutGames();
+      const done = rows.filter((row) => matchStatusClass(row.game) === "done").length;
+      const next = rows.find((row) => row.kstDate >= kstClockDate() && matchStatusClass(row.game) !== "done");
+      count.textContent = rows.length
+        ? `${done}/${rows.length} 경기 종료${next ? ` · 다음 ${formatKstTime(next.kstDate)}` : ""}`
+        : "대진 데이터 대기 중";
 
-    function koreaMatches() {
-      return KOREA.map((item) => ({
-        raw: item,
-        date: parseKoreaDate(item[0])
-      }))
-        .filter((item) => item.date)
-        .sort((a, b) => a.date - b.date);
-    }
+      if (!rows.length) {
+        root.innerHTML = `<div class="ko-empty">32강 대진 데이터가 아직 없습니다.</div>`;
+        return;
+      }
 
-    function nextKoreaMatch(now = new Date()) {
-      const matches = koreaMatches();
-      return matches.find((item) => item.date.getTime() + 150 * 60 * 1000 >= now.getTime()) ||
-        matches[matches.length - 1] ||
-        null;
+      root.innerHTML = KNOCKOUT_ROUNDS.map((round) => {
+        const roundRows = rows.filter((row) => String(row.game.group || "").toUpperCase() === round.key);
+        return `<section class="ko-round">
+          <div>
+            <div class="ko-round-title">${esc(round.title)}</div>
+            <div class="ko-round-meta">${roundRows.length}경기</div>
+          </div>
+          ${roundRows.length ? roundRows.map(knockoutMatchCard).join("") : `<div class="ko-empty">대기 중</div>`}
+        </section>`;
+      }).join("");
     }
 
     function renderKorea() {
-      const root = document.getElementById("korea");
-      const now = new Date();
-      const matches = koreaMatches();
-      const next = nextKoreaMatch(now);
-      root.innerHTML = next ? (() => {
-        const [, title, venue] = next.raw;
-        const dday = koreaDdayLabel(next.date);
-        const nextIndex = matches.findIndex((item) => item.raw === next.raw);
-        const followups = matches.slice(nextIndex + 1).filter((item) => item.date.getTime() + 150 * 60 * 1000 >= now.getTime());
-        const followupHtml = followups.length ? `
-          <div class="k-followups" aria-label="대한민국 이후 일정">
-            <span class="k-followup-label">이후 일정</span>
-            ${followups.map((item) => {
-              const [, followTitle] = item.raw;
-              return `
-                <span class="k-followup">
-                  <time>${esc(shortKoreaDate(item.date))}</time>
-                  <strong>${esc(koreaMatchTitle(followTitle))}</strong>
-                </span>
-              `;
-            }).join("")}
-          </div>
-        ` : "";
-        return `
-          <article class="k-next">
-            <div>
-              <div class="k-next-kicker">대한민국 다음 경기</div>
-              <div class="k-next-title">${esc(koreaMatchTitle(title))}</div>
-              <div class="k-next-meta">${esc(shortKoreaDate(next.date))} · ${esc(venue)} · 한국시간</div>
-            </div>
-            <div class="k-next-dday">${esc(dday.main)}<span>${esc(dday.sub)}</span></div>
-          </article>
-          ${followupHtml}
-        `;
-      })() : "";
+      document.getElementById("korea").innerHTML = KOREA.map((m) => `
+        <article class="k-card">
+          <div class="k-date">${esc(m[0])}</div>
+          <div class="k-title">${esc(m[1])}</div>
+          <div class="k-meta">${esc(m[2])}</div>
+        </article>
+      `).join("");
     }
 
     function renderStatus(live) {
@@ -3173,8 +2112,7 @@
         el.textContent = "오프라인 정적 데이터";
         return;
       }
-      const source = live.clientFetchedAt ? "FIFA 공식 즉시 확인" : "";
-      const date = new Date(live.clientFetchedAt || live.fetchedAt);
+      const date = new Date(live.fetchedAt);
       if (!Number.isFinite(date.getTime())) {
         el.className = "status-warn";
         el.textContent = `갱신 시간 확인 필요: ${live.fetchedAt}`;
@@ -3191,7 +2129,7 @@
           }).format(date)
         : live.fetchedAt;
       el.className = state.cls;
-      el.textContent = `${source || state.text}: ${label} · ${ageMinutes}분 전`;
+      el.textContent = `${state.text}: ${label} · ${ageMinutes}분 전`;
     }
 
     function startDashboard() {
@@ -3203,29 +2141,12 @@
 
       const live = liveStandings();
       renderTodayMatches(live);
-      renderCalendar(live);
-      bindCalendarEvents();
       bindLineupEvents();
       renderStats(live);
+      renderKnockout();
       renderGroups(live);
       renderKorea();
       renderStatus(live);
-
-      refreshFifaDataNow()
-        .then((updated) => {
-          if (!updated) return;
-          const refreshed = liveStandings();
-          renderTodayMatches(refreshed);
-          renderCalendar(refreshed);
-          renderStats(refreshed);
-          renderGroups(refreshed);
-          renderStatus(refreshed);
-          setText("refreshStatus", "FIFA 공식 데이터 즉시 반영 완료");
-        })
-        .catch((error) => {
-          console.warn("FIFA live refresh failed", error);
-          setText("refreshStatus", "자동 새로고침 유지 · FIFA 즉시 확인 실패");
-        });
 
       setTimeout(() => {
         window.location.reload();
